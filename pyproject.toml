@@ -1,0 +1,70 @@
+[tool.ruff]
+extend-include = ["*.ipynb"]
+line-length = 79
+target-version = "py38"
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "single"
+
+[tool.ruff.lint]
+# See all rules here: https://beta.ruff.rs/docs/rules
+select = [
+    # pyflakes
+    "F",
+    # pycodestyle
+    "E",
+    # mccabe
+    "C90",
+    # isort
+    "I",
+    # pep8-naming
+    "N",
+    # pyupgrade
+    "UP",
+    # flake8-2020
+    "YTT",
+    # flake8-bugbear
+    "B",
+    # flake8-builtins
+    "A",
+    # flake8-commas
+    "COM",
+    # flake8-comprehensions
+    "C4",
+    # flake8-implicit-str-concat
+    "ISC",
+    # flake8-quotes
+    "Q",
+    # flake8-debugger
+    "T10",
+    # flake8-simplify
+    "SIM",
+    # PyLint
+    "PLE", "PLW",
+    # ruff-specific
+    "RUF",
+]
+extend-ignore = [
+    # Allow builtin attribute shadowing
+    "A003",
+    # Conflicts with ruff format but leaving as enabled for now. This
+    # may require ruff's linter to be run a second time after the formatter.
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    # "COM812",
+    # "ISC001",
+    # Skip some flake8-simplify rules
+    "SIM105", "SIM117",
+]
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "single"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+known-first-party = []
+order-by-type = false
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
