@@ -1,5 +1,5 @@
 [tool.ruff]
-extend-include = ["*.ipynb"]
+extend-include = ["notebooks/*.ipynb"]
 line-length = 79
 target-version = "py38"
 
@@ -55,6 +55,7 @@ extend-ignore = [
     # "ISC001",
     # Skip some flake8-simplify rules
     "SIM105", "SIM117",
+    "C408",
 ]
 
 [tool.ruff.lint.flake8-quotes]
