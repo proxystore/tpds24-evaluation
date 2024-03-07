@@ -1,0 +1,986 @@
+[2024-03-07 15:10:13.433] TESTING (run.stream-scaling) :: All configurations loaded
+[2024-03-07 15:10:13.434] INFO  (proxystore.store.base) :: Initialized Store("redis-store", connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False)
+[2024-03-07 15:10:13.434] INFO  (proxystore.store) :: Registered a store named redis-store
+[2024-03-07 15:10:13.434] TESTING (run.stream-scaling) :: Benchmark initialized
+[2024-03-07 15:10:13.434] TESTING (psbench.runner) :: Starting benchmark: Stream Scaling
+[2024-03-07 15:10:13.435] TESTING (psbench.runner) :: Benchmark config:
+- executor: ParslExecutor
+- connector: RedisConnector
+- subscriber: RedisSubscriber
+- stream-config: kind='redis' topic='stream-benchmark-data' servers=['localhost:59465']
+[2024-03-07 15:10:13.436] INFO  (parsl.dataflow.dflow) :: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(HighThroughputExecutor(
+        address='127.0.1.1', 
+        address_probe_timeout=None, 
+        available_accelerators=[], 
+        block_error_handler=<function simple_error_handler at 0x7f8e2420e980>, 
+        cores_per_worker=1, 
+        cpu_affinity='none', 
+        encrypted=False, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='htex-local', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --cert_dir {cert_dir} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --cpu-affinity {cpu_affinity} --available-accelerators {accelerators}', 
+        max_workers=4, 
+        mem_per_worker=None, 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=LocalProvider(
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/jgpaul/workspace/sc24-proxystore-analysis'
+            ), 
+            cmd_timeout=30, 
+            init_blocks=1, 
+            launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+            max_blocks=1, 
+            min_blocks=0, 
+            move_files=None, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            worker_init=''
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='data/alderaan/1-stream-scaling/stream-scaling-2024-03-07-15-10-13/parsl_runinfo', 
+    strategy='simple', 
+    usage_tracking=False
+)
+[2024-03-07 15:10:13.436] INFO  (parsl.dataflow.dflow) :: Parsl version: 2024.02.05
+[2024-03-07 15:10:13.436] INFO  (parsl.dataflow.dflow) :: Run id is: fa9417af-bfce-4fe7-b08f-008f1b76b2fe
+[2024-03-07 15:10:13.462] INFO  (parsl.dataflow.memoization) :: App caching initialized
+[2024-03-07 15:10:13.514] INFO  (parsl.executors.status_handling) :: Scaling out by 1 blocks
+[2024-03-07 15:10:13.514] INFO  (parsl.executors.status_handling) :: Allocated block ID 0
+[2024-03-07 15:10:13.517] TESTING (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000 task_count=32 task_sleep=1.0 use_proxies=False
+[2024-03-07 15:10:13.517] TESTING (stream-scaling) :: Compute workers: 3
+[2024-03-07 15:10:13.517] TESTING (stream-scaling) :: Generator workers: 1
+[2024-03-07 15:10:13.517] TESTING (stream-scaling) :: Generator item interval: 0.3333333333333333
+[2024-03-07 15:10:13.518] INFO  (parsl.dataflow.dflow) :: Task 0 submitted for App generator_task, not waiting on any dependency
+[2024-03-07 15:10:13.520] INFO  (parsl.dataflow.dflow) :: Parsl task 0 try 0 launched on executor htex-local with executor id 1
+[2024-03-07 15:10:13.520] TESTING (stream-scaling) :: Submitted generator task: item_size_bytes=100000, max_items=32, interval_seconds=0.3333333333333333, pregenerate=False, use_proxies=False
+[2024-03-07 15:10:14.477] INFO  (parsl.dataflow.dflow) :: Task 1 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:14.479] INFO  (parsl.dataflow.dflow) :: Parsl task 1 try 0 launched on executor htex-local with executor id 2
+[2024-03-07 15:10:14.479] TESTING (stream-scaling) :: Submitted compute task 1/32
+[2024-03-07 15:10:14.809] INFO  (parsl.dataflow.dflow) :: Task 2 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:14.811] INFO  (parsl.dataflow.dflow) :: Parsl task 2 try 0 launched on executor htex-local with executor id 3
+[2024-03-07 15:10:14.811] TESTING (stream-scaling) :: Submitted compute task 2/32
+[2024-03-07 15:10:15.143] INFO  (parsl.dataflow.dflow) :: Task 3 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:15.144] INFO  (parsl.dataflow.dflow) :: Parsl task 3 try 0 launched on executor htex-local with executor id 4
+[2024-03-07 15:10:15.144] TESTING (stream-scaling) :: Submitted compute task 3/32
+[2024-03-07 15:10:15.675] INFO  (parsl.dataflow.dflow) :: Task 1 completed (launched -> exec_done)
+[2024-03-07 15:10:15.675] INFO  (parsl.dataflow.dflow) :: Task 4 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:15.677] INFO  (parsl.dataflow.dflow) :: Parsl task 4 try 0 launched on executor htex-local with executor id 5
+[2024-03-07 15:10:15.677] TESTING (stream-scaling) :: Submitted compute task 4/32
+[2024-03-07 15:10:16.007] INFO  (parsl.dataflow.dflow) :: Task 2 completed (launched -> exec_done)
+[2024-03-07 15:10:16.007] INFO  (parsl.dataflow.dflow) :: Task 5 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:16.008] INFO  (parsl.dataflow.dflow) :: Parsl task 5 try 0 launched on executor htex-local with executor id 6
+[2024-03-07 15:10:16.008] TESTING (stream-scaling) :: Submitted compute task 5/32
+[2024-03-07 15:10:16.343] INFO  (parsl.dataflow.dflow) :: Task 3 completed (launched -> exec_done)
+[2024-03-07 15:10:16.343] INFO  (parsl.dataflow.dflow) :: Task 6 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:16.345] INFO  (parsl.dataflow.dflow) :: Parsl task 6 try 0 launched on executor htex-local with executor id 7
+[2024-03-07 15:10:16.345] TESTING (stream-scaling) :: Submitted compute task 6/32
+[2024-03-07 15:10:16.697] INFO  (parsl.dataflow.dflow) :: Task 4 completed (launched -> exec_done)
+[2024-03-07 15:10:16.697] INFO  (parsl.dataflow.dflow) :: Task 7 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:16.698] INFO  (parsl.dataflow.dflow) :: Parsl task 7 try 0 launched on executor htex-local with executor id 8
+[2024-03-07 15:10:16.698] TESTING (stream-scaling) :: Submitted compute task 7/32
+[2024-03-07 15:10:17.028] INFO  (parsl.dataflow.dflow) :: Task 5 completed (launched -> exec_done)
+[2024-03-07 15:10:17.029] INFO  (parsl.dataflow.dflow) :: Task 8 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:17.030] INFO  (parsl.dataflow.dflow) :: Parsl task 8 try 0 launched on executor htex-local with executor id 9
+[2024-03-07 15:10:17.030] TESTING (stream-scaling) :: Submitted compute task 8/32
+[2024-03-07 15:10:17.365] INFO  (parsl.dataflow.dflow) :: Task 6 completed (launched -> exec_done)
+[2024-03-07 15:10:17.365] INFO  (parsl.dataflow.dflow) :: Task 9 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:17.367] INFO  (parsl.dataflow.dflow) :: Parsl task 9 try 0 launched on executor htex-local with executor id 10
+[2024-03-07 15:10:17.367] TESTING (stream-scaling) :: Submitted compute task 9/32
+[2024-03-07 15:10:17.718] INFO  (parsl.dataflow.dflow) :: Task 7 completed (launched -> exec_done)
+[2024-03-07 15:10:17.718] INFO  (parsl.dataflow.dflow) :: Task 10 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:17.720] INFO  (parsl.dataflow.dflow) :: Parsl task 10 try 0 launched on executor htex-local with executor id 11
+[2024-03-07 15:10:17.720] TESTING (stream-scaling) :: Submitted compute task 10/32
+[2024-03-07 15:10:18.050] INFO  (parsl.dataflow.dflow) :: Task 8 completed (launched -> exec_done)
+[2024-03-07 15:10:18.050] INFO  (parsl.dataflow.dflow) :: Task 11 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:18.051] INFO  (parsl.dataflow.dflow) :: Parsl task 11 try 0 launched on executor htex-local with executor id 12
+[2024-03-07 15:10:18.051] TESTING (stream-scaling) :: Submitted compute task 11/32
+[2024-03-07 15:10:18.386] INFO  (parsl.dataflow.dflow) :: Task 9 completed (launched -> exec_done)
+[2024-03-07 15:10:18.387] INFO  (parsl.dataflow.dflow) :: Task 12 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:18.388] INFO  (parsl.dataflow.dflow) :: Parsl task 12 try 0 launched on executor htex-local with executor id 13
+[2024-03-07 15:10:18.388] TESTING (stream-scaling) :: Submitted compute task 12/32
+[2024-03-07 15:10:18.739] INFO  (parsl.dataflow.dflow) :: Task 10 completed (launched -> exec_done)
+[2024-03-07 15:10:18.740] INFO  (parsl.dataflow.dflow) :: Task 13 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:18.741] INFO  (parsl.dataflow.dflow) :: Parsl task 13 try 0 launched on executor htex-local with executor id 14
+[2024-03-07 15:10:18.741] TESTING (stream-scaling) :: Submitted compute task 13/32
+[2024-03-07 15:10:19.071] INFO  (parsl.dataflow.dflow) :: Task 11 completed (launched -> exec_done)
+[2024-03-07 15:10:19.071] INFO  (parsl.dataflow.dflow) :: Task 14 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:19.073] INFO  (parsl.dataflow.dflow) :: Parsl task 14 try 0 launched on executor htex-local with executor id 15
+[2024-03-07 15:10:19.073] TESTING (stream-scaling) :: Submitted compute task 14/32
+[2024-03-07 15:10:19.408] INFO  (parsl.dataflow.dflow) :: Task 12 completed (launched -> exec_done)
+[2024-03-07 15:10:19.408] INFO  (parsl.dataflow.dflow) :: Task 15 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:19.409] INFO  (parsl.dataflow.dflow) :: Parsl task 15 try 0 launched on executor htex-local with executor id 16
+[2024-03-07 15:10:19.409] TESTING (stream-scaling) :: Submitted compute task 15/32
+[2024-03-07 15:10:19.761] INFO  (parsl.dataflow.dflow) :: Task 13 completed (launched -> exec_done)
+[2024-03-07 15:10:19.761] INFO  (parsl.dataflow.dflow) :: Task 16 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:19.763] INFO  (parsl.dataflow.dflow) :: Parsl task 16 try 0 launched on executor htex-local with executor id 17
+[2024-03-07 15:10:19.763] TESTING (stream-scaling) :: Submitted compute task 16/32
+[2024-03-07 15:10:20.092] INFO  (parsl.dataflow.dflow) :: Task 14 completed (launched -> exec_done)
+[2024-03-07 15:10:20.093] INFO  (parsl.dataflow.dflow) :: Task 17 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:20.094] INFO  (parsl.dataflow.dflow) :: Parsl task 17 try 0 launched on executor htex-local with executor id 18
+[2024-03-07 15:10:20.094] TESTING (stream-scaling) :: Submitted compute task 17/32
+[2024-03-07 15:10:20.429] INFO  (parsl.dataflow.dflow) :: Task 15 completed (launched -> exec_done)
+[2024-03-07 15:10:20.429] INFO  (parsl.dataflow.dflow) :: Task 18 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:20.431] INFO  (parsl.dataflow.dflow) :: Parsl task 18 try 0 launched on executor htex-local with executor id 19
+[2024-03-07 15:10:20.431] TESTING (stream-scaling) :: Submitted compute task 18/32
+[2024-03-07 15:10:20.782] INFO  (parsl.dataflow.dflow) :: Task 16 completed (launched -> exec_done)
+[2024-03-07 15:10:20.783] INFO  (parsl.dataflow.dflow) :: Task 19 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:20.784] INFO  (parsl.dataflow.dflow) :: Parsl task 19 try 0 launched on executor htex-local with executor id 20
+[2024-03-07 15:10:20.784] TESTING (stream-scaling) :: Submitted compute task 19/32
+[2024-03-07 15:10:21.114] INFO  (parsl.dataflow.dflow) :: Task 17 completed (launched -> exec_done)
+[2024-03-07 15:10:21.114] INFO  (parsl.dataflow.dflow) :: Task 20 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:21.116] INFO  (parsl.dataflow.dflow) :: Parsl task 20 try 0 launched on executor htex-local with executor id 21
+[2024-03-07 15:10:21.116] TESTING (stream-scaling) :: Submitted compute task 20/32
+[2024-03-07 15:10:21.451] INFO  (parsl.dataflow.dflow) :: Task 18 completed (launched -> exec_done)
+[2024-03-07 15:10:21.451] INFO  (parsl.dataflow.dflow) :: Task 21 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:21.452] INFO  (parsl.dataflow.dflow) :: Parsl task 21 try 0 launched on executor htex-local with executor id 22
+[2024-03-07 15:10:21.452] TESTING (stream-scaling) :: Submitted compute task 21/32
+[2024-03-07 15:10:21.804] INFO  (parsl.dataflow.dflow) :: Task 19 completed (launched -> exec_done)
+[2024-03-07 15:10:21.804] INFO  (parsl.dataflow.dflow) :: Task 22 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:21.805] INFO  (parsl.dataflow.dflow) :: Parsl task 22 try 0 launched on executor htex-local with executor id 23
+[2024-03-07 15:10:21.806] TESTING (stream-scaling) :: Submitted compute task 22/32
+[2024-03-07 15:10:22.135] INFO  (parsl.dataflow.dflow) :: Task 20 completed (launched -> exec_done)
+[2024-03-07 15:10:22.135] INFO  (parsl.dataflow.dflow) :: Task 23 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:22.137] INFO  (parsl.dataflow.dflow) :: Parsl task 23 try 0 launched on executor htex-local with executor id 24
+[2024-03-07 15:10:22.137] TESTING (stream-scaling) :: Submitted compute task 23/32
+[2024-03-07 15:10:22.472] INFO  (parsl.dataflow.dflow) :: Task 21 completed (launched -> exec_done)
+[2024-03-07 15:10:22.472] INFO  (parsl.dataflow.dflow) :: Task 24 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:22.474] INFO  (parsl.dataflow.dflow) :: Parsl task 24 try 0 launched on executor htex-local with executor id 25
+[2024-03-07 15:10:22.474] TESTING (stream-scaling) :: Submitted compute task 24/32
+[2024-03-07 15:10:22.825] INFO  (parsl.dataflow.dflow) :: Task 22 completed (launched -> exec_done)
+[2024-03-07 15:10:22.825] INFO  (parsl.dataflow.dflow) :: Task 25 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:22.827] INFO  (parsl.dataflow.dflow) :: Parsl task 25 try 0 launched on executor htex-local with executor id 26
+[2024-03-07 15:10:22.827] TESTING (stream-scaling) :: Submitted compute task 25/32
+[2024-03-07 15:10:23.156] INFO  (parsl.dataflow.dflow) :: Task 23 completed (launched -> exec_done)
+[2024-03-07 15:10:23.157] INFO  (parsl.dataflow.dflow) :: Task 26 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:23.158] INFO  (parsl.dataflow.dflow) :: Parsl task 26 try 0 launched on executor htex-local with executor id 27
+[2024-03-07 15:10:23.158] TESTING (stream-scaling) :: Submitted compute task 26/32
+[2024-03-07 15:10:23.494] INFO  (parsl.dataflow.dflow) :: Task 24 completed (launched -> exec_done)
+[2024-03-07 15:10:23.494] INFO  (parsl.dataflow.dflow) :: Task 27 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:23.495] INFO  (parsl.dataflow.dflow) :: Parsl task 27 try 0 launched on executor htex-local with executor id 28
+[2024-03-07 15:10:23.495] TESTING (stream-scaling) :: Submitted compute task 27/32
+[2024-03-07 15:10:23.847] INFO  (parsl.dataflow.dflow) :: Task 25 completed (launched -> exec_done)
+[2024-03-07 15:10:23.847] INFO  (parsl.dataflow.dflow) :: Task 28 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:23.848] INFO  (parsl.dataflow.dflow) :: Parsl task 28 try 0 launched on executor htex-local with executor id 29
+[2024-03-07 15:10:23.848] TESTING (stream-scaling) :: Submitted compute task 28/32
+[2024-03-07 15:10:24.178] INFO  (parsl.dataflow.dflow) :: Task 26 completed (launched -> exec_done)
+[2024-03-07 15:10:24.179] INFO  (parsl.dataflow.dflow) :: Task 29 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:24.180] INFO  (parsl.dataflow.dflow) :: Parsl task 29 try 0 launched on executor htex-local with executor id 30
+[2024-03-07 15:10:24.180] TESTING (stream-scaling) :: Submitted compute task 29/32
+[2024-03-07 15:10:24.515] INFO  (parsl.dataflow.dflow) :: Task 27 completed (launched -> exec_done)
+[2024-03-07 15:10:24.515] INFO  (parsl.dataflow.dflow) :: Task 30 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:24.517] INFO  (parsl.dataflow.dflow) :: Parsl task 30 try 0 launched on executor htex-local with executor id 31
+[2024-03-07 15:10:24.517] TESTING (stream-scaling) :: Submitted compute task 30/32
+[2024-03-07 15:10:24.868] INFO  (parsl.dataflow.dflow) :: Task 28 completed (launched -> exec_done)
+[2024-03-07 15:10:24.868] INFO  (parsl.dataflow.dflow) :: Task 31 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:24.870] INFO  (parsl.dataflow.dflow) :: Parsl task 31 try 0 launched on executor htex-local with executor id 32
+[2024-03-07 15:10:24.870] TESTING (stream-scaling) :: Submitted compute task 31/32
+[2024-03-07 15:10:25.156] INFO  (parsl.dataflow.dflow) :: Task 0 completed (launched -> exec_done)
+[2024-03-07 15:10:25.200] INFO  (parsl.dataflow.dflow) :: Task 29 completed (launched -> exec_done)
+[2024-03-07 15:10:25.200] INFO  (parsl.dataflow.dflow) :: Task 32 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:25.201] INFO  (parsl.dataflow.dflow) :: Parsl task 32 try 0 launched on executor htex-local with executor id 33
+[2024-03-07 15:10:25.201] TESTING (stream-scaling) :: Submitted compute task 32/32
+[2024-03-07 15:10:25.537] INFO  (parsl.dataflow.dflow) :: Task 30 completed (launched -> exec_done)
+[2024-03-07 15:10:25.537] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:10:25.537] TESTING (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-07 15:10:25.537] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:10:25.537] TESTING (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-07 15:10:25.890] INFO  (parsl.dataflow.dflow) :: Task 31 completed (launched -> exec_done)
+[2024-03-07 15:10:26.223] INFO  (parsl.dataflow.dflow) :: Task 32 completed (launched -> exec_done)
+[2024-03-07 15:10:26.223] TESTING (stream-scaling) :: All compute tasks finished
+[2024-03-07 15:10:26.223] TESTING (psbench.runner) :: Run 1/1 completed in 12.706s
+[2024-03-07 15:10:26.223] TESTING (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000 task_count=32 task_sleep=1.0 use_proxies=True
+[2024-03-07 15:10:26.223] TESTING (stream-scaling) :: Compute workers: 3
+[2024-03-07 15:10:26.223] TESTING (stream-scaling) :: Generator workers: 1
+[2024-03-07 15:10:26.223] TESTING (stream-scaling) :: Generator item interval: 0.3333333333333333
+[2024-03-07 15:10:26.224] INFO  (parsl.dataflow.dflow) :: Task 33 submitted for App generator_task, not waiting on any dependency
+[2024-03-07 15:10:26.224] INFO  (parsl.dataflow.dflow) :: Parsl task 33 try 0 launched on executor htex-local with executor id 34
+[2024-03-07 15:10:26.224] TESTING (stream-scaling) :: Submitted generator task: item_size_bytes=100000, max_items=32, interval_seconds=0.3333333333333333, pregenerate=False, use_proxies=True
+[2024-03-07 15:10:26.235] INFO  (parsl.dataflow.dflow) :: Task 34 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:26.235] INFO  (parsl.dataflow.dflow) :: Parsl task 34 try 0 launched on executor htex-local with executor id 35
+[2024-03-07 15:10:26.235] TESTING (stream-scaling) :: Submitted compute task 1/32
+[2024-03-07 15:10:26.568] INFO  (parsl.dataflow.dflow) :: Task 35 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:26.568] INFO  (parsl.dataflow.dflow) :: Parsl task 35 try 0 launched on executor htex-local with executor id 36
+[2024-03-07 15:10:26.568] TESTING (stream-scaling) :: Submitted compute task 2/32
+[2024-03-07 15:10:26.901] INFO  (parsl.dataflow.dflow) :: Task 36 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:26.902] INFO  (parsl.dataflow.dflow) :: Parsl task 36 try 0 launched on executor htex-local with executor id 37
+[2024-03-07 15:10:26.902] TESTING (stream-scaling) :: Submitted compute task 3/32
+[2024-03-07 15:10:27.255] INFO  (parsl.dataflow.dflow) :: Task 34 completed (launched -> exec_done)
+[2024-03-07 15:10:27.255] INFO  (parsl.dataflow.dflow) :: Task 37 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:27.255] INFO  (parsl.dataflow.dflow) :: Parsl task 37 try 0 launched on executor htex-local with executor id 38
+[2024-03-07 15:10:27.255] TESTING (stream-scaling) :: Submitted compute task 4/32
+[2024-03-07 15:10:27.588] INFO  (parsl.dataflow.dflow) :: Task 35 completed (launched -> exec_done)
+[2024-03-07 15:10:27.588] INFO  (parsl.dataflow.dflow) :: Task 38 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:27.589] INFO  (parsl.dataflow.dflow) :: Parsl task 38 try 0 launched on executor htex-local with executor id 39
+[2024-03-07 15:10:27.589] TESTING (stream-scaling) :: Submitted compute task 5/32
+[2024-03-07 15:10:27.920] INFO  (parsl.dataflow.dflow) :: Task 36 completed (launched -> exec_done)
+[2024-03-07 15:10:27.921] INFO  (parsl.dataflow.dflow) :: Task 39 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:27.921] INFO  (parsl.dataflow.dflow) :: Parsl task 39 try 0 launched on executor htex-local with executor id 40
+[2024-03-07 15:10:27.921] TESTING (stream-scaling) :: Submitted compute task 6/32
+[2024-03-07 15:10:28.277] INFO  (parsl.dataflow.dflow) :: Task 37 completed (launched -> exec_done)
+[2024-03-07 15:10:28.277] INFO  (parsl.dataflow.dflow) :: Task 40 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:28.277] INFO  (parsl.dataflow.dflow) :: Parsl task 40 try 0 launched on executor htex-local with executor id 41
+[2024-03-07 15:10:28.277] TESTING (stream-scaling) :: Submitted compute task 7/32
+[2024-03-07 15:10:28.609] INFO  (parsl.dataflow.dflow) :: Task 38 completed (launched -> exec_done)
+[2024-03-07 15:10:28.610] INFO  (parsl.dataflow.dflow) :: Task 41 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:28.610] INFO  (parsl.dataflow.dflow) :: Parsl task 41 try 0 launched on executor htex-local with executor id 42
+[2024-03-07 15:10:28.610] TESTING (stream-scaling) :: Submitted compute task 8/32
+[2024-03-07 15:10:28.942] INFO  (parsl.dataflow.dflow) :: Task 39 completed (launched -> exec_done)
+[2024-03-07 15:10:28.942] INFO  (parsl.dataflow.dflow) :: Task 42 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:28.942] INFO  (parsl.dataflow.dflow) :: Parsl task 42 try 0 launched on executor htex-local with executor id 43
+[2024-03-07 15:10:28.942] TESTING (stream-scaling) :: Submitted compute task 9/32
+[2024-03-07 15:10:29.299] INFO  (parsl.dataflow.dflow) :: Task 40 completed (launched -> exec_done)
+[2024-03-07 15:10:29.299] INFO  (parsl.dataflow.dflow) :: Task 43 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:29.299] INFO  (parsl.dataflow.dflow) :: Parsl task 43 try 0 launched on executor htex-local with executor id 44
+[2024-03-07 15:10:29.299] TESTING (stream-scaling) :: Submitted compute task 10/32
+[2024-03-07 15:10:29.631] INFO  (parsl.dataflow.dflow) :: Task 41 completed (launched -> exec_done)
+[2024-03-07 15:10:29.632] INFO  (parsl.dataflow.dflow) :: Task 44 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:29.632] INFO  (parsl.dataflow.dflow) :: Parsl task 44 try 0 launched on executor htex-local with executor id 45
+[2024-03-07 15:10:29.632] TESTING (stream-scaling) :: Submitted compute task 11/32
+[2024-03-07 15:10:29.964] INFO  (parsl.dataflow.dflow) :: Task 42 completed (launched -> exec_done)
+[2024-03-07 15:10:29.964] INFO  (parsl.dataflow.dflow) :: Task 45 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:29.964] INFO  (parsl.dataflow.dflow) :: Parsl task 45 try 0 launched on executor htex-local with executor id 46
+[2024-03-07 15:10:29.964] TESTING (stream-scaling) :: Submitted compute task 12/32
+[2024-03-07 15:10:30.320] INFO  (parsl.dataflow.dflow) :: Task 43 completed (launched -> exec_done)
+[2024-03-07 15:10:30.321] INFO  (parsl.dataflow.dflow) :: Task 46 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:30.321] INFO  (parsl.dataflow.dflow) :: Parsl task 46 try 0 launched on executor htex-local with executor id 47
+[2024-03-07 15:10:30.321] TESTING (stream-scaling) :: Submitted compute task 13/32
+[2024-03-07 15:10:30.653] INFO  (parsl.dataflow.dflow) :: Task 44 completed (launched -> exec_done)
+[2024-03-07 15:10:30.654] INFO  (parsl.dataflow.dflow) :: Task 47 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:30.654] INFO  (parsl.dataflow.dflow) :: Parsl task 47 try 0 launched on executor htex-local with executor id 48
+[2024-03-07 15:10:30.654] TESTING (stream-scaling) :: Submitted compute task 14/32
+[2024-03-07 15:10:30.985] INFO  (parsl.dataflow.dflow) :: Task 45 completed (launched -> exec_done)
+[2024-03-07 15:10:30.986] INFO  (parsl.dataflow.dflow) :: Task 48 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:30.986] INFO  (parsl.dataflow.dflow) :: Parsl task 48 try 0 launched on executor htex-local with executor id 49
+[2024-03-07 15:10:30.986] TESTING (stream-scaling) :: Submitted compute task 15/32
+[2024-03-07 15:10:31.342] INFO  (parsl.dataflow.dflow) :: Task 46 completed (launched -> exec_done)
+[2024-03-07 15:10:31.342] INFO  (parsl.dataflow.dflow) :: Task 49 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:31.342] INFO  (parsl.dataflow.dflow) :: Parsl task 49 try 0 launched on executor htex-local with executor id 50
+[2024-03-07 15:10:31.342] TESTING (stream-scaling) :: Submitted compute task 16/32
+[2024-03-07 15:10:31.675] INFO  (parsl.dataflow.dflow) :: Task 47 completed (launched -> exec_done)
+[2024-03-07 15:10:31.675] INFO  (parsl.dataflow.dflow) :: Task 50 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:31.676] INFO  (parsl.dataflow.dflow) :: Parsl task 50 try 0 launched on executor htex-local with executor id 51
+[2024-03-07 15:10:31.676] TESTING (stream-scaling) :: Submitted compute task 17/32
+[2024-03-07 15:10:32.007] INFO  (parsl.dataflow.dflow) :: Task 48 completed (launched -> exec_done)
+[2024-03-07 15:10:32.007] INFO  (parsl.dataflow.dflow) :: Task 51 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:32.007] INFO  (parsl.dataflow.dflow) :: Parsl task 51 try 0 launched on executor htex-local with executor id 52
+[2024-03-07 15:10:32.007] TESTING (stream-scaling) :: Submitted compute task 18/32
+[2024-03-07 15:10:32.364] INFO  (parsl.dataflow.dflow) :: Task 49 completed (launched -> exec_done)
+[2024-03-07 15:10:32.364] INFO  (parsl.dataflow.dflow) :: Task 52 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:32.364] INFO  (parsl.dataflow.dflow) :: Parsl task 52 try 0 launched on executor htex-local with executor id 53
+[2024-03-07 15:10:32.364] TESTING (stream-scaling) :: Submitted compute task 19/32
+[2024-03-07 15:10:32.697] INFO  (parsl.dataflow.dflow) :: Task 50 completed (launched -> exec_done)
+[2024-03-07 15:10:32.697] INFO  (parsl.dataflow.dflow) :: Task 53 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:32.698] INFO  (parsl.dataflow.dflow) :: Parsl task 53 try 0 launched on executor htex-local with executor id 54
+[2024-03-07 15:10:32.698] TESTING (stream-scaling) :: Submitted compute task 20/32
+[2024-03-07 15:10:33.028] INFO  (parsl.dataflow.dflow) :: Task 51 completed (launched -> exec_done)
+[2024-03-07 15:10:33.029] INFO  (parsl.dataflow.dflow) :: Task 54 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:33.029] INFO  (parsl.dataflow.dflow) :: Parsl task 54 try 0 launched on executor htex-local with executor id 55
+[2024-03-07 15:10:33.029] TESTING (stream-scaling) :: Submitted compute task 21/32
+[2024-03-07 15:10:33.385] INFO  (parsl.dataflow.dflow) :: Task 52 completed (launched -> exec_done)
+[2024-03-07 15:10:33.386] INFO  (parsl.dataflow.dflow) :: Task 55 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:33.386] INFO  (parsl.dataflow.dflow) :: Parsl task 55 try 0 launched on executor htex-local with executor id 56
+[2024-03-07 15:10:33.386] TESTING (stream-scaling) :: Submitted compute task 22/32
+[2024-03-07 15:10:33.719] INFO  (parsl.dataflow.dflow) :: Task 53 completed (launched -> exec_done)
+[2024-03-07 15:10:33.719] INFO  (parsl.dataflow.dflow) :: Task 56 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:33.719] INFO  (parsl.dataflow.dflow) :: Parsl task 56 try 0 launched on executor htex-local with executor id 57
+[2024-03-07 15:10:33.719] TESTING (stream-scaling) :: Submitted compute task 23/32
+[2024-03-07 15:10:34.050] INFO  (parsl.dataflow.dflow) :: Task 54 completed (launched -> exec_done)
+[2024-03-07 15:10:34.050] INFO  (parsl.dataflow.dflow) :: Task 57 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:34.050] INFO  (parsl.dataflow.dflow) :: Parsl task 57 try 0 launched on executor htex-local with executor id 58
+[2024-03-07 15:10:34.050] TESTING (stream-scaling) :: Submitted compute task 24/32
+[2024-03-07 15:10:34.407] INFO  (parsl.dataflow.dflow) :: Task 55 completed (launched -> exec_done)
+[2024-03-07 15:10:34.407] INFO  (parsl.dataflow.dflow) :: Task 58 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:34.407] INFO  (parsl.dataflow.dflow) :: Parsl task 58 try 0 launched on executor htex-local with executor id 59
+[2024-03-07 15:10:34.407] TESTING (stream-scaling) :: Submitted compute task 25/32
+[2024-03-07 15:10:34.740] INFO  (parsl.dataflow.dflow) :: Task 56 completed (launched -> exec_done)
+[2024-03-07 15:10:34.742] INFO  (parsl.dataflow.dflow) :: Task 59 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:34.742] INFO  (parsl.dataflow.dflow) :: Parsl task 59 try 0 launched on executor htex-local with executor id 60
+[2024-03-07 15:10:34.742] TESTING (stream-scaling) :: Submitted compute task 26/32
+[2024-03-07 15:10:35.071] INFO  (parsl.dataflow.dflow) :: Task 57 completed (launched -> exec_done)
+[2024-03-07 15:10:35.072] INFO  (parsl.dataflow.dflow) :: Task 60 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:35.072] INFO  (parsl.dataflow.dflow) :: Parsl task 60 try 0 launched on executor htex-local with executor id 61
+[2024-03-07 15:10:35.072] TESTING (stream-scaling) :: Submitted compute task 27/32
+[2024-03-07 15:10:35.428] INFO  (parsl.dataflow.dflow) :: Task 58 completed (launched -> exec_done)
+[2024-03-07 15:10:35.429] INFO  (parsl.dataflow.dflow) :: Task 61 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:35.429] INFO  (parsl.dataflow.dflow) :: Parsl task 61 try 0 launched on executor htex-local with executor id 62
+[2024-03-07 15:10:35.429] TESTING (stream-scaling) :: Submitted compute task 28/32
+[2024-03-07 15:10:35.762] INFO  (parsl.dataflow.dflow) :: Task 59 completed (launched -> exec_done)
+[2024-03-07 15:10:35.762] INFO  (parsl.dataflow.dflow) :: Task 62 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:35.762] INFO  (parsl.dataflow.dflow) :: Parsl task 62 try 0 launched on executor htex-local with executor id 63
+[2024-03-07 15:10:35.762] TESTING (stream-scaling) :: Submitted compute task 29/32
+[2024-03-07 15:10:36.093] INFO  (parsl.dataflow.dflow) :: Task 60 completed (launched -> exec_done)
+[2024-03-07 15:10:36.093] INFO  (parsl.dataflow.dflow) :: Task 63 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:36.094] INFO  (parsl.dataflow.dflow) :: Parsl task 63 try 0 launched on executor htex-local with executor id 64
+[2024-03-07 15:10:36.094] TESTING (stream-scaling) :: Submitted compute task 30/32
+[2024-03-07 15:10:36.450] INFO  (parsl.dataflow.dflow) :: Task 61 completed (launched -> exec_done)
+[2024-03-07 15:10:36.450] INFO  (parsl.dataflow.dflow) :: Task 64 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:36.450] INFO  (parsl.dataflow.dflow) :: Parsl task 64 try 0 launched on executor htex-local with executor id 65
+[2024-03-07 15:10:36.450] TESTING (stream-scaling) :: Submitted compute task 31/32
+[2024-03-07 15:10:36.783] INFO  (parsl.dataflow.dflow) :: Task 62 completed (launched -> exec_done)
+[2024-03-07 15:10:36.783] INFO  (parsl.dataflow.dflow) :: Task 65 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:36.784] INFO  (parsl.dataflow.dflow) :: Parsl task 65 try 0 launched on executor htex-local with executor id 66
+[2024-03-07 15:10:36.784] TESTING (stream-scaling) :: Submitted compute task 32/32
+[2024-03-07 15:10:36.914] INFO  (parsl.dataflow.dflow) :: Task 33 completed (launched -> exec_done)
+[2024-03-07 15:10:37.115] INFO  (parsl.dataflow.dflow) :: Task 63 completed (launched -> exec_done)
+[2024-03-07 15:10:37.115] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:10:37.115] TESTING (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-07 15:10:37.115] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:10:37.115] TESTING (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-07 15:10:37.471] INFO  (parsl.dataflow.dflow) :: Task 64 completed (launched -> exec_done)
+[2024-03-07 15:10:37.804] INFO  (parsl.dataflow.dflow) :: Task 65 completed (launched -> exec_done)
+[2024-03-07 15:10:37.805] TESTING (stream-scaling) :: All compute tasks finished
+[2024-03-07 15:10:37.805] TESTING (psbench.runner) :: Run 1/1 completed in 11.581s
+[2024-03-07 15:10:37.805] TESTING (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=1000000 task_count=32 task_sleep=1.0 use_proxies=False
+[2024-03-07 15:10:37.805] TESTING (stream-scaling) :: Compute workers: 3
+[2024-03-07 15:10:37.805] TESTING (stream-scaling) :: Generator workers: 1
+[2024-03-07 15:10:37.805] TESTING (stream-scaling) :: Generator item interval: 0.3333333333333333
+[2024-03-07 15:10:37.805] INFO  (parsl.dataflow.dflow) :: Task 66 submitted for App generator_task, not waiting on any dependency
+[2024-03-07 15:10:37.805] INFO  (parsl.dataflow.dflow) :: Parsl task 66 try 0 launched on executor htex-local with executor id 67
+[2024-03-07 15:10:37.805] TESTING (stream-scaling) :: Submitted generator task: item_size_bytes=1000000, max_items=32, interval_seconds=0.3333333333333333, pregenerate=False, use_proxies=False
+[2024-03-07 15:10:37.819] INFO  (parsl.dataflow.dflow) :: Task 67 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:37.833] INFO  (parsl.dataflow.dflow) :: Parsl task 67 try 0 launched on executor htex-local with executor id 68
+[2024-03-07 15:10:37.833] TESTING (stream-scaling) :: Submitted compute task 1/32
+[2024-03-07 15:10:38.151] INFO  (parsl.dataflow.dflow) :: Task 68 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:38.165] INFO  (parsl.dataflow.dflow) :: Parsl task 68 try 0 launched on executor htex-local with executor id 69
+[2024-03-07 15:10:38.165] TESTING (stream-scaling) :: Submitted compute task 2/32
+[2024-03-07 15:10:38.484] INFO  (parsl.dataflow.dflow) :: Task 69 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:38.497] INFO  (parsl.dataflow.dflow) :: Parsl task 69 try 0 launched on executor htex-local with executor id 70
+[2024-03-07 15:10:38.497] TESTING (stream-scaling) :: Submitted compute task 3/32
+[2024-03-07 15:10:38.850] INFO  (parsl.dataflow.dflow) :: Task 67 completed (launched -> exec_done)
+[2024-03-07 15:10:38.851] INFO  (parsl.dataflow.dflow) :: Task 70 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:38.864] INFO  (parsl.dataflow.dflow) :: Parsl task 70 try 0 launched on executor htex-local with executor id 71
+[2024-03-07 15:10:38.864] TESTING (stream-scaling) :: Submitted compute task 4/32
+[2024-03-07 15:10:39.182] INFO  (parsl.dataflow.dflow) :: Task 68 completed (launched -> exec_done)
+[2024-03-07 15:10:39.183] INFO  (parsl.dataflow.dflow) :: Task 71 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:39.196] INFO  (parsl.dataflow.dflow) :: Parsl task 71 try 0 launched on executor htex-local with executor id 72
+[2024-03-07 15:10:39.196] TESTING (stream-scaling) :: Submitted compute task 5/32
+[2024-03-07 15:10:39.515] INFO  (parsl.dataflow.dflow) :: Task 69 completed (launched -> exec_done)
+[2024-03-07 15:10:39.516] INFO  (parsl.dataflow.dflow) :: Task 72 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:39.530] INFO  (parsl.dataflow.dflow) :: Parsl task 72 try 0 launched on executor htex-local with executor id 73
+[2024-03-07 15:10:39.530] TESTING (stream-scaling) :: Submitted compute task 6/32
+[2024-03-07 15:10:39.884] INFO  (parsl.dataflow.dflow) :: Task 70 completed (launched -> exec_done)
+[2024-03-07 15:10:39.885] INFO  (parsl.dataflow.dflow) :: Task 73 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:39.898] INFO  (parsl.dataflow.dflow) :: Parsl task 73 try 0 launched on executor htex-local with executor id 74
+[2024-03-07 15:10:39.898] TESTING (stream-scaling) :: Submitted compute task 7/32
+[2024-03-07 15:10:40.217] INFO  (parsl.dataflow.dflow) :: Task 71 completed (launched -> exec_done)
+[2024-03-07 15:10:40.217] INFO  (parsl.dataflow.dflow) :: Task 74 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:40.230] INFO  (parsl.dataflow.dflow) :: Parsl task 74 try 0 launched on executor htex-local with executor id 75
+[2024-03-07 15:10:40.230] TESTING (stream-scaling) :: Submitted compute task 8/32
+[2024-03-07 15:10:40.549] INFO  (parsl.dataflow.dflow) :: Task 72 completed (launched -> exec_done)
+[2024-03-07 15:10:40.550] INFO  (parsl.dataflow.dflow) :: Task 75 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:40.563] INFO  (parsl.dataflow.dflow) :: Parsl task 75 try 0 launched on executor htex-local with executor id 76
+[2024-03-07 15:10:40.563] TESTING (stream-scaling) :: Submitted compute task 9/32
+[2024-03-07 15:10:40.918] INFO  (parsl.dataflow.dflow) :: Task 73 completed (launched -> exec_done)
+[2024-03-07 15:10:40.919] INFO  (parsl.dataflow.dflow) :: Task 76 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:40.932] INFO  (parsl.dataflow.dflow) :: Parsl task 76 try 0 launched on executor htex-local with executor id 77
+[2024-03-07 15:10:40.932] TESTING (stream-scaling) :: Submitted compute task 10/32
+[2024-03-07 15:10:41.250] INFO  (parsl.dataflow.dflow) :: Task 74 completed (launched -> exec_done)
+[2024-03-07 15:10:41.251] INFO  (parsl.dataflow.dflow) :: Task 77 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:41.264] INFO  (parsl.dataflow.dflow) :: Parsl task 77 try 0 launched on executor htex-local with executor id 78
+[2024-03-07 15:10:41.264] TESTING (stream-scaling) :: Submitted compute task 11/32
+[2024-03-07 15:10:41.583] INFO  (parsl.dataflow.dflow) :: Task 75 completed (launched -> exec_done)
+[2024-03-07 15:10:41.583] INFO  (parsl.dataflow.dflow) :: Task 78 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:41.596] INFO  (parsl.dataflow.dflow) :: Parsl task 78 try 0 launched on executor htex-local with executor id 79
+[2024-03-07 15:10:41.596] TESTING (stream-scaling) :: Submitted compute task 12/32
+[2024-03-07 15:10:41.952] INFO  (parsl.dataflow.dflow) :: Task 76 completed (launched -> exec_done)
+[2024-03-07 15:10:41.952] INFO  (parsl.dataflow.dflow) :: Task 79 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:41.965] INFO  (parsl.dataflow.dflow) :: Parsl task 79 try 0 launched on executor htex-local with executor id 80
+[2024-03-07 15:10:41.966] TESTING (stream-scaling) :: Submitted compute task 13/32
+[2024-03-07 15:10:42.284] INFO  (parsl.dataflow.dflow) :: Task 77 completed (launched -> exec_done)
+[2024-03-07 15:10:42.285] INFO  (parsl.dataflow.dflow) :: Task 80 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:42.298] INFO  (parsl.dataflow.dflow) :: Parsl task 80 try 0 launched on executor htex-local with executor id 81
+[2024-03-07 15:10:42.298] TESTING (stream-scaling) :: Submitted compute task 14/32
+[2024-03-07 15:10:42.617] INFO  (parsl.dataflow.dflow) :: Task 78 completed (launched -> exec_done)
+[2024-03-07 15:10:42.617] INFO  (parsl.dataflow.dflow) :: Task 81 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:42.630] INFO  (parsl.dataflow.dflow) :: Parsl task 81 try 0 launched on executor htex-local with executor id 82
+[2024-03-07 15:10:42.630] TESTING (stream-scaling) :: Submitted compute task 15/32
+[2024-03-07 15:10:42.986] INFO  (parsl.dataflow.dflow) :: Task 79 completed (launched -> exec_done)
+[2024-03-07 15:10:42.986] INFO  (parsl.dataflow.dflow) :: Task 82 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:43.000] INFO  (parsl.dataflow.dflow) :: Parsl task 82 try 0 launched on executor htex-local with executor id 83
+[2024-03-07 15:10:43.000] TESTING (stream-scaling) :: Submitted compute task 16/32
+[2024-03-07 15:10:43.318] INFO  (parsl.dataflow.dflow) :: Task 80 completed (launched -> exec_done)
+[2024-03-07 15:10:43.319] INFO  (parsl.dataflow.dflow) :: Task 83 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:43.332] INFO  (parsl.dataflow.dflow) :: Parsl task 83 try 0 launched on executor htex-local with executor id 84
+[2024-03-07 15:10:43.332] TESTING (stream-scaling) :: Submitted compute task 17/32
+[2024-03-07 15:10:43.651] INFO  (parsl.dataflow.dflow) :: Task 81 completed (launched -> exec_done)
+[2024-03-07 15:10:43.651] INFO  (parsl.dataflow.dflow) :: Task 84 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:43.664] INFO  (parsl.dataflow.dflow) :: Parsl task 84 try 0 launched on executor htex-local with executor id 85
+[2024-03-07 15:10:43.664] TESTING (stream-scaling) :: Submitted compute task 18/32
+[2024-03-07 15:10:44.020] INFO  (parsl.dataflow.dflow) :: Task 82 completed (launched -> exec_done)
+[2024-03-07 15:10:44.020] INFO  (parsl.dataflow.dflow) :: Task 85 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:44.033] INFO  (parsl.dataflow.dflow) :: Parsl task 85 try 0 launched on executor htex-local with executor id 86
+[2024-03-07 15:10:44.033] TESTING (stream-scaling) :: Submitted compute task 19/32
+[2024-03-07 15:10:44.352] INFO  (parsl.dataflow.dflow) :: Task 83 completed (launched -> exec_done)
+[2024-03-07 15:10:44.352] INFO  (parsl.dataflow.dflow) :: Task 86 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:44.366] INFO  (parsl.dataflow.dflow) :: Parsl task 86 try 0 launched on executor htex-local with executor id 87
+[2024-03-07 15:10:44.366] TESTING (stream-scaling) :: Submitted compute task 20/32
+[2024-03-07 15:10:44.685] INFO  (parsl.dataflow.dflow) :: Task 84 completed (launched -> exec_done)
+[2024-03-07 15:10:44.686] INFO  (parsl.dataflow.dflow) :: Task 87 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:44.699] INFO  (parsl.dataflow.dflow) :: Parsl task 87 try 0 launched on executor htex-local with executor id 88
+[2024-03-07 15:10:44.699] TESTING (stream-scaling) :: Submitted compute task 21/32
+[2024-03-07 15:10:45.054] INFO  (parsl.dataflow.dflow) :: Task 85 completed (launched -> exec_done)
+[2024-03-07 15:10:45.054] INFO  (parsl.dataflow.dflow) :: Task 88 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:45.068] INFO  (parsl.dataflow.dflow) :: Parsl task 88 try 0 launched on executor htex-local with executor id 89
+[2024-03-07 15:10:45.068] TESTING (stream-scaling) :: Submitted compute task 22/32
+[2024-03-07 15:10:45.386] INFO  (parsl.dataflow.dflow) :: Task 86 completed (launched -> exec_done)
+[2024-03-07 15:10:45.386] INFO  (parsl.dataflow.dflow) :: Task 89 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:45.399] INFO  (parsl.dataflow.dflow) :: Parsl task 89 try 0 launched on executor htex-local with executor id 90
+[2024-03-07 15:10:45.399] TESTING (stream-scaling) :: Submitted compute task 23/32
+[2024-03-07 15:10:45.718] INFO  (parsl.dataflow.dflow) :: Task 87 completed (launched -> exec_done)
+[2024-03-07 15:10:45.719] INFO  (parsl.dataflow.dflow) :: Task 90 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:45.732] INFO  (parsl.dataflow.dflow) :: Parsl task 90 try 0 launched on executor htex-local with executor id 91
+[2024-03-07 15:10:45.732] TESTING (stream-scaling) :: Submitted compute task 24/32
+[2024-03-07 15:10:46.088] INFO  (parsl.dataflow.dflow) :: Task 88 completed (launched -> exec_done)
+[2024-03-07 15:10:46.088] INFO  (parsl.dataflow.dflow) :: Task 91 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:46.102] INFO  (parsl.dataflow.dflow) :: Parsl task 91 try 0 launched on executor htex-local with executor id 92
+[2024-03-07 15:10:46.102] TESTING (stream-scaling) :: Submitted compute task 25/32
+[2024-03-07 15:10:46.420] INFO  (parsl.dataflow.dflow) :: Task 89 completed (launched -> exec_done)
+[2024-03-07 15:10:46.420] INFO  (parsl.dataflow.dflow) :: Task 92 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:46.434] INFO  (parsl.dataflow.dflow) :: Parsl task 92 try 0 launched on executor htex-local with executor id 93
+[2024-03-07 15:10:46.434] TESTING (stream-scaling) :: Submitted compute task 26/32
+[2024-03-07 15:10:46.753] INFO  (parsl.dataflow.dflow) :: Task 90 completed (launched -> exec_done)
+[2024-03-07 15:10:46.753] INFO  (parsl.dataflow.dflow) :: Task 93 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:46.766] INFO  (parsl.dataflow.dflow) :: Parsl task 93 try 0 launched on executor htex-local with executor id 94
+[2024-03-07 15:10:46.766] TESTING (stream-scaling) :: Submitted compute task 27/32
+[2024-03-07 15:10:47.122] INFO  (parsl.dataflow.dflow) :: Task 91 completed (launched -> exec_done)
+[2024-03-07 15:10:47.122] INFO  (parsl.dataflow.dflow) :: Task 94 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:47.135] INFO  (parsl.dataflow.dflow) :: Parsl task 94 try 0 launched on executor htex-local with executor id 95
+[2024-03-07 15:10:47.135] TESTING (stream-scaling) :: Submitted compute task 28/32
+[2024-03-07 15:10:47.454] INFO  (parsl.dataflow.dflow) :: Task 92 completed (launched -> exec_done)
+[2024-03-07 15:10:47.454] INFO  (parsl.dataflow.dflow) :: Task 95 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:47.467] INFO  (parsl.dataflow.dflow) :: Parsl task 95 try 0 launched on executor htex-local with executor id 96
+[2024-03-07 15:10:47.467] TESTING (stream-scaling) :: Submitted compute task 29/32
+[2024-03-07 15:10:47.786] INFO  (parsl.dataflow.dflow) :: Task 93 completed (launched -> exec_done)
+[2024-03-07 15:10:47.787] INFO  (parsl.dataflow.dflow) :: Task 96 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:47.800] INFO  (parsl.dataflow.dflow) :: Parsl task 96 try 0 launched on executor htex-local with executor id 97
+[2024-03-07 15:10:47.800] TESTING (stream-scaling) :: Submitted compute task 30/32
+[2024-03-07 15:10:48.155] INFO  (parsl.dataflow.dflow) :: Task 94 completed (launched -> exec_done)
+[2024-03-07 15:10:48.156] INFO  (parsl.dataflow.dflow) :: Task 97 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:48.169] INFO  (parsl.dataflow.dflow) :: Parsl task 97 try 0 launched on executor htex-local with executor id 98
+[2024-03-07 15:10:48.169] TESTING (stream-scaling) :: Submitted compute task 31/32
+[2024-03-07 15:10:48.485] INFO  (parsl.dataflow.dflow) :: Task 95 completed (launched -> exec_done)
+[2024-03-07 15:10:48.485] INFO  (parsl.dataflow.dflow) :: Task 66 completed (launched -> exec_done)
+[2024-03-07 15:10:48.486] INFO  (parsl.dataflow.dflow) :: Task 98 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:48.499] INFO  (parsl.dataflow.dflow) :: Parsl task 98 try 0 launched on executor htex-local with executor id 99
+[2024-03-07 15:10:48.499] TESTING (stream-scaling) :: Submitted compute task 32/32
+[2024-03-07 15:10:48.820] INFO  (parsl.dataflow.dflow) :: Task 96 completed (launched -> exec_done)
+[2024-03-07 15:10:48.820] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:10:48.820] TESTING (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-07 15:10:48.820] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:10:48.820] TESTING (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-07 15:10:49.189] INFO  (parsl.dataflow.dflow) :: Task 97 completed (launched -> exec_done)
+[2024-03-07 15:10:49.519] INFO  (parsl.dataflow.dflow) :: Task 98 completed (launched -> exec_done)
+[2024-03-07 15:10:49.519] TESTING (stream-scaling) :: All compute tasks finished
+[2024-03-07 15:10:49.519] TESTING (psbench.runner) :: Run 1/1 completed in 11.715s
+[2024-03-07 15:10:49.520] TESTING (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=1000000 task_count=32 task_sleep=1.0 use_proxies=True
+[2024-03-07 15:10:49.520] TESTING (stream-scaling) :: Compute workers: 3
+[2024-03-07 15:10:49.520] TESTING (stream-scaling) :: Generator workers: 1
+[2024-03-07 15:10:49.520] TESTING (stream-scaling) :: Generator item interval: 0.3333333333333333
+[2024-03-07 15:10:49.520] INFO  (parsl.dataflow.dflow) :: Task 99 submitted for App generator_task, not waiting on any dependency
+[2024-03-07 15:10:49.520] INFO  (parsl.dataflow.dflow) :: Parsl task 99 try 0 launched on executor htex-local with executor id 100
+[2024-03-07 15:10:49.520] TESTING (stream-scaling) :: Submitted generator task: item_size_bytes=1000000, max_items=32, interval_seconds=0.3333333333333333, pregenerate=False, use_proxies=True
+[2024-03-07 15:10:49.533] INFO  (parsl.dataflow.dflow) :: Task 100 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:49.533] INFO  (parsl.dataflow.dflow) :: Parsl task 100 try 0 launched on executor htex-local with executor id 101
+[2024-03-07 15:10:49.533] TESTING (stream-scaling) :: Submitted compute task 1/32
+[2024-03-07 15:10:49.865] INFO  (parsl.dataflow.dflow) :: Task 101 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:49.865] INFO  (parsl.dataflow.dflow) :: Parsl task 101 try 0 launched on executor htex-local with executor id 102
+[2024-03-07 15:10:49.865] TESTING (stream-scaling) :: Submitted compute task 2/32
+[2024-03-07 15:10:50.199] INFO  (parsl.dataflow.dflow) :: Task 102 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:50.199] INFO  (parsl.dataflow.dflow) :: Parsl task 102 try 0 launched on executor htex-local with executor id 103
+[2024-03-07 15:10:50.199] TESTING (stream-scaling) :: Submitted compute task 3/32
+[2024-03-07 15:10:50.552] INFO  (parsl.dataflow.dflow) :: Task 100 completed (launched -> exec_done)
+[2024-03-07 15:10:50.552] INFO  (parsl.dataflow.dflow) :: Task 103 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:50.552] INFO  (parsl.dataflow.dflow) :: Parsl task 103 try 0 launched on executor htex-local with executor id 104
+[2024-03-07 15:10:50.552] TESTING (stream-scaling) :: Submitted compute task 4/32
+[2024-03-07 15:10:50.885] INFO  (parsl.dataflow.dflow) :: Task 101 completed (launched -> exec_done)
+[2024-03-07 15:10:50.885] INFO  (parsl.dataflow.dflow) :: Task 104 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:50.885] INFO  (parsl.dataflow.dflow) :: Parsl task 104 try 0 launched on executor htex-local with executor id 105
+[2024-03-07 15:10:50.885] TESTING (stream-scaling) :: Submitted compute task 5/32
+[2024-03-07 15:10:51.217] INFO  (parsl.dataflow.dflow) :: Task 102 completed (launched -> exec_done)
+[2024-03-07 15:10:51.217] INFO  (parsl.dataflow.dflow) :: Task 105 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:51.218] INFO  (parsl.dataflow.dflow) :: Parsl task 105 try 0 launched on executor htex-local with executor id 106
+[2024-03-07 15:10:51.218] TESTING (stream-scaling) :: Submitted compute task 6/32
+[2024-03-07 15:10:51.574] INFO  (parsl.dataflow.dflow) :: Task 103 completed (launched -> exec_done)
+[2024-03-07 15:10:51.574] INFO  (parsl.dataflow.dflow) :: Task 106 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:51.574] INFO  (parsl.dataflow.dflow) :: Parsl task 106 try 0 launched on executor htex-local with executor id 107
+[2024-03-07 15:10:51.574] TESTING (stream-scaling) :: Submitted compute task 7/32
+[2024-03-07 15:10:51.907] INFO  (parsl.dataflow.dflow) :: Task 104 completed (launched -> exec_done)
+[2024-03-07 15:10:51.907] INFO  (parsl.dataflow.dflow) :: Task 107 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:51.908] INFO  (parsl.dataflow.dflow) :: Parsl task 107 try 0 launched on executor htex-local with executor id 108
+[2024-03-07 15:10:51.908] TESTING (stream-scaling) :: Submitted compute task 8/32
+[2024-03-07 15:10:52.240] INFO  (parsl.dataflow.dflow) :: Task 105 completed (launched -> exec_done)
+[2024-03-07 15:10:52.240] INFO  (parsl.dataflow.dflow) :: Task 108 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:52.240] INFO  (parsl.dataflow.dflow) :: Parsl task 108 try 0 launched on executor htex-local with executor id 109
+[2024-03-07 15:10:52.240] TESTING (stream-scaling) :: Submitted compute task 9/32
+[2024-03-07 15:10:52.597] INFO  (parsl.dataflow.dflow) :: Task 106 completed (launched -> exec_done)
+[2024-03-07 15:10:52.597] INFO  (parsl.dataflow.dflow) :: Task 109 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:52.597] INFO  (parsl.dataflow.dflow) :: Parsl task 109 try 0 launched on executor htex-local with executor id 110
+[2024-03-07 15:10:52.597] TESTING (stream-scaling) :: Submitted compute task 10/32
+[2024-03-07 15:10:52.930] INFO  (parsl.dataflow.dflow) :: Task 107 completed (launched -> exec_done)
+[2024-03-07 15:10:52.930] INFO  (parsl.dataflow.dflow) :: Task 110 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:52.930] INFO  (parsl.dataflow.dflow) :: Parsl task 110 try 0 launched on executor htex-local with executor id 111
+[2024-03-07 15:10:52.930] TESTING (stream-scaling) :: Submitted compute task 11/32
+[2024-03-07 15:10:53.262] INFO  (parsl.dataflow.dflow) :: Task 108 completed (launched -> exec_done)
+[2024-03-07 15:10:53.262] INFO  (parsl.dataflow.dflow) :: Task 111 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:53.262] INFO  (parsl.dataflow.dflow) :: Parsl task 111 try 0 launched on executor htex-local with executor id 112
+[2024-03-07 15:10:53.262] TESTING (stream-scaling) :: Submitted compute task 12/32
+[2024-03-07 15:10:53.619] INFO  (parsl.dataflow.dflow) :: Task 109 completed (launched -> exec_done)
+[2024-03-07 15:10:53.619] INFO  (parsl.dataflow.dflow) :: Task 112 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:53.619] INFO  (parsl.dataflow.dflow) :: Parsl task 112 try 0 launched on executor htex-local with executor id 113
+[2024-03-07 15:10:53.619] TESTING (stream-scaling) :: Submitted compute task 13/32
+[2024-03-07 15:10:53.952] INFO  (parsl.dataflow.dflow) :: Task 110 completed (launched -> exec_done)
+[2024-03-07 15:10:53.952] INFO  (parsl.dataflow.dflow) :: Task 113 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:53.953] INFO  (parsl.dataflow.dflow) :: Parsl task 113 try 0 launched on executor htex-local with executor id 114
+[2024-03-07 15:10:53.953] TESTING (stream-scaling) :: Submitted compute task 14/32
+[2024-03-07 15:10:54.284] INFO  (parsl.dataflow.dflow) :: Task 111 completed (launched -> exec_done)
+[2024-03-07 15:10:54.285] INFO  (parsl.dataflow.dflow) :: Task 114 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:54.285] INFO  (parsl.dataflow.dflow) :: Parsl task 114 try 0 launched on executor htex-local with executor id 115
+[2024-03-07 15:10:54.285] TESTING (stream-scaling) :: Submitted compute task 15/32
+[2024-03-07 15:10:54.641] INFO  (parsl.dataflow.dflow) :: Task 112 completed (launched -> exec_done)
+[2024-03-07 15:10:54.642] INFO  (parsl.dataflow.dflow) :: Task 115 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:54.642] INFO  (parsl.dataflow.dflow) :: Parsl task 115 try 0 launched on executor htex-local with executor id 116
+[2024-03-07 15:10:54.642] TESTING (stream-scaling) :: Submitted compute task 16/32
+[2024-03-07 15:10:54.974] INFO  (parsl.dataflow.dflow) :: Task 113 completed (launched -> exec_done)
+[2024-03-07 15:10:54.975] INFO  (parsl.dataflow.dflow) :: Task 116 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:54.975] INFO  (parsl.dataflow.dflow) :: Parsl task 116 try 0 launched on executor htex-local with executor id 117
+[2024-03-07 15:10:54.975] TESTING (stream-scaling) :: Submitted compute task 17/32
+[2024-03-07 15:10:55.307] INFO  (parsl.dataflow.dflow) :: Task 114 completed (launched -> exec_done)
+[2024-03-07 15:10:55.307] INFO  (parsl.dataflow.dflow) :: Task 117 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:55.307] INFO  (parsl.dataflow.dflow) :: Parsl task 117 try 0 launched on executor htex-local with executor id 118
+[2024-03-07 15:10:55.307] TESTING (stream-scaling) :: Submitted compute task 18/32
+[2024-03-07 15:10:55.664] INFO  (parsl.dataflow.dflow) :: Task 115 completed (launched -> exec_done)
+[2024-03-07 15:10:55.664] INFO  (parsl.dataflow.dflow) :: Task 118 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:55.664] INFO  (parsl.dataflow.dflow) :: Parsl task 118 try 0 launched on executor htex-local with executor id 119
+[2024-03-07 15:10:55.664] TESTING (stream-scaling) :: Submitted compute task 19/32
+[2024-03-07 15:10:55.997] INFO  (parsl.dataflow.dflow) :: Task 116 completed (launched -> exec_done)
+[2024-03-07 15:10:55.997] INFO  (parsl.dataflow.dflow) :: Task 119 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:55.998] INFO  (parsl.dataflow.dflow) :: Parsl task 119 try 0 launched on executor htex-local with executor id 120
+[2024-03-07 15:10:55.998] TESTING (stream-scaling) :: Submitted compute task 20/32
+[2024-03-07 15:10:56.329] INFO  (parsl.dataflow.dflow) :: Task 117 completed (launched -> exec_done)
+[2024-03-07 15:10:56.329] INFO  (parsl.dataflow.dflow) :: Task 120 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:56.329] INFO  (parsl.dataflow.dflow) :: Parsl task 120 try 0 launched on executor htex-local with executor id 121
+[2024-03-07 15:10:56.329] TESTING (stream-scaling) :: Submitted compute task 21/32
+[2024-03-07 15:10:56.686] INFO  (parsl.dataflow.dflow) :: Task 118 completed (launched -> exec_done)
+[2024-03-07 15:10:56.686] INFO  (parsl.dataflow.dflow) :: Task 121 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:56.686] INFO  (parsl.dataflow.dflow) :: Parsl task 121 try 0 launched on executor htex-local with executor id 122
+[2024-03-07 15:10:56.686] TESTING (stream-scaling) :: Submitted compute task 22/32
+[2024-03-07 15:10:57.020] INFO  (parsl.dataflow.dflow) :: Task 119 completed (launched -> exec_done)
+[2024-03-07 15:10:57.020] INFO  (parsl.dataflow.dflow) :: Task 122 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:57.020] INFO  (parsl.dataflow.dflow) :: Parsl task 122 try 0 launched on executor htex-local with executor id 123
+[2024-03-07 15:10:57.020] TESTING (stream-scaling) :: Submitted compute task 23/32
+[2024-03-07 15:10:57.352] INFO  (parsl.dataflow.dflow) :: Task 120 completed (launched -> exec_done)
+[2024-03-07 15:10:57.352] INFO  (parsl.dataflow.dflow) :: Task 123 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:57.352] INFO  (parsl.dataflow.dflow) :: Parsl task 123 try 0 launched on executor htex-local with executor id 124
+[2024-03-07 15:10:57.352] TESTING (stream-scaling) :: Submitted compute task 24/32
+[2024-03-07 15:10:57.708] INFO  (parsl.dataflow.dflow) :: Task 121 completed (launched -> exec_done)
+[2024-03-07 15:10:57.709] INFO  (parsl.dataflow.dflow) :: Task 124 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:57.709] INFO  (parsl.dataflow.dflow) :: Parsl task 124 try 0 launched on executor htex-local with executor id 125
+[2024-03-07 15:10:57.709] TESTING (stream-scaling) :: Submitted compute task 25/32
+[2024-03-07 15:10:58.042] INFO  (parsl.dataflow.dflow) :: Task 122 completed (launched -> exec_done)
+[2024-03-07 15:10:58.042] INFO  (parsl.dataflow.dflow) :: Task 125 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:58.042] INFO  (parsl.dataflow.dflow) :: Parsl task 125 try 0 launched on executor htex-local with executor id 126
+[2024-03-07 15:10:58.042] TESTING (stream-scaling) :: Submitted compute task 26/32
+[2024-03-07 15:10:58.374] INFO  (parsl.dataflow.dflow) :: Task 123 completed (launched -> exec_done)
+[2024-03-07 15:10:58.374] INFO  (parsl.dataflow.dflow) :: Task 126 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:58.374] INFO  (parsl.dataflow.dflow) :: Parsl task 126 try 0 launched on executor htex-local with executor id 127
+[2024-03-07 15:10:58.374] TESTING (stream-scaling) :: Submitted compute task 27/32
+[2024-03-07 15:10:58.731] INFO  (parsl.dataflow.dflow) :: Task 124 completed (launched -> exec_done)
+[2024-03-07 15:10:58.731] INFO  (parsl.dataflow.dflow) :: Task 127 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:58.731] INFO  (parsl.dataflow.dflow) :: Parsl task 127 try 0 launched on executor htex-local with executor id 128
+[2024-03-07 15:10:58.731] TESTING (stream-scaling) :: Submitted compute task 28/32
+[2024-03-07 15:10:59.064] INFO  (parsl.dataflow.dflow) :: Task 125 completed (launched -> exec_done)
+[2024-03-07 15:10:59.064] INFO  (parsl.dataflow.dflow) :: Task 128 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:59.065] INFO  (parsl.dataflow.dflow) :: Parsl task 128 try 0 launched on executor htex-local with executor id 129
+[2024-03-07 15:10:59.065] TESTING (stream-scaling) :: Submitted compute task 29/32
+[2024-03-07 15:10:59.396] INFO  (parsl.dataflow.dflow) :: Task 126 completed (launched -> exec_done)
+[2024-03-07 15:10:59.396] INFO  (parsl.dataflow.dflow) :: Task 129 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:59.397] INFO  (parsl.dataflow.dflow) :: Parsl task 129 try 0 launched on executor htex-local with executor id 130
+[2024-03-07 15:10:59.397] TESTING (stream-scaling) :: Submitted compute task 30/32
+[2024-03-07 15:10:59.753] INFO  (parsl.dataflow.dflow) :: Task 127 completed (launched -> exec_done)
+[2024-03-07 15:10:59.753] INFO  (parsl.dataflow.dflow) :: Task 130 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:10:59.754] INFO  (parsl.dataflow.dflow) :: Parsl task 130 try 0 launched on executor htex-local with executor id 131
+[2024-03-07 15:10:59.754] TESTING (stream-scaling) :: Submitted compute task 31/32
+[2024-03-07 15:11:00.087] INFO  (parsl.dataflow.dflow) :: Task 128 completed (launched -> exec_done)
+[2024-03-07 15:11:00.087] INFO  (parsl.dataflow.dflow) :: Task 131 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:00.087] INFO  (parsl.dataflow.dflow) :: Parsl task 131 try 0 launched on executor htex-local with executor id 132
+[2024-03-07 15:11:00.087] TESTING (stream-scaling) :: Submitted compute task 32/32
+[2024-03-07 15:11:00.210] INFO  (parsl.dataflow.dflow) :: Task 99 completed (launched -> exec_done)
+[2024-03-07 15:11:00.418] INFO  (parsl.dataflow.dflow) :: Task 129 completed (launched -> exec_done)
+[2024-03-07 15:11:00.419] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:11:00.419] TESTING (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-07 15:11:00.419] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:11:00.419] TESTING (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-07 15:11:00.775] INFO  (parsl.dataflow.dflow) :: Task 130 completed (launched -> exec_done)
+[2024-03-07 15:11:01.099] INFO  (parsl.dataflow.dflow) :: Task 131 completed (launched -> exec_done)
+[2024-03-07 15:11:01.099] TESTING (stream-scaling) :: All compute tasks finished
+[2024-03-07 15:11:01.099] TESTING (psbench.runner) :: Run 1/1 completed in 11.579s
+[2024-03-07 15:11:01.099] TESTING (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000000 task_count=32 task_sleep=1.0 use_proxies=False
+[2024-03-07 15:11:01.099] TESTING (stream-scaling) :: Compute workers: 3
+[2024-03-07 15:11:01.099] TESTING (stream-scaling) :: Generator workers: 1
+[2024-03-07 15:11:01.099] TESTING (stream-scaling) :: Generator item interval: 0.3333333333333333
+[2024-03-07 15:11:01.099] INFO  (parsl.dataflow.dflow) :: Task 132 submitted for App generator_task, not waiting on any dependency
+[2024-03-07 15:11:01.100] INFO  (parsl.dataflow.dflow) :: Parsl task 132 try 0 launched on executor htex-local with executor id 133
+[2024-03-07 15:11:01.100] TESTING (stream-scaling) :: Submitted generator task: item_size_bytes=10000000, max_items=32, interval_seconds=0.3333333333333333, pregenerate=False, use_proxies=False
+[2024-03-07 15:11:01.142] INFO  (parsl.dataflow.dflow) :: Task 133 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:01.270] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:01.274] INFO  (parsl.dataflow.dflow) :: Parsl task 133 try 0 launched on executor htex-local with executor id 134
+[2024-03-07 15:11:01.274] TESTING (stream-scaling) :: Submitted compute task 1/32
+[2024-03-07 15:11:01.468] INFO  (parsl.dataflow.dflow) :: Task 134 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:01.596] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:01.599] INFO  (parsl.dataflow.dflow) :: Parsl task 134 try 0 launched on executor htex-local with executor id 135
+[2024-03-07 15:11:01.599] TESTING (stream-scaling) :: Submitted compute task 2/32
+[2024-03-07 15:11:01.802] INFO  (parsl.dataflow.dflow) :: Task 135 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:01.928] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:01.931] INFO  (parsl.dataflow.dflow) :: Parsl task 135 try 0 launched on executor htex-local with executor id 136
+[2024-03-07 15:11:01.931] TESTING (stream-scaling) :: Submitted compute task 3/32
+[2024-03-07 15:11:02.326] INFO  (parsl.dataflow.dflow) :: Task 133 completed (launched -> exec_done)
+[2024-03-07 15:11:02.329] INFO  (parsl.dataflow.dflow) :: Task 136 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:02.458] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:02.462] INFO  (parsl.dataflow.dflow) :: Parsl task 136 try 0 launched on executor htex-local with executor id 137
+[2024-03-07 15:11:02.462] TESTING (stream-scaling) :: Submitted compute task 4/32
+[2024-03-07 15:11:02.649] INFO  (parsl.dataflow.dflow) :: Task 134 completed (launched -> exec_done)
+[2024-03-07 15:11:02.652] INFO  (parsl.dataflow.dflow) :: Task 137 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:02.779] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:02.785] INFO  (parsl.dataflow.dflow) :: Parsl task 137 try 0 launched on executor htex-local with executor id 138
+[2024-03-07 15:11:02.785] TESTING (stream-scaling) :: Submitted compute task 5/32
+[2024-03-07 15:11:02.976] INFO  (parsl.dataflow.dflow) :: Task 135 completed (launched -> exec_done)
+[2024-03-07 15:11:02.979] INFO  (parsl.dataflow.dflow) :: Task 138 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:03.106] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:03.110] INFO  (parsl.dataflow.dflow) :: Parsl task 138 try 0 launched on executor htex-local with executor id 139
+[2024-03-07 15:11:03.110] TESTING (stream-scaling) :: Submitted compute task 6/32
+[2024-03-07 15:11:03.507] INFO  (parsl.dataflow.dflow) :: Task 136 completed (launched -> exec_done)
+[2024-03-07 15:11:03.510] INFO  (parsl.dataflow.dflow) :: Task 139 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:03.637] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:03.641] INFO  (parsl.dataflow.dflow) :: Parsl task 139 try 0 launched on executor htex-local with executor id 140
+[2024-03-07 15:11:03.641] TESTING (stream-scaling) :: Submitted compute task 7/32
+[2024-03-07 15:11:03.827] INFO  (parsl.dataflow.dflow) :: Task 137 completed (launched -> exec_done)
+[2024-03-07 15:11:03.833] INFO  (parsl.dataflow.dflow) :: Task 140 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:03.961] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:03.964] INFO  (parsl.dataflow.dflow) :: Parsl task 140 try 0 launched on executor htex-local with executor id 141
+[2024-03-07 15:11:03.964] TESTING (stream-scaling) :: Submitted compute task 8/32
+[2024-03-07 15:11:04.152] INFO  (parsl.dataflow.dflow) :: Task 138 completed (launched -> exec_done)
+[2024-03-07 15:11:04.155] INFO  (parsl.dataflow.dflow) :: Task 141 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:04.282] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:04.286] INFO  (parsl.dataflow.dflow) :: Parsl task 141 try 0 launched on executor htex-local with executor id 142
+[2024-03-07 15:11:04.286] TESTING (stream-scaling) :: Submitted compute task 9/32
+[2024-03-07 15:11:04.682] INFO  (parsl.dataflow.dflow) :: Task 139 completed (launched -> exec_done)
+[2024-03-07 15:11:04.687] INFO  (parsl.dataflow.dflow) :: Task 142 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:04.815] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:04.818] INFO  (parsl.dataflow.dflow) :: Parsl task 142 try 0 launched on executor htex-local with executor id 143
+[2024-03-07 15:11:04.818] TESTING (stream-scaling) :: Submitted compute task 10/32
+[2024-03-07 15:11:05.004] INFO  (parsl.dataflow.dflow) :: Task 140 completed (launched -> exec_done)
+[2024-03-07 15:11:05.007] INFO  (parsl.dataflow.dflow) :: Task 143 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:05.133] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:05.137] INFO  (parsl.dataflow.dflow) :: Parsl task 143 try 0 launched on executor htex-local with executor id 144
+[2024-03-07 15:11:05.137] TESTING (stream-scaling) :: Submitted compute task 11/32
+[2024-03-07 15:11:05.325] INFO  (parsl.dataflow.dflow) :: Task 141 completed (launched -> exec_done)
+[2024-03-07 15:11:05.330] INFO  (parsl.dataflow.dflow) :: Task 144 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:05.458] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:05.464] INFO  (parsl.dataflow.dflow) :: Parsl task 144 try 0 launched on executor htex-local with executor id 145
+[2024-03-07 15:11:05.464] TESTING (stream-scaling) :: Submitted compute task 12/32
+[2024-03-07 15:11:05.861] INFO  (parsl.dataflow.dflow) :: Task 142 completed (launched -> exec_done)
+[2024-03-07 15:11:05.864] INFO  (parsl.dataflow.dflow) :: Task 145 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:05.990] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:05.996] INFO  (parsl.dataflow.dflow) :: Parsl task 145 try 0 launched on executor htex-local with executor id 146
+[2024-03-07 15:11:05.996] TESTING (stream-scaling) :: Submitted compute task 13/32
+[2024-03-07 15:11:06.178] INFO  (parsl.dataflow.dflow) :: Task 143 completed (launched -> exec_done)
+[2024-03-07 15:11:06.183] INFO  (parsl.dataflow.dflow) :: Task 146 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:06.309] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:06.314] INFO  (parsl.dataflow.dflow) :: Parsl task 146 try 0 launched on executor htex-local with executor id 147
+[2024-03-07 15:11:06.314] TESTING (stream-scaling) :: Submitted compute task 14/32
+[2024-03-07 15:11:06.498] INFO  (parsl.dataflow.dflow) :: Task 144 completed (launched -> exec_done)
+[2024-03-07 15:11:06.519] INFO  (parsl.dataflow.dflow) :: Task 147 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:06.644] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:06.647] INFO  (parsl.dataflow.dflow) :: Parsl task 147 try 0 launched on executor htex-local with executor id 148
+[2024-03-07 15:11:06.647] TESTING (stream-scaling) :: Submitted compute task 15/32
+[2024-03-07 15:11:07.034] INFO  (parsl.dataflow.dflow) :: Task 145 completed (launched -> exec_done)
+[2024-03-07 15:11:07.039] INFO  (parsl.dataflow.dflow) :: Task 148 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:07.167] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:07.170] INFO  (parsl.dataflow.dflow) :: Parsl task 148 try 0 launched on executor htex-local with executor id 149
+[2024-03-07 15:11:07.170] TESTING (stream-scaling) :: Submitted compute task 16/32
+[2024-03-07 15:11:07.353] INFO  (parsl.dataflow.dflow) :: Task 146 completed (launched -> exec_done)
+[2024-03-07 15:11:07.358] INFO  (parsl.dataflow.dflow) :: Task 149 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:07.483] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:07.487] INFO  (parsl.dataflow.dflow) :: Parsl task 149 try 0 launched on executor htex-local with executor id 150
+[2024-03-07 15:11:07.487] TESTING (stream-scaling) :: Submitted compute task 17/32
+[2024-03-07 15:11:07.678] INFO  (parsl.dataflow.dflow) :: Task 147 completed (launched -> exec_done)
+[2024-03-07 15:11:07.681] INFO  (parsl.dataflow.dflow) :: Task 150 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:07.808] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:07.811] INFO  (parsl.dataflow.dflow) :: Parsl task 150 try 0 launched on executor htex-local with executor id 151
+[2024-03-07 15:11:07.811] TESTING (stream-scaling) :: Submitted compute task 18/32
+[2024-03-07 15:11:08.214] INFO  (parsl.dataflow.dflow) :: Task 148 completed (launched -> exec_done)
+[2024-03-07 15:11:08.218] INFO  (parsl.dataflow.dflow) :: Task 151 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:08.344] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:08.348] INFO  (parsl.dataflow.dflow) :: Parsl task 151 try 0 launched on executor htex-local with executor id 152
+[2024-03-07 15:11:08.348] TESTING (stream-scaling) :: Submitted compute task 19/32
+[2024-03-07 15:11:08.527] INFO  (parsl.dataflow.dflow) :: Task 149 completed (launched -> exec_done)
+[2024-03-07 15:11:08.531] INFO  (parsl.dataflow.dflow) :: Task 152 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:08.655] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:08.658] INFO  (parsl.dataflow.dflow) :: Parsl task 152 try 0 launched on executor htex-local with executor id 153
+[2024-03-07 15:11:08.658] TESTING (stream-scaling) :: Submitted compute task 20/32
+[2024-03-07 15:11:08.852] INFO  (parsl.dataflow.dflow) :: Task 150 completed (launched -> exec_done)
+[2024-03-07 15:11:08.855] INFO  (parsl.dataflow.dflow) :: Task 153 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:08.980] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:08.983] INFO  (parsl.dataflow.dflow) :: Parsl task 153 try 0 launched on executor htex-local with executor id 154
+[2024-03-07 15:11:08.983] TESTING (stream-scaling) :: Submitted compute task 21/32
+[2024-03-07 15:11:09.389] INFO  (parsl.dataflow.dflow) :: Task 151 completed (launched -> exec_done)
+[2024-03-07 15:11:09.392] INFO  (parsl.dataflow.dflow) :: Task 154 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:09.518] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:09.526] INFO  (parsl.dataflow.dflow) :: Parsl task 154 try 0 launched on executor htex-local with executor id 155
+[2024-03-07 15:11:09.526] TESTING (stream-scaling) :: Submitted compute task 22/32
+[2024-03-07 15:11:09.703] INFO  (parsl.dataflow.dflow) :: Task 152 completed (launched -> exec_done)
+[2024-03-07 15:11:09.707] INFO  (parsl.dataflow.dflow) :: Task 155 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:09.834] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:09.838] INFO  (parsl.dataflow.dflow) :: Parsl task 155 try 0 launched on executor htex-local with executor id 156
+[2024-03-07 15:11:09.838] TESTING (stream-scaling) :: Submitted compute task 23/32
+[2024-03-07 15:11:10.027] INFO  (parsl.dataflow.dflow) :: Task 153 completed (launched -> exec_done)
+[2024-03-07 15:11:10.031] INFO  (parsl.dataflow.dflow) :: Task 156 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:10.155] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:10.159] INFO  (parsl.dataflow.dflow) :: Parsl task 156 try 0 launched on executor htex-local with executor id 157
+[2024-03-07 15:11:10.159] TESTING (stream-scaling) :: Submitted compute task 24/32
+[2024-03-07 15:11:10.563] INFO  (parsl.dataflow.dflow) :: Task 154 completed (launched -> exec_done)
+[2024-03-07 15:11:10.568] INFO  (parsl.dataflow.dflow) :: Task 157 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:10.696] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:10.701] INFO  (parsl.dataflow.dflow) :: Parsl task 157 try 0 launched on executor htex-local with executor id 158
+[2024-03-07 15:11:10.701] TESTING (stream-scaling) :: Submitted compute task 25/32
+[2024-03-07 15:11:10.878] INFO  (parsl.dataflow.dflow) :: Task 155 completed (launched -> exec_done)
+[2024-03-07 15:11:10.884] INFO  (parsl.dataflow.dflow) :: Task 158 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:11.010] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:11.013] INFO  (parsl.dataflow.dflow) :: Parsl task 158 try 0 launched on executor htex-local with executor id 159
+[2024-03-07 15:11:11.013] TESTING (stream-scaling) :: Submitted compute task 26/32
+[2024-03-07 15:11:11.199] INFO  (parsl.dataflow.dflow) :: Task 156 completed (launched -> exec_done)
+[2024-03-07 15:11:11.204] INFO  (parsl.dataflow.dflow) :: Task 159 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:11.329] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:11.335] INFO  (parsl.dataflow.dflow) :: Parsl task 159 try 0 launched on executor htex-local with executor id 160
+[2024-03-07 15:11:11.335] TESTING (stream-scaling) :: Submitted compute task 27/32
+[2024-03-07 15:11:11.740] INFO  (parsl.dataflow.dflow) :: Task 157 completed (launched -> exec_done)
+[2024-03-07 15:11:11.744] INFO  (parsl.dataflow.dflow) :: Task 160 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:11.868] INFO  (parsl.dataflow.dflow) :: Task 132 completed (launched -> exec_done)
+[2024-03-07 15:11:11.870] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:11.874] INFO  (parsl.dataflow.dflow) :: Parsl task 160 try 0 launched on executor htex-local with executor id 161
+[2024-03-07 15:11:11.874] TESTING (stream-scaling) :: Submitted compute task 28/32
+[2024-03-07 15:11:12.055] INFO  (parsl.dataflow.dflow) :: Task 158 completed (launched -> exec_done)
+[2024-03-07 15:11:12.059] INFO  (parsl.dataflow.dflow) :: Task 161 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:12.185] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:12.188] INFO  (parsl.dataflow.dflow) :: Parsl task 161 try 0 launched on executor htex-local with executor id 162
+[2024-03-07 15:11:12.188] TESTING (stream-scaling) :: Submitted compute task 29/32
+[2024-03-07 15:11:12.370] INFO  (parsl.dataflow.dflow) :: Task 159 completed (launched -> exec_done)
+[2024-03-07 15:11:12.375] INFO  (parsl.dataflow.dflow) :: Task 162 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:12.501] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:12.506] INFO  (parsl.dataflow.dflow) :: Parsl task 162 try 0 launched on executor htex-local with executor id 163
+[2024-03-07 15:11:12.506] TESTING (stream-scaling) :: Submitted compute task 30/32
+[2024-03-07 15:11:12.914] INFO  (parsl.dataflow.dflow) :: Task 160 completed (launched -> exec_done)
+[2024-03-07 15:11:12.918] INFO  (parsl.dataflow.dflow) :: Task 163 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:13.046] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:13.051] INFO  (parsl.dataflow.dflow) :: Parsl task 163 try 0 launched on executor htex-local with executor id 164
+[2024-03-07 15:11:13.051] TESTING (stream-scaling) :: Submitted compute task 31/32
+[2024-03-07 15:11:13.235] INFO  (parsl.dataflow.dflow) :: Task 161 completed (launched -> exec_done)
+[2024-03-07 15:11:13.238] INFO  (parsl.dataflow.dflow) :: Task 164 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:13.365] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-07 15:11:13.369] INFO  (parsl.dataflow.dflow) :: Parsl task 164 try 0 launched on executor htex-local with executor id 165
+[2024-03-07 15:11:13.369] TESTING (stream-scaling) :: Submitted compute task 32/32
+[2024-03-07 15:11:13.544] INFO  (parsl.dataflow.dflow) :: Task 162 completed (launched -> exec_done)
+[2024-03-07 15:11:13.546] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:11:13.546] TESTING (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-07 15:11:13.546] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:11:13.546] TESTING (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-07 15:11:14.087] INFO  (parsl.dataflow.dflow) :: Task 163 completed (launched -> exec_done)
+[2024-03-07 15:11:14.411] INFO  (parsl.dataflow.dflow) :: Task 164 completed (launched -> exec_done)
+[2024-03-07 15:11:14.411] TESTING (stream-scaling) :: All compute tasks finished
+[2024-03-07 15:11:14.424] TESTING (psbench.runner) :: Run 1/1 completed in 13.325s
+[2024-03-07 15:11:14.424] TESTING (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000000 task_count=32 task_sleep=1.0 use_proxies=True
+[2024-03-07 15:11:14.424] TESTING (stream-scaling) :: Compute workers: 3
+[2024-03-07 15:11:14.424] TESTING (stream-scaling) :: Generator workers: 1
+[2024-03-07 15:11:14.424] TESTING (stream-scaling) :: Generator item interval: 0.3333333333333333
+[2024-03-07 15:11:14.425] INFO  (parsl.dataflow.dflow) :: Task 165 submitted for App generator_task, not waiting on any dependency
+[2024-03-07 15:11:14.425] INFO  (parsl.dataflow.dflow) :: Parsl task 165 try 0 launched on executor htex-local with executor id 166
+[2024-03-07 15:11:14.425] TESTING (stream-scaling) :: Submitted generator task: item_size_bytes=10000000, max_items=32, interval_seconds=0.3333333333333333, pregenerate=False, use_proxies=True
+[2024-03-07 15:11:14.453] INFO  (parsl.dataflow.dflow) :: Task 166 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:14.454] INFO  (parsl.dataflow.dflow) :: Parsl task 166 try 0 launched on executor htex-local with executor id 167
+[2024-03-07 15:11:14.454] TESTING (stream-scaling) :: Submitted compute task 1/32
+[2024-03-07 15:11:14.784] INFO  (parsl.dataflow.dflow) :: Task 167 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:14.785] INFO  (parsl.dataflow.dflow) :: Parsl task 167 try 0 launched on executor htex-local with executor id 168
+[2024-03-07 15:11:14.785] TESTING (stream-scaling) :: Submitted compute task 2/32
+[2024-03-07 15:11:15.117] INFO  (parsl.dataflow.dflow) :: Task 168 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:15.117] INFO  (parsl.dataflow.dflow) :: Parsl task 168 try 0 launched on executor htex-local with executor id 169
+[2024-03-07 15:11:15.117] TESTING (stream-scaling) :: Submitted compute task 3/32
+[2024-03-07 15:11:15.484] INFO  (parsl.dataflow.dflow) :: Task 166 completed (launched -> exec_done)
+[2024-03-07 15:11:15.484] INFO  (parsl.dataflow.dflow) :: Task 169 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:15.484] INFO  (parsl.dataflow.dflow) :: Parsl task 169 try 0 launched on executor htex-local with executor id 170
+[2024-03-07 15:11:15.484] TESTING (stream-scaling) :: Submitted compute task 4/32
+[2024-03-07 15:11:15.808] INFO  (parsl.dataflow.dflow) :: Task 167 completed (launched -> exec_done)
+[2024-03-07 15:11:15.808] INFO  (parsl.dataflow.dflow) :: Task 170 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:15.808] INFO  (parsl.dataflow.dflow) :: Parsl task 170 try 0 launched on executor htex-local with executor id 171
+[2024-03-07 15:11:15.808] TESTING (stream-scaling) :: Submitted compute task 5/32
+[2024-03-07 15:11:16.142] INFO  (parsl.dataflow.dflow) :: Task 168 completed (launched -> exec_done)
+[2024-03-07 15:11:16.142] INFO  (parsl.dataflow.dflow) :: Task 171 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:16.142] INFO  (parsl.dataflow.dflow) :: Parsl task 171 try 0 launched on executor htex-local with executor id 172
+[2024-03-07 15:11:16.142] TESTING (stream-scaling) :: Submitted compute task 6/32
+[2024-03-07 15:11:16.515] INFO  (parsl.dataflow.dflow) :: Task 169 completed (launched -> exec_done)
+[2024-03-07 15:11:16.515] INFO  (parsl.dataflow.dflow) :: Task 172 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:16.515] INFO  (parsl.dataflow.dflow) :: Parsl task 172 try 0 launched on executor htex-local with executor id 173
+[2024-03-07 15:11:16.515] TESTING (stream-scaling) :: Submitted compute task 7/32
+[2024-03-07 15:11:16.840] INFO  (parsl.dataflow.dflow) :: Task 170 completed (launched -> exec_done)
+[2024-03-07 15:11:16.840] INFO  (parsl.dataflow.dflow) :: Task 173 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:16.840] INFO  (parsl.dataflow.dflow) :: Parsl task 173 try 0 launched on executor htex-local with executor id 174
+[2024-03-07 15:11:16.840] TESTING (stream-scaling) :: Submitted compute task 8/32
+[2024-03-07 15:11:17.174] INFO  (parsl.dataflow.dflow) :: Task 171 completed (launched -> exec_done)
+[2024-03-07 15:11:17.174] INFO  (parsl.dataflow.dflow) :: Task 174 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:17.174] INFO  (parsl.dataflow.dflow) :: Parsl task 174 try 0 launched on executor htex-local with executor id 175
+[2024-03-07 15:11:17.174] TESTING (stream-scaling) :: Submitted compute task 9/32
+[2024-03-07 15:11:17.550] INFO  (parsl.dataflow.dflow) :: Task 172 completed (launched -> exec_done)
+[2024-03-07 15:11:17.550] INFO  (parsl.dataflow.dflow) :: Task 175 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:17.550] INFO  (parsl.dataflow.dflow) :: Parsl task 175 try 0 launched on executor htex-local with executor id 176
+[2024-03-07 15:11:17.550] TESTING (stream-scaling) :: Submitted compute task 10/32
+[2024-03-07 15:11:17.874] INFO  (parsl.dataflow.dflow) :: Task 173 completed (launched -> exec_done)
+[2024-03-07 15:11:17.874] INFO  (parsl.dataflow.dflow) :: Task 176 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:17.874] INFO  (parsl.dataflow.dflow) :: Parsl task 176 try 0 launched on executor htex-local with executor id 177
+[2024-03-07 15:11:17.874] TESTING (stream-scaling) :: Submitted compute task 11/32
+[2024-03-07 15:11:18.205] INFO  (parsl.dataflow.dflow) :: Task 174 completed (launched -> exec_done)
+[2024-03-07 15:11:18.206] INFO  (parsl.dataflow.dflow) :: Task 177 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:18.206] INFO  (parsl.dataflow.dflow) :: Parsl task 177 try 0 launched on executor htex-local with executor id 178
+[2024-03-07 15:11:18.206] TESTING (stream-scaling) :: Submitted compute task 12/32
+[2024-03-07 15:11:18.582] INFO  (parsl.dataflow.dflow) :: Task 175 completed (launched -> exec_done)
+[2024-03-07 15:11:18.582] INFO  (parsl.dataflow.dflow) :: Task 178 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:18.582] INFO  (parsl.dataflow.dflow) :: Parsl task 178 try 0 launched on executor htex-local with executor id 179
+[2024-03-07 15:11:18.582] TESTING (stream-scaling) :: Submitted compute task 13/32
+[2024-03-07 15:11:18.909] INFO  (parsl.dataflow.dflow) :: Task 176 completed (launched -> exec_done)
+[2024-03-07 15:11:18.909] INFO  (parsl.dataflow.dflow) :: Task 179 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:18.909] INFO  (parsl.dataflow.dflow) :: Parsl task 179 try 0 launched on executor htex-local with executor id 180
+[2024-03-07 15:11:18.909] TESTING (stream-scaling) :: Submitted compute task 14/32
+[2024-03-07 15:11:19.237] INFO  (parsl.dataflow.dflow) :: Task 177 completed (launched -> exec_done)
+[2024-03-07 15:11:19.237] INFO  (parsl.dataflow.dflow) :: Task 180 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:19.238] INFO  (parsl.dataflow.dflow) :: Parsl task 180 try 0 launched on executor htex-local with executor id 181
+[2024-03-07 15:11:19.238] TESTING (stream-scaling) :: Submitted compute task 15/32
+[2024-03-07 15:11:19.615] INFO  (parsl.dataflow.dflow) :: Task 178 completed (launched -> exec_done)
+[2024-03-07 15:11:19.615] INFO  (parsl.dataflow.dflow) :: Task 181 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:19.615] INFO  (parsl.dataflow.dflow) :: Parsl task 181 try 0 launched on executor htex-local with executor id 182
+[2024-03-07 15:11:19.615] TESTING (stream-scaling) :: Submitted compute task 16/32
+[2024-03-07 15:11:19.946] INFO  (parsl.dataflow.dflow) :: Task 179 completed (launched -> exec_done)
+[2024-03-07 15:11:19.946] INFO  (parsl.dataflow.dflow) :: Task 182 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:19.946] INFO  (parsl.dataflow.dflow) :: Parsl task 182 try 0 launched on executor htex-local with executor id 183
+[2024-03-07 15:11:19.946] TESTING (stream-scaling) :: Submitted compute task 17/32
+[2024-03-07 15:11:20.272] INFO  (parsl.dataflow.dflow) :: Task 180 completed (launched -> exec_done)
+[2024-03-07 15:11:20.272] INFO  (parsl.dataflow.dflow) :: Task 183 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:20.272] INFO  (parsl.dataflow.dflow) :: Parsl task 183 try 0 launched on executor htex-local with executor id 184
+[2024-03-07 15:11:20.272] TESTING (stream-scaling) :: Submitted compute task 18/32
+[2024-03-07 15:11:20.649] INFO  (parsl.dataflow.dflow) :: Task 181 completed (launched -> exec_done)
+[2024-03-07 15:11:20.649] INFO  (parsl.dataflow.dflow) :: Task 184 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:20.649] INFO  (parsl.dataflow.dflow) :: Parsl task 184 try 0 launched on executor htex-local with executor id 185
+[2024-03-07 15:11:20.649] TESTING (stream-scaling) :: Submitted compute task 19/32
+[2024-03-07 15:11:20.981] INFO  (parsl.dataflow.dflow) :: Task 182 completed (launched -> exec_done)
+[2024-03-07 15:11:20.982] INFO  (parsl.dataflow.dflow) :: Task 185 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:20.982] INFO  (parsl.dataflow.dflow) :: Parsl task 185 try 0 launched on executor htex-local with executor id 186
+[2024-03-07 15:11:20.982] TESTING (stream-scaling) :: Submitted compute task 20/32
+[2024-03-07 15:11:21.307] INFO  (parsl.dataflow.dflow) :: Task 183 completed (launched -> exec_done)
+[2024-03-07 15:11:21.307] INFO  (parsl.dataflow.dflow) :: Task 186 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:21.307] INFO  (parsl.dataflow.dflow) :: Parsl task 186 try 0 launched on executor htex-local with executor id 187
+[2024-03-07 15:11:21.307] TESTING (stream-scaling) :: Submitted compute task 21/32
+[2024-03-07 15:11:21.685] INFO  (parsl.dataflow.dflow) :: Task 184 completed (launched -> exec_done)
+[2024-03-07 15:11:21.685] INFO  (parsl.dataflow.dflow) :: Task 187 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:21.685] INFO  (parsl.dataflow.dflow) :: Parsl task 187 try 0 launched on executor htex-local with executor id 188
+[2024-03-07 15:11:21.685] TESTING (stream-scaling) :: Submitted compute task 22/32
+[2024-03-07 15:11:22.015] INFO  (parsl.dataflow.dflow) :: Task 185 completed (launched -> exec_done)
+[2024-03-07 15:11:22.015] INFO  (parsl.dataflow.dflow) :: Task 188 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:22.015] INFO  (parsl.dataflow.dflow) :: Parsl task 188 try 0 launched on executor htex-local with executor id 189
+[2024-03-07 15:11:22.015] TESTING (stream-scaling) :: Submitted compute task 23/32
+[2024-03-07 15:11:22.341] INFO  (parsl.dataflow.dflow) :: Task 186 completed (launched -> exec_done)
+[2024-03-07 15:11:22.342] INFO  (parsl.dataflow.dflow) :: Task 189 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:22.342] INFO  (parsl.dataflow.dflow) :: Parsl task 189 try 0 launched on executor htex-local with executor id 190
+[2024-03-07 15:11:22.342] TESTING (stream-scaling) :: Submitted compute task 24/32
+[2024-03-07 15:11:22.719] INFO  (parsl.dataflow.dflow) :: Task 187 completed (launched -> exec_done)
+[2024-03-07 15:11:22.719] INFO  (parsl.dataflow.dflow) :: Task 190 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:22.719] INFO  (parsl.dataflow.dflow) :: Parsl task 190 try 0 launched on executor htex-local with executor id 191
+[2024-03-07 15:11:22.720] TESTING (stream-scaling) :: Submitted compute task 25/32
+[2024-03-07 15:11:23.047] INFO  (parsl.dataflow.dflow) :: Task 188 completed (launched -> exec_done)
+[2024-03-07 15:11:23.047] INFO  (parsl.dataflow.dflow) :: Task 191 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:23.048] INFO  (parsl.dataflow.dflow) :: Parsl task 191 try 0 launched on executor htex-local with executor id 192
+[2024-03-07 15:11:23.048] TESTING (stream-scaling) :: Submitted compute task 26/32
+[2024-03-07 15:11:23.373] INFO  (parsl.dataflow.dflow) :: Task 189 completed (launched -> exec_done)
+[2024-03-07 15:11:23.373] INFO  (parsl.dataflow.dflow) :: Task 192 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:23.374] INFO  (parsl.dataflow.dflow) :: Parsl task 192 try 0 launched on executor htex-local with executor id 193
+[2024-03-07 15:11:23.374] TESTING (stream-scaling) :: Submitted compute task 27/32
+[2024-03-07 15:11:23.750] INFO  (parsl.dataflow.dflow) :: Task 190 completed (launched -> exec_done)
+[2024-03-07 15:11:23.751] INFO  (parsl.dataflow.dflow) :: Task 193 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:23.751] INFO  (parsl.dataflow.dflow) :: Parsl task 193 try 0 launched on executor htex-local with executor id 194
+[2024-03-07 15:11:23.751] TESTING (stream-scaling) :: Submitted compute task 28/32
+[2024-03-07 15:11:24.085] INFO  (parsl.dataflow.dflow) :: Task 191 completed (launched -> exec_done)
+[2024-03-07 15:11:24.085] INFO  (parsl.dataflow.dflow) :: Task 194 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:24.085] INFO  (parsl.dataflow.dflow) :: Parsl task 194 try 0 launched on executor htex-local with executor id 195
+[2024-03-07 15:11:24.085] TESTING (stream-scaling) :: Submitted compute task 29/32
+[2024-03-07 15:11:24.405] INFO  (parsl.dataflow.dflow) :: Task 192 completed (launched -> exec_done)
+[2024-03-07 15:11:24.405] INFO  (parsl.dataflow.dflow) :: Task 195 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:24.406] INFO  (parsl.dataflow.dflow) :: Parsl task 195 try 0 launched on executor htex-local with executor id 196
+[2024-03-07 15:11:24.406] TESTING (stream-scaling) :: Submitted compute task 30/32
+[2024-03-07 15:11:24.782] INFO  (parsl.dataflow.dflow) :: Task 193 completed (launched -> exec_done)
+[2024-03-07 15:11:24.782] INFO  (parsl.dataflow.dflow) :: Task 196 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:24.782] INFO  (parsl.dataflow.dflow) :: Parsl task 196 try 0 launched on executor htex-local with executor id 197
+[2024-03-07 15:11:24.782] TESTING (stream-scaling) :: Submitted compute task 31/32
+[2024-03-07 15:11:25.110] INFO  (parsl.dataflow.dflow) :: Task 165 completed (launched -> exec_done)
+[2024-03-07 15:11:25.110] INFO  (parsl.dataflow.dflow) :: Task 194 completed (launched -> exec_done)
+[2024-03-07 15:11:25.110] INFO  (parsl.dataflow.dflow) :: Task 197 submitted for App compute_task, not waiting on any dependency
+[2024-03-07 15:11:25.111] INFO  (parsl.dataflow.dflow) :: Parsl task 197 try 0 launched on executor htex-local with executor id 198
+[2024-03-07 15:11:25.111] TESTING (stream-scaling) :: Submitted compute task 32/32
+[2024-03-07 15:11:25.440] INFO  (parsl.dataflow.dflow) :: Task 195 completed (launched -> exec_done)
+[2024-03-07 15:11:25.440] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:11:25.440] TESTING (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-07 15:11:25.440] TESTING (stream-scaling) :: Waiting on generator task
+[2024-03-07 15:11:25.440] TESTING (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-07 15:11:25.816] INFO  (parsl.dataflow.dflow) :: Task 196 completed (launched -> exec_done)
+[2024-03-07 15:11:26.144] INFO  (parsl.dataflow.dflow) :: Task 197 completed (launched -> exec_done)
+[2024-03-07 15:11:26.144] TESTING (stream-scaling) :: All compute tasks finished
+[2024-03-07 15:11:26.144] TESTING (psbench.runner) :: Run 1/1 completed in 11.720s
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Waiting for all remaining tasks to complete
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: All remaining tasks completed
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: DFK cleanup initiated
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Summary of tasks in DFK:
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.unsched: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.pending: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.exec_done: 198
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.failed: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.dep_fail: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.launched: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.fail_retryable: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.memo_done: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.joining: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running_ended: 0
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: End of summary
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Closing job status poller
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Terminated job status poller
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Scaling in and shutting down executors
+[2024-03-07 15:11:26.145] INFO  (parsl.dataflow.dflow) :: Scaling in executor htex-local
+[2024-03-07 15:11:26.151] INFO  (parsl.dataflow.dflow) :: Shutting down executor htex-local
+[2024-03-07 15:11:26.151] INFO  (parsl.executors.high_throughput.executor) :: Attempting HighThroughputExecutor shutdown
+[2024-03-07 15:11:26.151] INFO  (parsl.executors.high_throughput.executor) :: Finished HighThroughputExecutor shutdown attempt
+[2024-03-07 15:11:26.151] INFO  (parsl.dataflow.dflow) :: Shut down executor htex-local
+[2024-03-07 15:11:26.151] INFO  (parsl.dataflow.dflow) :: Shutting down executor _parsl_internal
+[2024-03-07 15:11:26.151] INFO  (parsl.dataflow.dflow) :: Shut down executor _parsl_internal
+[2024-03-07 15:11:26.151] INFO  (parsl.dataflow.dflow) :: Terminated executors
+[2024-03-07 15:11:26.151] INFO  (parsl.dataflow.dflow) :: DFK cleanup complete
+[2024-03-07 15:11:26.151] TESTING (psbench.runner) :: Benchmark completed: 72.717 s
+[2024-03-07 15:11:26.152] TESTING (run.stream-scaling) :: All logs and results saved to: data/alderaan/1-stream-scaling/stream-scaling-2024-03-07-15-10-13
