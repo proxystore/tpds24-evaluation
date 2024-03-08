@@ -21,8 +21,9 @@ layout = {
     'margin': dict(l=5, r=5, t=5, b=5),
     'xaxis': axis_layout,
     'yaxis': axis_layout,
-    'legend': dict(bordercolor=BLACK_300, borderwidth=1, font=dict(size=12)),
-    'title': dict(font=dict(size=10)),
+    'legend': dict(bordercolor=BLACK_300, borderwidth=1, font=dict(size=12), title=dict(font=dict(size=12))),
+    'title': dict(font=dict(size=12)),
+    'font': dict(family='Arial'),
 }
 options = {
     'layout': layout,
