@@ -1,0 +1,130 @@
+[2024-03-08 21:48:20.530] TESTING (run.task-pipelining) :: All configurations loaded
+[2024-03-08 21:48:22.148] INFO  (proxystore.store.base) :: Initialized Store("redis-store", connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False)
+[2024-03-08 21:48:22.148] INFO  (proxystore.store) :: Registered a store named redis-store
+[2024-03-08 21:48:22.148] TESTING (run.task-pipelining) :: Benchmark initialized
+[2024-03-08 21:48:22.150] TESTING (psbench.runner) :: Starting benchmark: Task Pipelining
+[2024-03-08 21:48:22.150] TESTING (psbench.runner) :: Benchmark config:
+- executor: DaskExecutor
+- connector: RedisConnector
+[2024-03-08 21:48:22.151] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.0 task_sleep=1.0
+[2024-03-08 21:48:30.491] TESTING (psbench.runner) :: Run 1/5 completed in 8.339s
+[2024-03-08 21:48:38.807] TESTING (psbench.runner) :: Run 2/5 completed in 8.315s
+[2024-03-08 21:48:47.122] TESTING (psbench.runner) :: Run 3/5 completed in 8.315s
+[2024-03-08 21:48:55.434] TESTING (psbench.runner) :: Run 4/5 completed in 8.312s
+[2024-03-08 21:49:03.742] TESTING (psbench.runner) :: Run 5/5 completed in 8.308s
+[2024-03-08 21:49:03.743] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.0 task_sleep=1.0
+[2024-03-08 21:49:11.838] TESTING (psbench.runner) :: Run 1/5 completed in 8.095s
+[2024-03-08 21:49:19.929] TESTING (psbench.runner) :: Run 2/5 completed in 8.091s
+[2024-03-08 21:49:28.020] TESTING (psbench.runner) :: Run 3/5 completed in 8.091s
+[2024-03-08 21:49:36.106] TESTING (psbench.runner) :: Run 4/5 completed in 8.086s
+[2024-03-08 21:49:44.192] TESTING (psbench.runner) :: Run 5/5 completed in 8.086s
+[2024-03-08 21:49:44.192] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.1 task_sleep=1.0
+[2024-03-08 21:49:52.501] TESTING (psbench.runner) :: Run 1/5 completed in 8.309s
+[2024-03-08 21:50:00.810] TESTING (psbench.runner) :: Run 2/5 completed in 8.309s
+[2024-03-08 21:50:09.129] TESTING (psbench.runner) :: Run 3/5 completed in 8.318s
+[2024-03-08 21:50:17.448] TESTING (psbench.runner) :: Run 4/5 completed in 8.318s
+[2024-03-08 21:50:25.763] TESTING (psbench.runner) :: Run 5/5 completed in 8.315s
+[2024-03-08 21:50:25.764] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.1 task_sleep=1.0
+[2024-03-08 21:50:33.148] TESTING (psbench.runner) :: Run 1/5 completed in 7.384s
+[2024-03-08 21:50:40.536] TESTING (psbench.runner) :: Run 2/5 completed in 7.388s
+[2024-03-08 21:50:47.926] TESTING (psbench.runner) :: Run 3/5 completed in 7.389s
+[2024-03-08 21:50:55.312] TESTING (psbench.runner) :: Run 4/5 completed in 7.386s
+[2024-03-08 21:51:02.697] TESTING (psbench.runner) :: Run 5/5 completed in 7.385s
+[2024-03-08 21:51:02.697] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.2 task_sleep=1.0
+[2024-03-08 21:51:11.009] TESTING (psbench.runner) :: Run 1/5 completed in 8.311s
+[2024-03-08 21:51:19.322] TESTING (psbench.runner) :: Run 2/5 completed in 8.313s
+[2024-03-08 21:51:27.635] TESTING (psbench.runner) :: Run 3/5 completed in 8.312s
+[2024-03-08 21:51:35.946] TESTING (psbench.runner) :: Run 4/5 completed in 8.311s
+[2024-03-08 21:51:44.257] TESTING (psbench.runner) :: Run 5/5 completed in 8.311s
+[2024-03-08 21:51:44.258] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.2 task_sleep=1.0
+[2024-03-08 21:51:50.944] TESTING (psbench.runner) :: Run 1/5 completed in 6.686s
+[2024-03-08 21:51:57.626] TESTING (psbench.runner) :: Run 2/5 completed in 6.682s
+[2024-03-08 21:52:04.320] TESTING (psbench.runner) :: Run 3/5 completed in 6.694s
+[2024-03-08 21:52:11.006] TESTING (psbench.runner) :: Run 4/5 completed in 6.685s
+[2024-03-08 21:52:17.698] TESTING (psbench.runner) :: Run 5/5 completed in 6.692s
+[2024-03-08 21:52:17.698] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.3 task_sleep=1.0
+[2024-03-08 21:52:26.005] TESTING (psbench.runner) :: Run 1/5 completed in 8.307s
+[2024-03-08 21:52:34.312] TESTING (psbench.runner) :: Run 2/5 completed in 8.307s
+[2024-03-08 21:52:42.619] TESTING (psbench.runner) :: Run 3/5 completed in 8.306s
+[2024-03-08 21:52:50.928] TESTING (psbench.runner) :: Run 4/5 completed in 8.309s
+[2024-03-08 21:52:59.235] TESTING (psbench.runner) :: Run 5/5 completed in 8.307s
+[2024-03-08 21:52:59.235] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.3 task_sleep=1.0
+[2024-03-08 21:53:05.220] TESTING (psbench.runner) :: Run 1/5 completed in 5.984s
+[2024-03-08 21:53:11.208] TESTING (psbench.runner) :: Run 2/5 completed in 5.988s
+[2024-03-08 21:53:17.199] TESTING (psbench.runner) :: Run 3/5 completed in 5.991s
+[2024-03-08 21:53:23.190] TESTING (psbench.runner) :: Run 4/5 completed in 5.991s
+[2024-03-08 21:53:29.176] TESTING (psbench.runner) :: Run 5/5 completed in 5.986s
+[2024-03-08 21:53:29.176] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.4 task_sleep=1.0
+[2024-03-08 21:53:37.481] TESTING (psbench.runner) :: Run 1/5 completed in 8.304s
+[2024-03-08 21:53:45.788] TESTING (psbench.runner) :: Run 2/5 completed in 8.307s
+[2024-03-08 21:53:54.090] TESTING (psbench.runner) :: Run 3/5 completed in 8.301s
+[2024-03-08 21:54:02.399] TESTING (psbench.runner) :: Run 4/5 completed in 8.309s
+[2024-03-08 21:54:10.704] TESTING (psbench.runner) :: Run 5/5 completed in 8.305s
+[2024-03-08 21:54:10.705] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.4 task_sleep=1.0
+[2024-03-08 21:54:15.989] TESTING (psbench.runner) :: Run 1/5 completed in 5.284s
+[2024-03-08 21:54:21.275] TESTING (psbench.runner) :: Run 2/5 completed in 5.286s
+[2024-03-08 21:54:26.561] TESTING (psbench.runner) :: Run 3/5 completed in 5.285s
+[2024-03-08 21:54:31.847] TESTING (psbench.runner) :: Run 4/5 completed in 5.286s
+[2024-03-08 21:54:37.133] TESTING (psbench.runner) :: Run 5/5 completed in 5.285s
+[2024-03-08 21:54:37.133] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.5 task_sleep=1.0
+[2024-03-08 21:54:45.437] TESTING (psbench.runner) :: Run 1/5 completed in 8.304s
+[2024-03-08 21:54:53.741] TESTING (psbench.runner) :: Run 2/5 completed in 8.304s
+[2024-03-08 21:55:02.045] TESTING (psbench.runner) :: Run 3/5 completed in 8.303s
+[2024-03-08 21:55:10.349] TESTING (psbench.runner) :: Run 4/5 completed in 8.303s
+[2024-03-08 21:55:18.655] TESTING (psbench.runner) :: Run 5/5 completed in 8.306s
+[2024-03-08 21:55:18.655] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.5 task_sleep=1.0
+[2024-03-08 21:55:23.261] TESTING (psbench.runner) :: Run 1/5 completed in 4.605s
+[2024-03-08 21:55:27.861] TESTING (psbench.runner) :: Run 2/5 completed in 4.600s
+[2024-03-08 21:55:32.456] TESTING (psbench.runner) :: Run 3/5 completed in 4.594s
+[2024-03-08 21:55:37.052] TESTING (psbench.runner) :: Run 4/5 completed in 4.596s
+[2024-03-08 21:55:41.653] TESTING (psbench.runner) :: Run 5/5 completed in 4.601s
+[2024-03-08 21:55:41.653] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.6 task_sleep=1.0
+[2024-03-08 21:55:49.958] TESTING (psbench.runner) :: Run 1/5 completed in 8.305s
+[2024-03-08 21:55:58.263] TESTING (psbench.runner) :: Run 2/5 completed in 8.305s
+[2024-03-08 21:56:06.567] TESTING (psbench.runner) :: Run 3/5 completed in 8.304s
+[2024-03-08 21:56:14.871] TESTING (psbench.runner) :: Run 4/5 completed in 8.304s
+[2024-03-08 21:56:23.185] TESTING (psbench.runner) :: Run 5/5 completed in 8.314s
+[2024-03-08 21:56:23.186] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.6 task_sleep=1.0
+[2024-03-08 21:56:27.078] TESTING (psbench.runner) :: Run 1/5 completed in 3.891s
+[2024-03-08 21:56:30.975] TESTING (psbench.runner) :: Run 2/5 completed in 3.897s
+[2024-03-08 21:56:34.867] TESTING (psbench.runner) :: Run 3/5 completed in 3.892s
+[2024-03-08 21:56:38.767] TESTING (psbench.runner) :: Run 4/5 completed in 3.899s
+[2024-03-08 21:56:42.654] TESTING (psbench.runner) :: Run 5/5 completed in 3.887s
+[2024-03-08 21:56:42.654] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.7 task_sleep=1.0
+[2024-03-08 21:56:50.959] TESTING (psbench.runner) :: Run 1/5 completed in 8.305s
+[2024-03-08 21:56:59.267] TESTING (psbench.runner) :: Run 2/5 completed in 8.308s
+[2024-03-08 21:57:07.573] TESTING (psbench.runner) :: Run 3/5 completed in 8.305s
+[2024-03-08 21:57:15.879] TESTING (psbench.runner) :: Run 4/5 completed in 8.306s
+[2024-03-08 21:57:24.188] TESTING (psbench.runner) :: Run 5/5 completed in 8.308s
+[2024-03-08 21:57:24.188] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.7 task_sleep=1.0
+[2024-03-08 21:57:27.369] TESTING (psbench.runner) :: Run 1/5 completed in 3.181s
+[2024-03-08 21:57:30.554] TESTING (psbench.runner) :: Run 2/5 completed in 3.184s
+[2024-03-08 21:57:33.737] TESTING (psbench.runner) :: Run 3/5 completed in 3.183s
+[2024-03-08 21:57:36.928] TESTING (psbench.runner) :: Run 4/5 completed in 3.191s
+[2024-03-08 21:57:40.113] TESTING (psbench.runner) :: Run 5/5 completed in 3.185s
+[2024-03-08 21:57:40.114] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.8 task_sleep=1.0
+[2024-03-08 21:57:48.421] TESTING (psbench.runner) :: Run 1/5 completed in 8.307s
+[2024-03-08 21:57:56.726] TESTING (psbench.runner) :: Run 2/5 completed in 8.304s
+[2024-03-08 21:58:05.030] TESTING (psbench.runner) :: Run 3/5 completed in 8.304s
+[2024-03-08 21:58:13.336] TESTING (psbench.runner) :: Run 4/5 completed in 8.305s
+[2024-03-08 21:58:21.641] TESTING (psbench.runner) :: Run 5/5 completed in 8.305s
+[2024-03-08 21:58:21.641] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.8 task_sleep=1.0
+[2024-03-08 21:58:24.122] TESTING (psbench.runner) :: Run 1/5 completed in 2.480s
+[2024-03-08 21:58:26.608] TESTING (psbench.runner) :: Run 2/5 completed in 2.485s
+[2024-03-08 21:58:29.092] TESTING (psbench.runner) :: Run 3/5 completed in 2.484s
+[2024-03-08 21:58:31.576] TESTING (psbench.runner) :: Run 4/5 completed in 2.483s
+[2024-03-08 21:58:34.061] TESTING (psbench.runner) :: Run 5/5 completed in 2.485s
+[2024-03-08 21:58:34.061] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='sequential' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.9 task_sleep=1.0
+[2024-03-08 21:58:42.364] TESTING (psbench.runner) :: Run 1/5 completed in 8.303s
+[2024-03-08 21:58:50.671] TESTING (psbench.runner) :: Run 2/5 completed in 8.306s
+[2024-03-08 21:58:58.976] TESTING (psbench.runner) :: Run 3/5 completed in 8.305s
+[2024-03-08 21:59:07.288] TESTING (psbench.runner) :: Run 4/5 completed in 8.312s
+[2024-03-08 21:59:15.596] TESTING (psbench.runner) :: Run 5/5 completed in 8.307s
+[2024-03-08 21:59:15.596] TESTING (psbench.runner) :: Starting run config (repeat=5): submission_method='pipelined' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.9 task_sleep=1.0
+[2024-03-08 21:59:17.377] TESTING (psbench.runner) :: Run 1/5 completed in 1.781s
+[2024-03-08 21:59:19.161] TESTING (psbench.runner) :: Run 2/5 completed in 1.784s
+[2024-03-08 21:59:20.945] TESTING (psbench.runner) :: Run 3/5 completed in 1.784s
+[2024-03-08 21:59:22.726] TESTING (psbench.runner) :: Run 4/5 completed in 1.781s
+[2024-03-08 21:59:24.509] TESTING (psbench.runner) :: Run 5/5 completed in 1.783s
+[2024-03-08 21:59:24.644] TESTING (psbench.runner) :: Benchmark completed: 662.494 s
+[2024-03-08 21:59:24.646] TESTING (run.task-pipelining) :: All logs and results saved to: data/polaris/0-task-pipelining/task-pipelining-2024-03-08-21-48-20
