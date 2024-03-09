@@ -1,0 +1,16 @@
+[2024-03-08 20:42:42.503] TESTING (run.workflow-memory) :: All configurations loaded
+[2024-03-08 20:42:43.096] INFO  (proxystore.store.base) :: Initialized Store("redis-store", connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=0, metrics=False)
+[2024-03-08 20:42:43.096] INFO  (proxystore.store) :: Registered a store named redis-store
+[2024-03-08 20:42:43.096] TESTING (run.workflow-memory) :: Benchmark initialized
+[2024-03-08 20:42:43.099] TESTING (psbench.runner) :: Starting benchmark: Workflow Memory
+[2024-03-08 20:42:43.099] TESTING (psbench.runner) :: Benchmark config:
+- executor: DaskExecutor
+- connector: RedisConnector
+[2024-03-08 20:42:43.099] TESTING (psbench.runner) :: Starting run config (repeat=3): data_management=<DataManagement.MANUAL_PROXY: 'manual-proxy'> stage_sizes=[1, 1, 8, 1, 1, 8, 1, 1] data_size_bytes=100000000 task_sleep=5.0
+[2024-03-08 20:43:30.685] TESTING (psbench.runner) :: Run 1/3 completed in 47.585s
+[2024-03-08 20:44:17.867] TESTING (psbench.runner) :: Run 2/3 completed in 47.182s
+[2024-03-08 20:45:05.124] TESTING (psbench.runner) :: Run 3/3 completed in 47.257s
+[2024-03-08 20:45:05.124] TESTING (psbench.runner) :: Average run time: 47.341 ± 0.215s
+[2024-03-08 20:45:05.378] TESTING (psbench.runner) :: Benchmark completed: 142.279 s
+[2024-03-08 20:45:05.384] TESTING (run.workflow-memory) :: Memory profile data saved: data/alderaan/2-memory-management/workflow-memory-2024-03-08-20-42-42/results-memory.csv
+[2024-03-08 20:45:05.385] TESTING (run.workflow-memory) :: All logs and results saved to: data/alderaan/2-memory-management/workflow-memory-2024-03-08-20-42-42

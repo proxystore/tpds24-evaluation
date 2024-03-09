@@ -1,0 +1,4 @@
+executor,connector,data_management,stage_sizes,data_size_bytes,task_sleep,workflow_start_timestamp,workflow_end_timestamp,workflow_makespan_s
+DaskExecutor,RedisConnector,owned-proxy,1-1-8-1-1-8-1-1,100000000,5.0,1709952306.5975783,1709952354.4028828,47.805304527282715
+DaskExecutor,RedisConnector,owned-proxy,1-1-8-1-1-8-1-1,100000000,5.0,1709952354.4202404,1709952401.787541,47.367300510406494
+DaskExecutor,RedisConnector,owned-proxy,1-1-8-1-1-8-1-1,100000000,5.0,1709952401.80357,1709952449.0486221,47.245052099227905
