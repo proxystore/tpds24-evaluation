@@ -1,4 +1,5 @@
 parsl_runinfo/
+pbs_logs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

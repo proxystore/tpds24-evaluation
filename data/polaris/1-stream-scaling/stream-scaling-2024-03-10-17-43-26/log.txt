@@ -1,0 +1,1666 @@
+[2024-03-10 17:43:26.944] BENCH (run.stream-scaling) :: All configurations loaded
+[2024-03-10 17:43:26.947] BENCH (run.stream-scaling) :: Benchmark initialized
+[2024-03-10 17:43:26.949] BENCH (psbench.runner) :: Starting benchmark: Stream Scaling
+[2024-03-10 17:43:26.949] BENCH (psbench.runner) :: Benchmark config:
+- executor: ParslExecutor
+- connector: RedisConnector
+- subscriber: RedisSubscriber
+- stream-config: kind='redis' topic='stream-benchmark-data' servers=['localhost:59465']
+[2024-03-10 17:43:27.084] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000 task_count=128 task_sleep=1.0 use_proxies=True
+[2024-03-10 17:43:27.084] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:43:27.085] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:43:27.085] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:43:27.091] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=True
+[2024-03-10 17:43:28.821] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:43:28.959] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:43:29.102] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:43:29.245] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:43:29.388] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:43:29.531] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:43:29.674] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:43:30.192] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:43:30.331] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:43:30.472] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:43:30.613] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:43:30.759] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:43:30.903] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:43:31.047] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:43:31.216] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:43:31.355] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:43:31.496] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:43:31.636] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:43:31.782] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:43:31.927] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:43:32.071] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:43:32.240] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:43:32.379] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:43:32.520] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:43:32.660] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:43:32.805] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:43:32.951] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:43:33.095] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:43:33.263] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:43:33.403] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:43:33.544] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:43:33.684] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:43:33.829] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:43:33.975] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:43:34.118] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:43:34.288] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:43:34.427] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:43:34.568] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:43:34.707] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:43:34.852] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:43:34.999] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:43:35.141] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:43:35.312] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:43:35.451] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:43:35.591] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:43:35.731] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:43:35.876] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:43:36.023] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:43:36.165] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:43:36.336] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:43:36.474] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:43:36.615] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:43:36.755] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:43:36.899] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:43:37.047] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:43:37.188] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:43:37.360] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:43:37.498] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:43:37.639] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:43:37.779] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:43:37.923] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:43:38.071] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:43:38.212] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:43:38.384] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:43:38.522] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:43:38.663] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:43:38.803] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:43:38.947] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:43:39.094] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:43:39.236] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:43:39.408] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:43:39.546] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:43:39.686] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:43:39.827] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:43:39.970] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:43:40.118] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:43:40.260] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:43:40.432] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:43:40.570] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:43:40.710] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:43:40.851] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:43:40.992] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:43:41.142] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:43:41.283] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:43:41.455] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:43:41.594] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:43:41.733] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:43:41.875] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:43:42.016] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:43:42.166] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:43:42.307] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:43:42.480] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:43:42.617] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:43:42.757] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:43:42.899] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:43:43.039] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:43:43.190] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:43:43.330] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:43:43.503] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:43:43.641] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:43:43.781] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:43:43.922] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:43:44.062] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:43:44.214] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:43:44.354] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:43:44.527] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:43:44.665] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:43:44.804] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:43:44.946] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:43:45.085] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:43:45.238] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:43:45.378] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:43:45.551] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:43:45.687] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:43:45.828] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:43:45.970] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:43:46.109] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:43:46.262] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:43:46.402] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:43:46.575] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:43:46.711] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:43:46.852] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:43:46.994] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:43:47.126] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:43:47.285] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:43:47.447] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:43:47.588] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:43:47.735] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:43:47.875] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:43:47.875] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:43:47.875] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:43:47.875] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:43:48.757] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:43:48.758] BENCH (psbench.runner) :: Run 1/1 completed in 21.673s
+[2024-03-10 17:43:48.758] BENCH (psbench.runner) :: Average run time: 21.673 ± 0.000s
+[2024-03-10 17:43:48.758] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000 task_count=128 task_sleep=1.0 use_proxies=False
+[2024-03-10 17:43:48.758] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:43:48.758] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:43:48.758] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:43:48.759] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=False
+[2024-03-10 17:43:48.770] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:43:48.913] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:43:49.056] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:43:49.199] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:43:49.342] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:43:49.485] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:43:49.628] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:43:49.792] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:43:49.934] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:43:50.075] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:43:50.217] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:43:50.359] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:43:50.501] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:43:50.643] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:43:50.815] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:43:50.957] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:43:51.098] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:43:51.230] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:43:51.383] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:43:51.524] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:43:51.667] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:43:51.839] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:43:51.981] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:43:52.121] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:43:52.254] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:43:52.406] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:43:52.548] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:43:52.690] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:43:52.862] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:43:53.004] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:43:53.144] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:43:53.277] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:43:53.430] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:43:53.571] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:43:53.713] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:43:53.886] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:43:54.027] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:43:54.166] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:43:54.301] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:43:54.453] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:43:54.595] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:43:54.737] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:43:54.909] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:43:55.051] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:43:55.189] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:43:55.324] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:43:55.477] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:43:55.618] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:43:55.760] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:43:55.931] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:43:56.074] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:43:56.212] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:43:56.347] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:43:56.500] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:43:56.641] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:43:56.783] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:43:56.955] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:43:57.097] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:43:57.235] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:43:57.371] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:43:57.523] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:43:57.664] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:43:57.807] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:43:57.979] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:43:58.121] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:43:58.259] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:43:58.395] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:43:58.547] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:43:58.687] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:43:58.830] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:43:59.002] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:43:59.144] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:43:59.282] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:43:59.418] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:43:59.571] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:43:59.710] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:43:59.853] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:44:00.025] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:44:00.167] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:44:00.306] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:44:00.442] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:44:00.595] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:44:00.733] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:44:00.876] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:44:01.048] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:44:01.191] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:44:01.329] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:44:01.465] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:44:01.618] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:44:01.756] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:44:01.899] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:44:02.071] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:44:02.214] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:44:02.352] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:44:02.488] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:44:02.642] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:44:02.779] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:44:02.923] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:44:03.095] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:44:03.238] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:44:03.375] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:44:03.512] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:44:03.665] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:44:03.803] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:44:03.936] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:44:04.118] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:44:04.261] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:44:04.398] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:44:04.535] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:44:04.688] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:44:04.826] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:44:04.959] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:44:05.141] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:44:05.283] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:44:05.421] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:44:05.559] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:44:05.711] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:44:05.849] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:44:05.982] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:44:06.164] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:44:06.308] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:44:06.445] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:44:06.583] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:44:06.735] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:44:06.872] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:44:07.006] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:44:07.188] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:44:07.331] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:44:07.467] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:44:07.467] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:44:07.467] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:44:07.467] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:44:08.353] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:44:08.353] BENCH (psbench.runner) :: Run 1/1 completed in 19.595s
+[2024-03-10 17:44:08.353] BENCH (psbench.runner) :: Average run time: 19.595 ± 0.000s
+[2024-03-10 17:44:08.353] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000 task_count=128 task_sleep=1.0 use_proxies=True
+[2024-03-10 17:44:08.353] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:44:08.353] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:44:08.353] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:44:08.354] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=True
+[2024-03-10 17:44:08.366] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:44:08.509] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:44:08.652] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:44:08.795] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:44:08.938] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:44:09.081] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:44:09.224] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:44:09.388] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:44:09.530] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:44:09.672] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:44:09.813] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:44:09.955] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:44:10.097] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:44:10.239] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:44:10.411] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:44:10.554] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:44:10.696] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:44:10.837] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:44:10.979] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:44:11.120] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:44:11.263] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:44:11.435] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:44:11.567] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:44:11.720] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:44:11.861] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:44:12.003] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:44:12.143] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:44:12.287] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:44:12.459] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:44:12.591] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:44:12.744] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:44:12.884] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:44:13.027] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:44:13.167] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:44:13.312] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:44:13.483] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:44:13.615] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:44:13.767] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:44:13.908] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:44:14.051] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:44:14.191] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:44:14.335] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:44:14.506] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:44:14.639] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:44:14.791] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:44:14.932] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:44:15.075] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:44:15.215] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:44:15.359] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:44:15.530] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:44:15.653] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:44:15.815] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:44:15.956] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:44:16.099] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:44:16.239] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:44:16.373] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:44:16.553] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:44:16.677] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:44:16.839] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:44:16.980] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:44:17.122] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:44:17.263] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:44:17.397] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:44:17.576] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:44:17.701] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:44:17.863] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:44:18.003] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:44:18.146] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:44:18.286] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:44:18.420] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:44:18.599] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:44:18.725] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:44:18.887] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:44:19.027] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:44:19.170] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:44:19.310] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:44:19.444] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:44:19.623] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:44:19.748] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:44:19.911] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:44:20.050] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:44:20.183] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:44:20.334] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:44:20.467] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:44:20.646] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:44:20.772] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:44:20.935] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:44:21.074] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:44:21.207] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:44:21.358] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:44:21.491] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:44:21.669] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:44:21.796] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:44:21.958] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:44:22.098] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:44:22.221] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:44:22.382] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:44:22.515] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:44:22.694] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:44:22.820] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:44:22.983] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:44:23.122] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:44:23.235] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:44:23.406] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:44:23.539] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:44:23.716] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:44:23.844] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:44:24.006] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:44:24.146] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:44:24.258] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:44:24.430] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:44:24.553] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:44:24.740] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:44:24.867] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:44:25.030] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:44:25.170] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:44:25.282] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:44:25.454] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:44:25.566] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:44:25.764] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:44:25.891] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:44:26.054] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:44:26.194] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:44:26.306] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:44:26.478] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:44:26.590] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:44:26.788] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:44:26.915] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:44:27.077] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:44:27.077] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:44:27.077] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:44:27.077] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:44:27.938] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:44:27.939] BENCH (psbench.runner) :: Run 1/1 completed in 19.585s
+[2024-03-10 17:44:27.939] BENCH (psbench.runner) :: Average run time: 19.585 ± 0.000s
+[2024-03-10 17:44:27.939] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000 task_count=128 task_sleep=1.0 use_proxies=False
+[2024-03-10 17:44:27.939] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:44:27.939] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:44:27.939] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:44:27.940] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=False
+[2024-03-10 17:44:27.952] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:44:28.096] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:44:28.239] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:44:28.382] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:44:28.525] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:44:28.668] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:44:28.811] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:44:28.975] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:44:29.116] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:44:29.258] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:44:29.399] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:44:29.542] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:44:29.694] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:44:29.835] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:44:29.988] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:44:30.140] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:44:30.281] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:44:30.423] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:44:30.565] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:44:30.718] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:44:30.857] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:44:31.012] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:44:31.164] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:44:31.305] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:44:31.446] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:44:31.589] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:44:31.741] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:44:31.881] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:44:32.036] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:44:32.187] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:44:32.329] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:44:32.470] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:44:32.612] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:44:32.765] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:44:32.905] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:44:33.059] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:44:33.211] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:44:33.352] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:44:33.493] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:44:33.635] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:44:33.778] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:44:33.928] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:44:34.082] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:44:34.234] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:44:34.376] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:44:34.517] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:44:34.659] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:44:34.792] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:44:34.952] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:44:35.095] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:44:35.257] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:44:35.400] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:44:35.541] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:44:35.682] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:44:35.815] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:44:35.975] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:44:36.118] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:44:36.281] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:44:36.423] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:44:36.564] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:44:36.705] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:44:36.828] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:44:36.999] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:44:37.141] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:44:37.304] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:44:37.445] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:44:37.587] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:44:37.729] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:44:37.852] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:44:38.022] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:44:38.165] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:44:38.328] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:44:38.470] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:44:38.611] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:44:38.752] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:44:38.876] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:44:39.044] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:44:39.188] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:44:39.352] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:44:39.493] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:44:39.634] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:44:39.776] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:44:39.899] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:44:40.068] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:44:40.212] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:44:40.375] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:44:40.517] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:44:40.658] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:44:40.799] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:44:40.922] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:44:41.092] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:44:41.236] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:44:41.398] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:44:41.540] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:44:41.682] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:44:41.823] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:44:41.946] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:44:42.116] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:44:42.259] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:44:42.422] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:44:42.564] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:44:42.705] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:44:42.846] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:44:42.959] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:44:43.139] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:44:43.283] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:44:43.445] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:44:43.587] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:44:43.728] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:44:43.870] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:44:43.982] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:44:44.161] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:44:44.306] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:44:44.469] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:44:44.611] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:44:44.752] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:44:44.893] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:44:45.006] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:44:45.185] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:44:45.329] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:44:45.493] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:44:45.634] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:44:45.776] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:44:45.917] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:44:46.030] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:44:46.209] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:44:46.352] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:44:46.516] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:44:46.656] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:44:46.656] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:44:46.656] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:44:46.656] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:44:47.537] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:44:47.537] BENCH (psbench.runner) :: Run 1/1 completed in 19.598s
+[2024-03-10 17:44:47.538] BENCH (psbench.runner) :: Average run time: 19.598 ± 0.000s
+[2024-03-10 17:44:47.538] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=1000000 task_count=128 task_sleep=1.0 use_proxies=True
+[2024-03-10 17:44:47.538] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:44:47.538] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:44:47.538] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:44:47.539] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=1000000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=True
+[2024-03-10 17:44:47.552] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:44:47.695] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:44:47.838] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:44:47.981] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:44:48.124] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:44:48.267] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:44:48.410] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:44:48.574] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:44:48.715] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:44:48.857] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:44:48.999] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:44:49.151] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:44:49.293] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:44:49.435] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:44:49.598] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:44:49.739] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:44:49.881] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:44:50.023] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:44:50.174] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:44:50.316] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:44:50.459] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:44:50.612] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:44:50.764] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:44:50.906] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:44:51.047] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:44:51.199] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:44:51.340] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:44:51.483] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:44:51.637] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:44:51.788] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:44:51.930] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:44:52.071] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:44:52.223] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:44:52.365] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:44:52.508] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:44:52.651] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:44:52.812] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:44:52.954] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:44:53.096] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:44:53.247] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:44:53.390] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:44:53.532] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:44:53.665] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:44:53.837] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:44:53.978] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:44:54.120] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:44:54.272] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:44:54.414] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:44:54.556] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:44:54.689] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:44:54.862] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:44:55.002] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:44:55.145] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:44:55.297] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:44:55.439] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:44:55.581] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:44:55.713] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:44:55.886] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:44:56.027] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:44:56.169] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:44:56.321] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:44:56.463] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:44:56.605] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:44:56.738] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:44:56.911] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:44:57.051] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:44:57.193] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:44:57.345] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:44:57.487] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:44:57.629] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:44:57.762] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:44:57.935] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:44:58.076] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:44:58.217] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:44:58.369] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:44:58.501] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:44:58.653] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:44:58.786] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:44:58.960] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:44:59.100] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:44:59.242] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:44:59.394] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:44:59.526] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:44:59.677] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:44:59.811] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:44:59.984] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:45:00.125] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:45:00.266] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:45:00.418] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:45:00.551] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:45:00.702] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:45:00.835] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:45:01.008] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:45:01.149] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:45:01.291] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:45:01.443] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:45:01.574] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:45:01.726] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:45:01.860] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:45:02.033] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:45:02.173] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:45:02.315] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:45:02.467] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:45:02.598] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:45:02.750] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:45:02.884] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:45:03.057] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:45:03.197] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:45:03.339] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:45:03.491] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:45:03.623] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:45:03.775] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:45:03.909] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:45:04.082] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:45:04.222] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:45:04.363] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:45:04.516] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:45:04.648] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:45:04.799] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:45:04.933] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:45:05.106] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:45:05.246] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:45:05.388] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:45:05.540] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:45:05.672] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:45:05.824] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:45:05.958] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:45:06.130] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:45:06.269] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:45:06.269] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:45:06.270] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:45:06.270] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:45:07.154] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:45:07.154] BENCH (psbench.runner) :: Run 1/1 completed in 19.617s
+[2024-03-10 17:45:07.155] BENCH (psbench.runner) :: Average run time: 19.617 ± 0.000s
+[2024-03-10 17:45:07.155] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=1000000 task_count=128 task_sleep=1.0 use_proxies=False
+[2024-03-10 17:45:07.155] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:45:07.155] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:45:07.155] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:45:07.155] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=1000000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=False
+[2024-03-10 17:45:07.186] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:45:07.328] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:45:07.472] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:45:07.614] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:45:07.758] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:45:07.901] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:45:08.044] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:45:08.230] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:45:08.370] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:45:08.511] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:45:08.654] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:45:08.797] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:45:08.938] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:45:09.081] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:45:09.264] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:45:09.406] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:45:09.547] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:45:09.679] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:45:09.832] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:45:09.973] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:45:10.115] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:45:10.299] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:45:10.441] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:45:10.582] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:45:10.715] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:45:10.867] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:45:11.008] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:45:11.150] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:45:11.334] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:45:11.475] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:45:11.616] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:45:11.750] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:45:11.903] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:45:12.043] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:45:12.185] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:45:12.369] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:45:12.510] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:45:12.651] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:45:12.785] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:45:12.938] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:45:13.082] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:45:13.220] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:45:13.403] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:45:13.545] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:45:13.687] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:45:13.820] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:45:13.973] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:45:14.123] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:45:14.254] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:45:14.439] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:45:14.580] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:45:14.722] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:45:14.855] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:45:15.009] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:45:15.157] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:45:15.290] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:45:15.472] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:45:15.615] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:45:15.756] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:45:15.889] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:45:16.043] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:45:16.192] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:45:16.324] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:45:16.507] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:45:16.649] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:45:16.792] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:45:16.914] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:45:17.079] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:45:17.227] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:45:17.348] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:45:17.542] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:45:17.684] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:45:17.826] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:45:17.950] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:45:18.114] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:45:18.260] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:45:18.384] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:45:18.577] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:45:18.719] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:45:18.861] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:45:18.984] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:45:19.149] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:45:19.296] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:45:19.419] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:45:19.612] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:45:19.754] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:45:19.896] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:45:20.019] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:45:20.184] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:45:20.330] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:45:20.454] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:45:20.646] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:45:20.788] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:45:20.931] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:45:21.054] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:45:21.220] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:45:21.365] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:45:21.489] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:45:21.681] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:45:21.823] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:45:21.965] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:45:22.089] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:45:22.255] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:45:22.399] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:45:22.524] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:45:22.716] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:45:22.858] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:45:22.999] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:45:23.124] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:45:23.291] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:45:23.434] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:45:23.560] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:45:23.751] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:45:23.892] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:45:24.034] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:45:24.158] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:45:24.325] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:45:24.459] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:45:24.595] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:45:24.786] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:45:24.927] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:45:25.070] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:45:25.192] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:45:25.361] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:45:25.493] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:45:25.630] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:45:25.821] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:45:25.962] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:45:26.089] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:45:26.089] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:45:26.089] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:45:26.089] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:45:26.980] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:45:26.981] BENCH (psbench.runner) :: Run 1/1 completed in 19.826s
+[2024-03-10 17:45:26.981] BENCH (psbench.runner) :: Average run time: 19.826 ± 0.000s
+[2024-03-10 17:45:26.981] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000000 task_count=128 task_sleep=1.0 use_proxies=True
+[2024-03-10 17:45:26.981] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:45:26.981] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:45:26.981] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:45:26.982] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=True
+[2024-03-10 17:45:27.018] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:45:27.160] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:45:27.301] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:45:27.445] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:45:27.587] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:45:27.730] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:45:27.873] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:45:28.048] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:45:28.188] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:45:28.329] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:45:28.471] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:45:28.613] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:45:28.766] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:45:28.907] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:45:29.071] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:45:29.223] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:45:29.364] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:45:29.504] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:45:29.637] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:45:29.790] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:45:29.942] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:45:30.108] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:45:30.259] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:45:30.400] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:45:30.540] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:45:30.675] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:45:30.818] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:45:30.979] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:45:31.144] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:45:31.295] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:45:31.437] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:45:31.577] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:45:31.712] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:45:31.855] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:45:32.016] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:45:32.179] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:45:32.330] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:45:32.474] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:45:32.614] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:45:32.747] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:45:32.880] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:45:33.051] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:45:33.214] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:45:33.364] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:45:33.508] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:45:33.647] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:45:33.783] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:45:33.905] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:45:34.086] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:45:34.248] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:45:34.401] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:45:34.543] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:45:34.681] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:45:34.820] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:45:34.943] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:45:35.122] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:45:35.284] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:45:35.437] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:45:35.579] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:45:35.718] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:45:35.856] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:45:35.980] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:45:36.158] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:45:36.322] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:45:36.473] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:45:36.606] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:45:36.754] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:45:36.895] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:45:37.017] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:45:37.195] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:45:37.358] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:45:37.507] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:45:37.643] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:45:37.791] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:45:37.930] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:45:38.042] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:45:38.231] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:45:38.394] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:45:38.542] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:45:38.677] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:45:38.827] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:45:38.965] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:45:39.080] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:45:39.264] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:45:39.431] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:45:39.579] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:45:39.711] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:45:39.863] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:45:40.002] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:45:40.115] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:45:40.301] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:45:40.467] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:45:40.615] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:45:40.748] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:45:40.899] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:45:41.041] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:45:41.152] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:45:41.338] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:45:41.504] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:45:41.653] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:45:41.785] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:45:41.937] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:45:42.078] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:45:42.188] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:45:42.375] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:45:42.540] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:45:42.689] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:45:42.821] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:45:42.973] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:45:43.113] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:45:43.215] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:45:43.410] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:45:43.577] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:45:43.726] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:45:43.856] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:45:43.999] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:45:44.147] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:45:44.252] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:45:44.444] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:45:44.613] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:45:44.763] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:45:44.890] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:45:45.035] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:45:45.184] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:45:45.289] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:45:45.480] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:45:45.649] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:45:45.799] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:45:45.925] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:45:45.925] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:45:45.925] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:45:45.926] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:45:46.835] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:45:46.835] BENCH (psbench.runner) :: Run 1/1 completed in 19.854s
+[2024-03-10 17:45:46.835] BENCH (psbench.runner) :: Average run time: 19.854 ± 0.000s
+[2024-03-10 17:45:46.836] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000000 task_count=128 task_sleep=1.0 use_proxies=False
+[2024-03-10 17:45:46.836] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:45:46.836] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:45:46.836] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:45:46.836] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=False, use_proxies=False
+[2024-03-10 17:45:47.041] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:47.046] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:45:47.212] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:47.214] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:45:47.378] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:47.380] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:45:47.545] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:47.548] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:45:47.713] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:47.716] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:45:47.881] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:47.884] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:45:48.051] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:48.054] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:45:48.265] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:48.270] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:45:48.435] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:48.437] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:45:48.602] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:48.607] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:45:48.771] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:48.774] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:45:48.936] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:48.941] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:45:49.105] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:49.108] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:45:49.273] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:49.277] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:45:49.470] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:49.474] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:45:49.637] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:49.640] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:45:49.803] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:49.806] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:45:49.970] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:49.973] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:45:50.140] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:50.143] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:45:50.308] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:50.313] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:45:50.478] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:50.484] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:45:50.669] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:50.673] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:45:50.848] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:50.854] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:45:51.019] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:51.024] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:45:51.188] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:51.192] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:45:51.357] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:51.362] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:45:51.526] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:51.530] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:45:51.693] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:51.698] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:45:51.878] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:51.884] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:45:52.055] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:52.058] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:45:52.231] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:52.234] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:45:52.397] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:52.402] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:45:52.565] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:52.571] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:45:52.733] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:52.738] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:45:52.900] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:52.906] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:45:53.090] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:53.096] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:45:53.261] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:53.266] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:45:53.434] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:53.439] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:45:53.604] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:53.608] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:45:53.772] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:53.777] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:45:53.944] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:53.948] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:45:54.112] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:54.116] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:45:54.298] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:54.302] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:45:54.469] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:54.473] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:45:54.639] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:54.642] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:45:54.815] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:54.819] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:45:54.985] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:54.988] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:45:55.155] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:55.158] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:45:55.324] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:55.328] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:45:55.508] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:55.514] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:45:55.679] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:55.683] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:45:55.849] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:55.854] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:45:56.026] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:56.031] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:45:56.197] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:56.200] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:45:56.366] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:56.371] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:45:56.537] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:56.540] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:45:56.719] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:56.724] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:45:56.890] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:56.893] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:45:57.059] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:57.062] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:45:57.234] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:57.238] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:45:57.404] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:57.407] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:45:57.575] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:57.578] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:45:57.746] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:57.749] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:45:57.927] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:57.931] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:45:58.104] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:58.111] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:45:58.279] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:58.283] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:45:58.451] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:58.456] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:45:58.622] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:58.626] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:45:58.792] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:58.796] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:45:58.964] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:58.966] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:45:59.137] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:59.141] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:45:59.315] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:59.319] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:45:59.484] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:59.488] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:45:59.661] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:59.667] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:45:59.832] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:45:59.837] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:46:00.004] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:00.007] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:46:00.174] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:00.180] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:46:00.345] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:00.349] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:46:00.528] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:00.533] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:46:00.700] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:00.703] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:46:00.871] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:00.874] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:46:01.041] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:01.044] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:46:01.210] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:01.213] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:46:01.387] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:01.390] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:46:01.556] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:01.558] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:46:01.740] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:01.743] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:46:01.910] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:01.913] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:46:02.079] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:02.082] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:46:02.251] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:02.256] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:46:02.422] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:02.426] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:46:02.594] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:02.598] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:46:02.766] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:02.769] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:46:02.944] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:02.947] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:46:03.121] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:03.133] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:46:03.300] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:03.305] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:46:03.473] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:03.478] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:46:03.644] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:03.648] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:46:03.815] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:03.818] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:46:03.985] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:03.988] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:46:04.154] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:04.159] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:46:04.341] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:04.345] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:46:04.513] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:04.517] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:46:04.684] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:04.687] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:46:04.854] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:04.857] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:46:05.023] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:05.026] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:46:05.195] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:05.198] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:46:05.367] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:05.371] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:46:05.548] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:05.551] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:46:05.725] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:05.728] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:46:05.895] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:05.899] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:46:06.064] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:06.067] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:46:06.233] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:06.237] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:46:06.403] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:06.405] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:46:06.577] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:06.582] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:46:06.755] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:06.758] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:46:06.928] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:06.933] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:46:07.100] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:07.103] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:46:07.271] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:07.276] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:46:07.442] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:07.445] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:46:07.611] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:07.617] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:46:07.784] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:07.788] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:46:07.962] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:07.965] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:46:08.156] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:08.160] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:46:08.329] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:08.333] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:46:08.503] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:08.505] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:46:08.674] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:08.676] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:46:08.843] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:08.846] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:46:09.015] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:09.018] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:46:09.029] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:46:09.029] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:46:09.029] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:46:09.029] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:46:10.057] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:46:10.057] BENCH (psbench.runner) :: Run 1/1 completed in 23.221s
+[2024-03-10 17:46:10.057] BENCH (psbench.runner) :: Average run time: 23.221 ± 0.000s
+[2024-03-10 17:46:10.057] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000000 task_count=128 task_sleep=1.0 use_proxies=True
+[2024-03-10 17:46:10.057] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:46:10.058] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:46:10.058] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:46:10.059] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=True, use_proxies=True
+[2024-03-10 17:46:10.317] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:46:10.463] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:46:10.604] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:46:10.749] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:46:10.895] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:46:11.033] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:46:11.176] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:46:11.448] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:46:11.595] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:46:11.738] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:46:11.891] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:46:12.020] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:46:12.162] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:46:12.304] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:46:12.580] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:46:12.724] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:46:12.866] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:46:13.032] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:46:13.153] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:46:13.293] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:46:13.426] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:46:13.715] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:46:13.855] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:46:13.995] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:46:14.173] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:46:14.284] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:46:14.424] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:46:14.547] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:46:14.847] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:46:14.985] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:46:15.128] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:46:15.343] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:46:15.418] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:46:15.556] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:46:15.678] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:46:15.979] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:46:16.117] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:46:16.260] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:46:16.485] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:46:16.550] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:46:16.686] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:46:16.810] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:46:17.112] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:46:17.255] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:46:17.395] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:46:17.629] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:46:17.680] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:46:17.819] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:46:17.946] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:46:18.247] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:46:18.386] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:46:18.528] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:46:18.772] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:46:18.810] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:46:18.949] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:46:19.076] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:46:19.379] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:46:19.515] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:46:19.659] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:46:19.944] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:46:19.945] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:46:20.079] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:46:20.211] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:46:20.512] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:46:20.644] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:46:20.793] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:46:21.138] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:46:21.139] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:46:21.209] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:46:21.342] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:46:21.652] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:46:21.774] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:46:21.926] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:46:22.300] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:46:22.314] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:46:22.363] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:46:22.475] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:46:22.777] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:46:22.905] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:46:23.055] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:46:23.456] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:46:23.534] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:46:23.535] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:46:23.605] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:46:23.909] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:46:24.034] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:46:24.187] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:46:24.636] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:46:24.732] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:46:24.733] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:46:24.754] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:46:25.042] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:46:25.163] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:46:25.320] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:46:25.846] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:46:25.953] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:46:25.954] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:46:25.955] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:46:26.176] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:46:26.294] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:46:26.454] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:46:26.975] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:46:27.156] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:46:27.157] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:46:27.157] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:46:27.307] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:46:27.424] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:46:27.582] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:46:28.093] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:46:28.365] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:46:28.375] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:46:28.376] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:46:28.441] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:46:28.555] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:46:28.717] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:46:29.213] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:46:29.633] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:46:29.634] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:46:29.634] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:46:29.635] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:46:29.698] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:46:29.846] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:46:30.346] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:46:30.960] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:46:30.961] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:46:30.962] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:46:30.962] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:46:30.963] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:46:31.004] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:46:31.004] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:46:31.004] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:46:31.005] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:46:32.275] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:46:32.275] BENCH (psbench.runner) :: Run 1/1 completed in 22.218s
+[2024-03-10 17:46:32.276] BENCH (psbench.runner) :: Average run time: 22.218 ± 0.000s
+[2024-03-10 17:46:32.276] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000000 task_count=128 task_sleep=1.0 use_proxies=False
+[2024-03-10 17:46:32.276] TEST  (stream-scaling) :: Compute workers: 7
+[2024-03-10 17:46:32.276] TEST  (stream-scaling) :: Generator workers: 1
+[2024-03-10 17:46:32.276] TEST  (stream-scaling) :: Generator item interval: 0.14285714285714285
+[2024-03-10 17:46:32.276] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000000, max_items=128, interval_seconds=0.14285714285714285, pregenerate=True, use_proxies=False
+[2024-03-10 17:46:34.286] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:34.349] TEST  (stream-scaling) :: Submitted compute task 1/128
+[2024-03-10 17:46:36.084] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:36.147] TEST  (stream-scaling) :: Submitted compute task 2/128
+[2024-03-10 17:46:37.862] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:37.925] TEST  (stream-scaling) :: Submitted compute task 3/128
+[2024-03-10 17:46:39.644] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:39.707] TEST  (stream-scaling) :: Submitted compute task 4/128
+[2024-03-10 17:46:41.428] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:41.491] TEST  (stream-scaling) :: Submitted compute task 5/128
+[2024-03-10 17:46:43.205] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:43.268] TEST  (stream-scaling) :: Submitted compute task 6/128
+[2024-03-10 17:46:44.987] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:45.049] TEST  (stream-scaling) :: Submitted compute task 7/128
+[2024-03-10 17:46:46.763] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:46.826] TEST  (stream-scaling) :: Submitted compute task 8/128
+[2024-03-10 17:46:48.562] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:48.625] TEST  (stream-scaling) :: Submitted compute task 9/128
+[2024-03-10 17:46:50.385] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:50.455] TEST  (stream-scaling) :: Submitted compute task 10/128
+[2024-03-10 17:46:52.179] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:52.242] TEST  (stream-scaling) :: Submitted compute task 11/128
+[2024-03-10 17:46:53.953] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:54.015] TEST  (stream-scaling) :: Submitted compute task 12/128
+[2024-03-10 17:46:55.731] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:55.794] TEST  (stream-scaling) :: Submitted compute task 13/128
+[2024-03-10 17:46:57.503] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:57.565] TEST  (stream-scaling) :: Submitted compute task 14/128
+[2024-03-10 17:46:59.277] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:46:59.340] TEST  (stream-scaling) :: Submitted compute task 15/128
+[2024-03-10 17:47:01.069] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:01.132] TEST  (stream-scaling) :: Submitted compute task 16/128
+[2024-03-10 17:47:02.881] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:02.942] TEST  (stream-scaling) :: Submitted compute task 17/128
+[2024-03-10 17:47:04.695] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:04.756] TEST  (stream-scaling) :: Submitted compute task 18/128
+[2024-03-10 17:47:06.512] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:06.576] TEST  (stream-scaling) :: Submitted compute task 19/128
+[2024-03-10 17:47:08.325] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:08.387] TEST  (stream-scaling) :: Submitted compute task 20/128
+[2024-03-10 17:47:10.136] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:10.198] TEST  (stream-scaling) :: Submitted compute task 21/128
+[2024-03-10 17:47:11.952] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:12.014] TEST  (stream-scaling) :: Submitted compute task 22/128
+[2024-03-10 17:47:13.759] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:13.821] TEST  (stream-scaling) :: Submitted compute task 23/128
+[2024-03-10 17:47:15.565] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:15.627] TEST  (stream-scaling) :: Submitted compute task 24/128
+[2024-03-10 17:47:17.382] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:17.444] TEST  (stream-scaling) :: Submitted compute task 25/128
+[2024-03-10 17:47:19.190] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:19.252] TEST  (stream-scaling) :: Submitted compute task 26/128
+[2024-03-10 17:47:21.007] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:21.069] TEST  (stream-scaling) :: Submitted compute task 27/128
+[2024-03-10 17:47:22.824] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:22.885] TEST  (stream-scaling) :: Submitted compute task 28/128
+[2024-03-10 17:47:24.629] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:24.691] TEST  (stream-scaling) :: Submitted compute task 29/128
+[2024-03-10 17:47:26.433] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:26.495] TEST  (stream-scaling) :: Submitted compute task 30/128
+[2024-03-10 17:47:28.251] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:28.313] TEST  (stream-scaling) :: Submitted compute task 31/128
+[2024-03-10 17:47:30.058] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:30.118] TEST  (stream-scaling) :: Submitted compute task 32/128
+[2024-03-10 17:47:31.862] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:31.930] TEST  (stream-scaling) :: Submitted compute task 33/128
+[2024-03-10 17:47:33.693] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:33.757] TEST  (stream-scaling) :: Submitted compute task 34/128
+[2024-03-10 17:47:35.518] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:35.581] TEST  (stream-scaling) :: Submitted compute task 35/128
+[2024-03-10 17:47:37.327] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:37.389] TEST  (stream-scaling) :: Submitted compute task 36/128
+[2024-03-10 17:47:39.150] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:39.212] TEST  (stream-scaling) :: Submitted compute task 37/128
+[2024-03-10 17:47:40.962] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:41.021] TEST  (stream-scaling) :: Submitted compute task 38/128
+[2024-03-10 17:47:42.766] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:42.825] TEST  (stream-scaling) :: Submitted compute task 39/128
+[2024-03-10 17:47:44.583] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:44.644] TEST  (stream-scaling) :: Submitted compute task 40/128
+[2024-03-10 17:47:46.390] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:46.450] TEST  (stream-scaling) :: Submitted compute task 41/128
+[2024-03-10 17:47:48.195] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:48.254] TEST  (stream-scaling) :: Submitted compute task 42/128
+[2024-03-10 17:47:50.014] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:50.078] TEST  (stream-scaling) :: Submitted compute task 43/128
+[2024-03-10 17:47:51.830] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:51.892] TEST  (stream-scaling) :: Submitted compute task 44/128
+[2024-03-10 17:47:53.637] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:53.700] TEST  (stream-scaling) :: Submitted compute task 45/128
+[2024-03-10 17:47:55.459] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:55.523] TEST  (stream-scaling) :: Submitted compute task 46/128
+[2024-03-10 17:47:57.278] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:57.341] TEST  (stream-scaling) :: Submitted compute task 47/128
+[2024-03-10 17:47:59.086] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:47:59.146] TEST  (stream-scaling) :: Submitted compute task 48/128
+[2024-03-10 17:48:00.914] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:00.978] TEST  (stream-scaling) :: Submitted compute task 49/128
+[2024-03-10 17:48:02.724] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:02.787] TEST  (stream-scaling) :: Submitted compute task 50/128
+[2024-03-10 17:48:04.532] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:04.606] TEST  (stream-scaling) :: Submitted compute task 51/128
+[2024-03-10 17:48:06.370] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:06.434] TEST  (stream-scaling) :: Submitted compute task 52/128
+[2024-03-10 17:48:08.187] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:08.247] TEST  (stream-scaling) :: Submitted compute task 53/128
+[2024-03-10 17:48:09.996] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:10.055] TEST  (stream-scaling) :: Submitted compute task 54/128
+[2024-03-10 17:48:11.823] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:11.885] TEST  (stream-scaling) :: Submitted compute task 55/128
+[2024-03-10 17:48:13.610] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:13.670] TEST  (stream-scaling) :: Submitted compute task 56/128
+[2024-03-10 17:48:15.385] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:15.451] TEST  (stream-scaling) :: Submitted compute task 57/128
+[2024-03-10 17:48:17.182] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:17.245] TEST  (stream-scaling) :: Submitted compute task 58/128
+[2024-03-10 17:48:18.958] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:19.018] TEST  (stream-scaling) :: Submitted compute task 59/128
+[2024-03-10 17:48:20.730] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:20.790] TEST  (stream-scaling) :: Submitted compute task 60/128
+[2024-03-10 17:48:22.520] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:22.582] TEST  (stream-scaling) :: Submitted compute task 61/128
+[2024-03-10 17:48:24.322] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:24.385] TEST  (stream-scaling) :: Submitted compute task 62/128
+[2024-03-10 17:48:26.098] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:26.159] TEST  (stream-scaling) :: Submitted compute task 63/128
+[2024-03-10 17:48:27.892] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:27.954] TEST  (stream-scaling) :: Submitted compute task 64/128
+[2024-03-10 17:48:29.674] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:29.742] TEST  (stream-scaling) :: Submitted compute task 65/128
+[2024-03-10 17:48:31.458] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:31.521] TEST  (stream-scaling) :: Submitted compute task 66/128
+[2024-03-10 17:48:33.254] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:33.321] TEST  (stream-scaling) :: Submitted compute task 67/128
+[2024-03-10 17:48:35.038] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:35.100] TEST  (stream-scaling) :: Submitted compute task 68/128
+[2024-03-10 17:48:36.814] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:36.888] TEST  (stream-scaling) :: Submitted compute task 69/128
+[2024-03-10 17:48:38.606] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:38.691] TEST  (stream-scaling) :: Submitted compute task 70/128
+[2024-03-10 17:48:40.408] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:40.476] TEST  (stream-scaling) :: Submitted compute task 71/128
+[2024-03-10 17:48:42.194] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:42.258] TEST  (stream-scaling) :: Submitted compute task 72/128
+[2024-03-10 17:48:43.997] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:44.064] TEST  (stream-scaling) :: Submitted compute task 73/128
+[2024-03-10 17:48:45.781] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:45.844] TEST  (stream-scaling) :: Submitted compute task 74/128
+[2024-03-10 17:48:47.557] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:47.631] TEST  (stream-scaling) :: Submitted compute task 75/128
+[2024-03-10 17:48:49.363] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:49.432] TEST  (stream-scaling) :: Submitted compute task 76/128
+[2024-03-10 17:48:51.142] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:51.203] TEST  (stream-scaling) :: Submitted compute task 77/128
+[2024-03-10 17:48:52.913] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:52.974] TEST  (stream-scaling) :: Submitted compute task 78/128
+[2024-03-10 17:48:54.709] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:54.770] TEST  (stream-scaling) :: Submitted compute task 79/128
+[2024-03-10 17:48:56.480] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:56.541] TEST  (stream-scaling) :: Submitted compute task 80/128
+[2024-03-10 17:48:58.253] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:48:58.314] TEST  (stream-scaling) :: Submitted compute task 81/128
+[2024-03-10 17:49:00.049] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:00.132] TEST  (stream-scaling) :: Submitted compute task 82/128
+[2024-03-10 17:49:01.845] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:01.906] TEST  (stream-scaling) :: Submitted compute task 83/128
+[2024-03-10 17:49:03.611] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:03.673] TEST  (stream-scaling) :: Submitted compute task 84/128
+[2024-03-10 17:49:05.400] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:05.481] TEST  (stream-scaling) :: Submitted compute task 85/128
+[2024-03-10 17:49:07.248] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:07.338] TEST  (stream-scaling) :: Submitted compute task 86/128
+[2024-03-10 17:49:09.091] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:09.155] TEST  (stream-scaling) :: Submitted compute task 87/128
+[2024-03-10 17:49:10.902] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:10.966] TEST  (stream-scaling) :: Submitted compute task 88/128
+[2024-03-10 17:49:12.685] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:12.749] TEST  (stream-scaling) :: Submitted compute task 89/128
+[2024-03-10 17:49:14.459] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:14.522] TEST  (stream-scaling) :: Submitted compute task 90/128
+[2024-03-10 17:49:16.263] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:16.326] TEST  (stream-scaling) :: Submitted compute task 91/128
+[2024-03-10 17:49:18.036] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:18.099] TEST  (stream-scaling) :: Submitted compute task 92/128
+[2024-03-10 17:49:19.810] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:19.884] TEST  (stream-scaling) :: Submitted compute task 93/128
+[2024-03-10 17:49:21.612] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:21.681] TEST  (stream-scaling) :: Submitted compute task 94/128
+[2024-03-10 17:49:23.390] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:23.452] TEST  (stream-scaling) :: Submitted compute task 95/128
+[2024-03-10 17:49:25.163] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:25.223] TEST  (stream-scaling) :: Submitted compute task 96/128
+[2024-03-10 17:49:26.967] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:27.038] TEST  (stream-scaling) :: Submitted compute task 97/128
+[2024-03-10 17:49:28.758] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:28.819] TEST  (stream-scaling) :: Submitted compute task 98/128
+[2024-03-10 17:49:30.544] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:30.603] TEST  (stream-scaling) :: Submitted compute task 99/128
+[2024-03-10 17:49:32.348] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:32.409] TEST  (stream-scaling) :: Submitted compute task 100/128
+[2024-03-10 17:49:34.120] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:34.181] TEST  (stream-scaling) :: Submitted compute task 101/128
+[2024-03-10 17:49:35.889] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:35.949] TEST  (stream-scaling) :: Submitted compute task 102/128
+[2024-03-10 17:49:37.682] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:37.743] TEST  (stream-scaling) :: Submitted compute task 103/128
+[2024-03-10 17:49:39.453] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:39.513] TEST  (stream-scaling) :: Submitted compute task 104/128
+[2024-03-10 17:49:41.235] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:41.317] TEST  (stream-scaling) :: Submitted compute task 105/128
+[2024-03-10 17:49:43.047] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:43.108] TEST  (stream-scaling) :: Submitted compute task 106/128
+[2024-03-10 17:49:44.819] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:44.879] TEST  (stream-scaling) :: Submitted compute task 107/128
+[2024-03-10 17:49:46.587] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:46.647] TEST  (stream-scaling) :: Submitted compute task 108/128
+[2024-03-10 17:49:48.382] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:48.446] TEST  (stream-scaling) :: Submitted compute task 109/128
+[2024-03-10 17:49:50.203] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:50.265] TEST  (stream-scaling) :: Submitted compute task 110/128
+[2024-03-10 17:49:51.977] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:52.040] TEST  (stream-scaling) :: Submitted compute task 111/128
+[2024-03-10 17:49:53.780] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:53.844] TEST  (stream-scaling) :: Submitted compute task 112/128
+[2024-03-10 17:49:55.565] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:55.626] TEST  (stream-scaling) :: Submitted compute task 113/128
+[2024-03-10 17:49:57.335] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:57.395] TEST  (stream-scaling) :: Submitted compute task 114/128
+[2024-03-10 17:49:59.136] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:49:59.198] TEST  (stream-scaling) :: Submitted compute task 115/128
+[2024-03-10 17:50:00.909] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:00.971] TEST  (stream-scaling) :: Submitted compute task 116/128
+[2024-03-10 17:50:02.686] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:02.760] TEST  (stream-scaling) :: Submitted compute task 117/128
+[2024-03-10 17:50:04.501] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:04.565] TEST  (stream-scaling) :: Submitted compute task 118/128
+[2024-03-10 17:50:06.276] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:06.338] TEST  (stream-scaling) :: Submitted compute task 119/128
+[2024-03-10 17:50:08.046] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:08.106] TEST  (stream-scaling) :: Submitted compute task 120/128
+[2024-03-10 17:50:09.868] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:09.929] TEST  (stream-scaling) :: Submitted compute task 121/128
+[2024-03-10 17:50:11.649] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:11.708] TEST  (stream-scaling) :: Submitted compute task 122/128
+[2024-03-10 17:50:13.419] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:13.479] TEST  (stream-scaling) :: Submitted compute task 123/128
+[2024-03-10 17:50:15.218] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:15.280] TEST  (stream-scaling) :: Submitted compute task 124/128
+[2024-03-10 17:50:16.995] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:17.056] TEST  (stream-scaling) :: Submitted compute task 125/128
+[2024-03-10 17:50:18.763] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:18.824] TEST  (stream-scaling) :: Submitted compute task 126/128
+[2024-03-10 17:50:20.563] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:20.624] TEST  (stream-scaling) :: Submitted compute task 127/128
+[2024-03-10 17:50:22.330] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-03-10 17:50:22.390] TEST  (stream-scaling) :: Submitted compute task 128/128
+[2024-03-10 17:50:22.478] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:50:22.478] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-03-10 17:50:22.478] TEST  (stream-scaling) :: Waiting on generator task
+[2024-03-10 17:50:22.478] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-03-10 17:50:23.837] TEST  (stream-scaling) :: All compute tasks finished
+[2024-03-10 17:50:23.837] BENCH (psbench.runner) :: Run 1/1 completed in 231.561s
+[2024-03-10 17:50:23.837] BENCH (psbench.runner) :: Average run time: 231.561 ± 0.000s
+[2024-03-10 17:50:23.872] BENCH (psbench.runner) :: Benchmark completed: 416.923 s
+[2024-03-10 17:50:23.873] BENCH (run.stream-scaling) :: All logs and results saved to: data/polaris/1-stream-scaling/stream-scaling-2024-03-10-17-43-26

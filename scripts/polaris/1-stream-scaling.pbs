@@ -1,0 +1,48 @@
+#!/bin/bash
+#PBS -A SuperBERT
+#PBS -q debug-scaling
+#PBS -l walltime=1:00:00
+#PBS -l filesystems=home
+#PBS -j oe
+
+cd /home/jgpaul/workspace-polaris/sc24/analysis
+
+module load cray-python
+. ../venv/bin/activate
+
+SYSTEM=polaris
+
+PORT=59465
+redis-server --port $PORT --save "" --appendonly no --client-output-buffer-limit "pubsub 512GB 512GB 1" --maxmemory 0 &> /dev/null &
+REDIS=$!
+echo "Redis started on port $PORT."
+
+NODES=$(< $PBS_NODEFILE wc -l)
+WORKERS_PER_NODE=32
+WORKERS=$(( WORKERS_PER_NODE*NODES ))
+TASK_COUNT=$(( 16*WORKERS ))
+
+echo "Nodes: $NODES"
+echo "Workers per node: $WORKERS_PER_NODE"
+echo "Total workers: $WORKERS_PER_NODE"
+echo "Total tasks: $TASK_COUNT"
+
+ARGS="--executor parsl --parsl-executor htex-polaris-headless "
+ARGS+="--parsl-max-workers $WORKERS_PER_NODE "
+ARGS+="--stream redis --stream-servers localhost:$PORT "
+ARGS+="--ps-connector redis --ps-host localhost --ps-port $PORT "
+ARGS+="--stream-method proxy default "
+ARGS+="--data-size-bytes 10000 100000 1000000 10000000 100000000 "
+ARGS+="--task-sleep 1.0 "
+ARGS+="--task-count $TASK_COUNT "
+ARGS+="--repeat 1 "
+ARGS+="--run-dir data/$SYSTEM/1-stream-scaling "
+ARGS+="--log-level BENCH --log-file-level TEST "
+
+echo "Using args: $ARGS"
+
+python -m psbench.run.stream_scaling $ARGS
+
+kill $REDIS
+echo "Stopped Redis."
+echo "Done."

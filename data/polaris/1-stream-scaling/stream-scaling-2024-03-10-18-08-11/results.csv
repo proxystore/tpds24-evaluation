@@ -1,0 +1,11 @@
+executor,connector,stream,data_size_bytes,task_count,task_sleep,use_proxies,workers,completed_tasks,start_submit_tasks_timestamp,end_tasks_done_timestamp
+ParslExecutor,RedisConnector,redis,10000,32,1.0,True,2,32,1710094092.076303,1710094126.855117
+ParslExecutor,RedisConnector,redis,10000,32,1.0,False,2,32,1710094126.8563726,1710094159.6042
+ParslExecutor,RedisConnector,redis,100000,32,1.0,True,2,32,1710094159.6056542,1710094192.3423107
+ParslExecutor,RedisConnector,redis,100000,32,1.0,False,2,32,1710094192.3434744,1710094225.1096795
+ParslExecutor,RedisConnector,redis,1000000,32,1.0,True,2,32,1710094225.1108792,1710094257.896279
+ParslExecutor,RedisConnector,redis,1000000,32,1.0,False,2,32,1710094257.8974192,1710094290.9266043
+ParslExecutor,RedisConnector,redis,10000000,32,1.0,True,2,32,1710094290.92781,1710094324.0793667
+ParslExecutor,RedisConnector,redis,10000000,32,1.0,False,2,32,1710094324.080663,1710094362.6786673
+ParslExecutor,RedisConnector,redis,100000000,32,1.0,True,2,32,1710094362.6798701,1710094399.1295605
+ParslExecutor,RedisConnector,redis,100000000,32,1.0,False,2,32,1710094399.1309662,1710094498.3293724
