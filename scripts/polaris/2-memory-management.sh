@@ -18,6 +18,7 @@ ARGS+="--run-dir data/$SYSTEM/2-memory-management "
 
 echo "Using args: $ARGS"
 
+python -m psbench.run.workflow_memory $ARGS --data-management none
 python -m psbench.run.workflow_memory $ARGS --data-management manual-proxy
 python -m psbench.run.workflow_memory $ARGS --data-management owned-proxy
 # We run the default-proxy last because it will leave data in the redis
