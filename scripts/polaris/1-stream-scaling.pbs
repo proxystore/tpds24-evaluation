@@ -13,11 +13,12 @@ module load cray-python
 SYSTEM=polaris
 
 PORT=59465
-redis-server --port $PORT --save "" --appendonly no --client-output-buffer-limit "pubsub 512GB 512GB 1" --maxmemory 0 &> /dev/null &
+redis-server --port $PORT --save "" --appendonly no --protected-mode no --client-output-buffer-limit "pubsub 512GB 512GB 1" --maxmemory 0 &> redis.$PBS_JOBID.out &
 REDIS=$!
 echo "Redis started on port $PORT."
 
 NODES=$(< $PBS_NODEFILE wc -l)
+PRIMARY_RANK=$(head -n 1 $PBS_NODEFILE)
 WORKERS_PER_NODE=32
 WORKERS=$(( WORKERS_PER_NODE*NODES ))
 TASK_COUNT=$(( 16*WORKERS ))
@@ -28,16 +29,16 @@ echo "Total workers: $WORKERS_PER_NODE"
 echo "Total tasks: $TASK_COUNT"
 
 ARGS="--executor parsl --parsl-executor htex-polaris-headless "
-ARGS+="--parsl-max-workers $WORKERS_PER_NODE "
-ARGS+="--stream redis --stream-servers localhost:$PORT "
-ARGS+="--ps-connector redis --ps-host localhost --ps-port $PORT "
+ARGS+="--parsl-max-workers $WORKERS "
+ARGS+="--stream redis --stream-servers $PRIMARY_RANK:$PORT "
+ARGS+="--ps-connector redis --ps-host $PRIMARY_RANK --ps-port $PORT "
 ARGS+="--stream-method proxy default "
 ARGS+="--data-size-bytes 10000 100000 1000000 10000000 100000000 "
 ARGS+="--task-sleep 1.0 "
 ARGS+="--task-count $TASK_COUNT "
 ARGS+="--repeat 1 "
 ARGS+="--run-dir data/$SYSTEM/1-stream-scaling "
-ARGS+="--log-level BENCH --log-file-level TEST "
+ARGS+="--log-level BENCH --log-file-level INFO "
 
 echo "Using args: $ARGS"
 
