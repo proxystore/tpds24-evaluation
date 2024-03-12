@@ -1,9 +1,0 @@
-[2024-03-11 19:32:42.827] BENCH (run.task-pipelining) :: All configurations loaded
-[2024-03-11 19:32:44.432] INFO  (proxystore.store.base) :: Initialized Store("redis-store", connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False)
-[2024-03-11 19:32:44.433] INFO  (proxystore.store) :: Registered a store named redis-store
-[2024-03-11 19:32:44.433] BENCH (run.task-pipelining) :: Benchmark initialized
-[2024-03-11 19:32:44.459] BENCH (psbench.runner) :: Starting benchmark: Task Pipelining
-[2024-03-11 19:32:44.459] BENCH (psbench.runner) :: Benchmark config:
-- executor: DaskExecutor
-- connector: RedisConnector
-[2024-03-11 19:32:44.459] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method='no-proxy' task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.0 task_sleep=1.0
