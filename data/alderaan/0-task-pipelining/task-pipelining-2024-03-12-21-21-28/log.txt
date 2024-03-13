@@ -1,0 +1,220 @@
+[2024-03-12 21:21:28.432] BENCH (run.task-pipelining) :: All configurations loaded
+[2024-03-12 21:21:28.959] INFO  (proxystore.store.base) :: Initialized Store("redis-store", connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False)
+[2024-03-12 21:21:28.959] INFO  (proxystore.store) :: Registered a store named redis-store
+[2024-03-12 21:21:28.959] BENCH (run.task-pipelining) :: Benchmark initialized
+[2024-03-12 21:21:28.959] BENCH (psbench.runner) :: Starting benchmark: Task Pipelining
+[2024-03-12 21:21:28.959] BENCH (psbench.runner) :: Benchmark config:
+- executor: DaskExecutor
+- connector: RedisConnector
+[2024-03-12 21:21:28.959] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.0 task_sleep=1.0
+[2024-03-12 21:21:38.101] BENCH (psbench.runner) :: Run 1/5 completed in 9.141s
+[2024-03-12 21:21:47.243] BENCH (psbench.runner) :: Run 2/5 completed in 9.141s
+[2024-03-12 21:21:56.368] BENCH (psbench.runner) :: Run 3/5 completed in 9.124s
+[2024-03-12 21:22:05.474] BENCH (psbench.runner) :: Run 4/5 completed in 9.106s
+[2024-03-12 21:22:14.581] BENCH (psbench.runner) :: Run 5/5 completed in 9.106s
+[2024-03-12 21:22:14.581] BENCH (psbench.runner) :: Average run time: 9.124 ± 0.018s
+[2024-03-12 21:22:14.581] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.0 task_sleep=1.0
+[2024-03-12 21:22:22.817] BENCH (psbench.runner) :: Run 1/5 completed in 8.236s
+[2024-03-12 21:22:31.048] BENCH (psbench.runner) :: Run 2/5 completed in 8.230s
+[2024-03-12 21:22:39.278] BENCH (psbench.runner) :: Run 3/5 completed in 8.229s
+[2024-03-12 21:22:47.508] BENCH (psbench.runner) :: Run 4/5 completed in 8.229s
+[2024-03-12 21:22:55.738] BENCH (psbench.runner) :: Run 5/5 completed in 8.230s
+[2024-03-12 21:22:55.738] BENCH (psbench.runner) :: Average run time: 8.231 ± 0.003s
+[2024-03-12 21:22:55.738] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.0 task_sleep=1.0
+[2024-03-12 21:23:03.795] BENCH (psbench.runner) :: Run 1/5 completed in 8.056s
+[2024-03-12 21:23:11.858] BENCH (psbench.runner) :: Run 2/5 completed in 8.063s
+[2024-03-12 21:23:19.917] BENCH (psbench.runner) :: Run 3/5 completed in 8.059s
+[2024-03-12 21:23:27.977] BENCH (psbench.runner) :: Run 4/5 completed in 8.060s
+[2024-03-12 21:23:36.034] BENCH (psbench.runner) :: Run 5/5 completed in 8.057s
+[2024-03-12 21:23:36.034] BENCH (psbench.runner) :: Average run time: 8.059 ± 0.003s
+[2024-03-12 21:23:36.034] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.1 task_sleep=1.0
+[2024-03-12 21:23:45.180] BENCH (psbench.runner) :: Run 1/5 completed in 9.146s
+[2024-03-12 21:23:54.337] BENCH (psbench.runner) :: Run 2/5 completed in 9.157s
+[2024-03-12 21:24:03.482] BENCH (psbench.runner) :: Run 3/5 completed in 9.144s
+[2024-03-12 21:24:12.627] BENCH (psbench.runner) :: Run 4/5 completed in 9.145s
+[2024-03-12 21:24:21.774] BENCH (psbench.runner) :: Run 5/5 completed in 9.147s
+[2024-03-12 21:24:21.775] BENCH (psbench.runner) :: Average run time: 9.148 ± 0.005s
+[2024-03-12 21:24:21.775] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.1 task_sleep=1.0
+[2024-03-12 21:24:30.006] BENCH (psbench.runner) :: Run 1/5 completed in 8.231s
+[2024-03-12 21:24:38.235] BENCH (psbench.runner) :: Run 2/5 completed in 8.228s
+[2024-03-12 21:24:46.464] BENCH (psbench.runner) :: Run 3/5 completed in 8.229s
+[2024-03-12 21:24:54.698] BENCH (psbench.runner) :: Run 4/5 completed in 8.234s
+[2024-03-12 21:25:02.929] BENCH (psbench.runner) :: Run 5/5 completed in 8.230s
+[2024-03-12 21:25:02.930] BENCH (psbench.runner) :: Average run time: 8.230 ± 0.002s
+[2024-03-12 21:25:02.930] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.1 task_sleep=1.0
+[2024-03-12 21:25:10.287] BENCH (psbench.runner) :: Run 1/5 completed in 7.357s
+[2024-03-12 21:25:17.644] BENCH (psbench.runner) :: Run 2/5 completed in 7.357s
+[2024-03-12 21:25:25.005] BENCH (psbench.runner) :: Run 3/5 completed in 7.361s
+[2024-03-12 21:25:32.361] BENCH (psbench.runner) :: Run 4/5 completed in 7.355s
+[2024-03-12 21:25:39.717] BENCH (psbench.runner) :: Run 5/5 completed in 7.357s
+[2024-03-12 21:25:39.718] BENCH (psbench.runner) :: Average run time: 7.357 ± 0.002s
+[2024-03-12 21:25:39.718] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.2 task_sleep=1.0
+[2024-03-12 21:25:48.861] BENCH (psbench.runner) :: Run 1/5 completed in 9.143s
+[2024-03-12 21:25:58.012] BENCH (psbench.runner) :: Run 2/5 completed in 9.150s
+[2024-03-12 21:26:07.171] BENCH (psbench.runner) :: Run 3/5 completed in 9.159s
+[2024-03-12 21:26:16.324] BENCH (psbench.runner) :: Run 4/5 completed in 9.152s
+[2024-03-12 21:26:25.488] BENCH (psbench.runner) :: Run 5/5 completed in 9.164s
+[2024-03-12 21:26:25.489] BENCH (psbench.runner) :: Average run time: 9.154 ± 0.008s
+[2024-03-12 21:26:25.489] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.2 task_sleep=1.0
+[2024-03-12 21:26:33.719] BENCH (psbench.runner) :: Run 1/5 completed in 8.230s
+[2024-03-12 21:26:41.946] BENCH (psbench.runner) :: Run 2/5 completed in 8.226s
+[2024-03-12 21:26:50.179] BENCH (psbench.runner) :: Run 3/5 completed in 8.233s
+[2024-03-12 21:26:58.412] BENCH (psbench.runner) :: Run 4/5 completed in 8.232s
+[2024-03-12 21:27:06.645] BENCH (psbench.runner) :: Run 5/5 completed in 8.232s
+[2024-03-12 21:27:06.645] BENCH (psbench.runner) :: Average run time: 8.231 ± 0.003s
+[2024-03-12 21:27:06.645] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.2 task_sleep=1.0
+[2024-03-12 21:27:13.306] BENCH (psbench.runner) :: Run 1/5 completed in 6.660s
+[2024-03-12 21:27:19.963] BENCH (psbench.runner) :: Run 2/5 completed in 6.657s
+[2024-03-12 21:27:26.619] BENCH (psbench.runner) :: Run 3/5 completed in 6.656s
+[2024-03-12 21:27:33.277] BENCH (psbench.runner) :: Run 4/5 completed in 6.657s
+[2024-03-12 21:27:39.933] BENCH (psbench.runner) :: Run 5/5 completed in 6.656s
+[2024-03-12 21:27:39.934] BENCH (psbench.runner) :: Average run time: 6.657 ± 0.002s
+[2024-03-12 21:27:39.934] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.3 task_sleep=1.0
+[2024-03-12 21:27:49.074] BENCH (psbench.runner) :: Run 1/5 completed in 9.139s
+[2024-03-12 21:27:58.216] BENCH (psbench.runner) :: Run 2/5 completed in 9.142s
+[2024-03-12 21:28:07.357] BENCH (psbench.runner) :: Run 3/5 completed in 9.141s
+[2024-03-12 21:28:16.496] BENCH (psbench.runner) :: Run 4/5 completed in 9.138s
+[2024-03-12 21:28:25.639] BENCH (psbench.runner) :: Run 5/5 completed in 9.142s
+[2024-03-12 21:28:25.639] BENCH (psbench.runner) :: Average run time: 9.141 ± 0.002s
+[2024-03-12 21:28:25.639] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.3 task_sleep=1.0
+[2024-03-12 21:28:33.872] BENCH (psbench.runner) :: Run 1/5 completed in 8.232s
+[2024-03-12 21:28:42.104] BENCH (psbench.runner) :: Run 2/5 completed in 8.231s
+[2024-03-12 21:28:50.335] BENCH (psbench.runner) :: Run 3/5 completed in 8.230s
+[2024-03-12 21:28:58.567] BENCH (psbench.runner) :: Run 4/5 completed in 8.232s
+[2024-03-12 21:29:06.798] BENCH (psbench.runner) :: Run 5/5 completed in 8.231s
+[2024-03-12 21:29:06.799] BENCH (psbench.runner) :: Average run time: 8.231 ± 0.001s
+[2024-03-12 21:29:06.799] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.3 task_sleep=1.0
+[2024-03-12 21:29:12.754] BENCH (psbench.runner) :: Run 1/5 completed in 5.955s
+[2024-03-12 21:29:18.715] BENCH (psbench.runner) :: Run 2/5 completed in 5.961s
+[2024-03-12 21:29:24.673] BENCH (psbench.runner) :: Run 3/5 completed in 5.957s
+[2024-03-12 21:29:30.632] BENCH (psbench.runner) :: Run 4/5 completed in 5.959s
+[2024-03-12 21:29:36.595] BENCH (psbench.runner) :: Run 5/5 completed in 5.962s
+[2024-03-12 21:29:36.597] BENCH (psbench.runner) :: Average run time: 5.959 ± 0.003s
+[2024-03-12 21:29:36.597] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.4 task_sleep=1.0
+[2024-03-12 21:29:45.754] BENCH (psbench.runner) :: Run 1/5 completed in 9.157s
+[2024-03-12 21:29:54.901] BENCH (psbench.runner) :: Run 2/5 completed in 9.146s
+[2024-03-12 21:30:04.039] BENCH (psbench.runner) :: Run 3/5 completed in 9.137s
+[2024-03-12 21:30:13.178] BENCH (psbench.runner) :: Run 4/5 completed in 9.139s
+[2024-03-12 21:30:22.322] BENCH (psbench.runner) :: Run 5/5 completed in 9.144s
+[2024-03-12 21:30:22.322] BENCH (psbench.runner) :: Average run time: 9.145 ± 0.008s
+[2024-03-12 21:30:22.323] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.4 task_sleep=1.0
+[2024-03-12 21:30:30.555] BENCH (psbench.runner) :: Run 1/5 completed in 8.232s
+[2024-03-12 21:30:38.786] BENCH (psbench.runner) :: Run 2/5 completed in 8.231s
+[2024-03-12 21:30:47.017] BENCH (psbench.runner) :: Run 3/5 completed in 8.231s
+[2024-03-12 21:30:55.250] BENCH (psbench.runner) :: Run 4/5 completed in 8.232s
+[2024-03-12 21:31:03.483] BENCH (psbench.runner) :: Run 5/5 completed in 8.233s
+[2024-03-12 21:31:03.484] BENCH (psbench.runner) :: Average run time: 8.232 ± 0.001s
+[2024-03-12 21:31:03.484] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.4 task_sleep=1.0
+[2024-03-12 21:31:08.737] BENCH (psbench.runner) :: Run 1/5 completed in 5.253s
+[2024-03-12 21:31:13.995] BENCH (psbench.runner) :: Run 2/5 completed in 5.257s
+[2024-03-12 21:31:19.257] BENCH (psbench.runner) :: Run 3/5 completed in 5.257s
+[2024-03-12 21:31:24.518] BENCH (psbench.runner) :: Run 4/5 completed in 5.257s
+[2024-03-12 21:31:29.779] BENCH (psbench.runner) :: Run 5/5 completed in 5.257s
+[2024-03-12 21:31:29.783] BENCH (psbench.runner) :: Average run time: 5.256 ± 0.002s
+[2024-03-12 21:31:29.783] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.5 task_sleep=1.0
+[2024-03-12 21:31:38.923] BENCH (psbench.runner) :: Run 1/5 completed in 9.140s
+[2024-03-12 21:31:48.055] BENCH (psbench.runner) :: Run 2/5 completed in 9.132s
+[2024-03-12 21:31:57.193] BENCH (psbench.runner) :: Run 3/5 completed in 9.137s
+[2024-03-12 21:32:06.336] BENCH (psbench.runner) :: Run 4/5 completed in 9.143s
+[2024-03-12 21:32:15.475] BENCH (psbench.runner) :: Run 5/5 completed in 9.138s
+[2024-03-12 21:32:15.476] BENCH (psbench.runner) :: Average run time: 9.138 ± 0.004s
+[2024-03-12 21:32:15.476] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.5 task_sleep=1.0
+[2024-03-12 21:32:23.709] BENCH (psbench.runner) :: Run 1/5 completed in 8.233s
+[2024-03-12 21:32:31.943] BENCH (psbench.runner) :: Run 2/5 completed in 8.234s
+[2024-03-12 21:32:40.186] BENCH (psbench.runner) :: Run 3/5 completed in 8.242s
+[2024-03-12 21:32:48.418] BENCH (psbench.runner) :: Run 4/5 completed in 8.232s
+[2024-03-12 21:32:56.652] BENCH (psbench.runner) :: Run 5/5 completed in 8.233s
+[2024-03-12 21:32:56.652] BENCH (psbench.runner) :: Average run time: 8.235 ± 0.004s
+[2024-03-12 21:32:56.652] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.5 task_sleep=1.0
+[2024-03-12 21:33:01.229] BENCH (psbench.runner) :: Run 1/5 completed in 4.576s
+[2024-03-12 21:33:05.788] BENCH (psbench.runner) :: Run 2/5 completed in 4.560s
+[2024-03-12 21:33:10.365] BENCH (psbench.runner) :: Run 3/5 completed in 4.576s
+[2024-03-12 21:33:14.935] BENCH (psbench.runner) :: Run 4/5 completed in 4.570s
+[2024-03-12 21:33:19.504] BENCH (psbench.runner) :: Run 5/5 completed in 4.569s
+[2024-03-12 21:33:19.504] BENCH (psbench.runner) :: Average run time: 4.570 ± 0.007s
+[2024-03-12 21:33:19.504] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.6 task_sleep=1.0
+[2024-03-12 21:33:28.643] BENCH (psbench.runner) :: Run 1/5 completed in 9.138s
+[2024-03-12 21:33:37.785] BENCH (psbench.runner) :: Run 2/5 completed in 9.142s
+[2024-03-12 21:33:46.927] BENCH (psbench.runner) :: Run 3/5 completed in 9.141s
+[2024-03-12 21:33:56.069] BENCH (psbench.runner) :: Run 4/5 completed in 9.141s
+[2024-03-12 21:34:05.221] BENCH (psbench.runner) :: Run 5/5 completed in 9.152s
+[2024-03-12 21:34:05.222] BENCH (psbench.runner) :: Average run time: 9.143 ± 0.005s
+[2024-03-12 21:34:05.222] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.6 task_sleep=1.0
+[2024-03-12 21:34:13.455] BENCH (psbench.runner) :: Run 1/5 completed in 8.232s
+[2024-03-12 21:34:21.686] BENCH (psbench.runner) :: Run 2/5 completed in 8.231s
+[2024-03-12 21:34:29.921] BENCH (psbench.runner) :: Run 3/5 completed in 8.234s
+[2024-03-12 21:34:38.162] BENCH (psbench.runner) :: Run 4/5 completed in 8.240s
+[2024-03-12 21:34:46.398] BENCH (psbench.runner) :: Run 5/5 completed in 8.236s
+[2024-03-12 21:34:46.398] BENCH (psbench.runner) :: Average run time: 8.235 ± 0.004s
+[2024-03-12 21:34:46.398] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.6 task_sleep=1.0
+[2024-03-12 21:34:50.262] BENCH (psbench.runner) :: Run 1/5 completed in 3.863s
+[2024-03-12 21:34:54.126] BENCH (psbench.runner) :: Run 2/5 completed in 3.864s
+[2024-03-12 21:34:57.993] BENCH (psbench.runner) :: Run 3/5 completed in 3.867s
+[2024-03-12 21:35:01.864] BENCH (psbench.runner) :: Run 4/5 completed in 3.871s
+[2024-03-12 21:35:05.738] BENCH (psbench.runner) :: Run 5/5 completed in 3.874s
+[2024-03-12 21:35:05.739] BENCH (psbench.runner) :: Average run time: 3.868 ± 0.005s
+[2024-03-12 21:35:05.739] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.7 task_sleep=1.0
+[2024-03-12 21:35:14.875] BENCH (psbench.runner) :: Run 1/5 completed in 9.136s
+[2024-03-12 21:35:24.011] BENCH (psbench.runner) :: Run 2/5 completed in 9.136s
+[2024-03-12 21:35:33.152] BENCH (psbench.runner) :: Run 3/5 completed in 9.140s
+[2024-03-12 21:35:42.294] BENCH (psbench.runner) :: Run 4/5 completed in 9.142s
+[2024-03-12 21:35:51.429] BENCH (psbench.runner) :: Run 5/5 completed in 9.135s
+[2024-03-12 21:35:51.430] BENCH (psbench.runner) :: Average run time: 9.138 ± 0.003s
+[2024-03-12 21:35:51.430] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.7 task_sleep=1.0
+[2024-03-12 21:35:59.658] BENCH (psbench.runner) :: Run 1/5 completed in 8.227s
+[2024-03-12 21:36:07.890] BENCH (psbench.runner) :: Run 2/5 completed in 8.231s
+[2024-03-12 21:36:16.121] BENCH (psbench.runner) :: Run 3/5 completed in 8.231s
+[2024-03-12 21:36:24.355] BENCH (psbench.runner) :: Run 4/5 completed in 8.233s
+[2024-03-12 21:36:32.586] BENCH (psbench.runner) :: Run 5/5 completed in 8.231s
+[2024-03-12 21:36:32.587] BENCH (psbench.runner) :: Average run time: 8.231 ± 0.002s
+[2024-03-12 21:36:32.587] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.7 task_sleep=1.0
+[2024-03-12 21:36:35.745] BENCH (psbench.runner) :: Run 1/5 completed in 3.158s
+[2024-03-12 21:36:38.904] BENCH (psbench.runner) :: Run 2/5 completed in 3.159s
+[2024-03-12 21:36:42.070] BENCH (psbench.runner) :: Run 3/5 completed in 3.166s
+[2024-03-12 21:36:45.226] BENCH (psbench.runner) :: Run 4/5 completed in 3.156s
+[2024-03-12 21:36:48.381] BENCH (psbench.runner) :: Run 5/5 completed in 3.155s
+[2024-03-12 21:36:48.382] BENCH (psbench.runner) :: Average run time: 3.159 ± 0.005s
+[2024-03-12 21:36:48.382] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.8 task_sleep=1.0
+[2024-03-12 21:36:57.518] BENCH (psbench.runner) :: Run 1/5 completed in 9.136s
+[2024-03-12 21:37:06.662] BENCH (psbench.runner) :: Run 2/5 completed in 9.144s
+[2024-03-12 21:37:15.804] BENCH (psbench.runner) :: Run 3/5 completed in 9.141s
+[2024-03-12 21:37:24.940] BENCH (psbench.runner) :: Run 4/5 completed in 9.135s
+[2024-03-12 21:37:34.085] BENCH (psbench.runner) :: Run 5/5 completed in 9.144s
+[2024-03-12 21:37:34.085] BENCH (psbench.runner) :: Average run time: 9.140 ± 0.004s
+[2024-03-12 21:37:34.085] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.8 task_sleep=1.0
+[2024-03-12 21:37:42.313] BENCH (psbench.runner) :: Run 1/5 completed in 8.227s
+[2024-03-12 21:37:50.537] BENCH (psbench.runner) :: Run 2/5 completed in 8.224s
+[2024-03-12 21:37:58.769] BENCH (psbench.runner) :: Run 3/5 completed in 8.232s
+[2024-03-12 21:38:07.006] BENCH (psbench.runner) :: Run 4/5 completed in 8.237s
+[2024-03-12 21:38:15.236] BENCH (psbench.runner) :: Run 5/5 completed in 8.229s
+[2024-03-12 21:38:15.236] BENCH (psbench.runner) :: Average run time: 8.230 ± 0.005s
+[2024-03-12 21:38:15.236] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.8 task_sleep=1.0
+[2024-03-12 21:38:17.692] BENCH (psbench.runner) :: Run 1/5 completed in 2.456s
+[2024-03-12 21:38:20.152] BENCH (psbench.runner) :: Run 2/5 completed in 2.459s
+[2024-03-12 21:38:22.613] BENCH (psbench.runner) :: Run 3/5 completed in 2.461s
+[2024-03-12 21:38:25.071] BENCH (psbench.runner) :: Run 4/5 completed in 2.458s
+[2024-03-12 21:38:27.527] BENCH (psbench.runner) :: Run 5/5 completed in 2.456s
+[2024-03-12 21:38:27.527] BENCH (psbench.runner) :: Average run time: 2.458 ± 0.002s
+[2024-03-12 21:38:27.527] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_NO_PROXY: 'sequential-no-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.9 task_sleep=1.0
+[2024-03-12 21:38:36.666] BENCH (psbench.runner) :: Run 1/5 completed in 9.138s
+[2024-03-12 21:38:45.806] BENCH (psbench.runner) :: Run 2/5 completed in 9.139s
+[2024-03-12 21:38:54.944] BENCH (psbench.runner) :: Run 3/5 completed in 9.138s
+[2024-03-12 21:39:04.084] BENCH (psbench.runner) :: Run 4/5 completed in 9.139s
+[2024-03-12 21:39:13.227] BENCH (psbench.runner) :: Run 5/5 completed in 9.143s
+[2024-03-12 21:39:13.227] BENCH (psbench.runner) :: Average run time: 9.139 ± 0.002s
+[2024-03-12 21:39:13.227] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.SEQUENTIAL_PROXY: 'sequential-proxy'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.9 task_sleep=1.0
+[2024-03-12 21:39:21.454] BENCH (psbench.runner) :: Run 1/5 completed in 8.227s
+[2024-03-12 21:39:29.681] BENCH (psbench.runner) :: Run 2/5 completed in 8.227s
+[2024-03-12 21:39:37.911] BENCH (psbench.runner) :: Run 3/5 completed in 8.229s
+[2024-03-12 21:39:46.140] BENCH (psbench.runner) :: Run 4/5 completed in 8.229s
+[2024-03-12 21:39:54.371] BENCH (psbench.runner) :: Run 5/5 completed in 8.230s
+[2024-03-12 21:39:54.372] BENCH (psbench.runner) :: Average run time: 8.228 ± 0.002s
+[2024-03-12 21:39:54.372] BENCH (psbench.runner) :: Starting run config (repeat=5): submission_method=<SubmissionMethod.PIPELINED_PROXY_FUTURE: 'pipelined-proxy-future'> task_chain_length=8 task_data_bytes=10000000 task_overhead_fraction=0.9 task_sleep=1.0
+[2024-03-12 21:39:56.129] BENCH (psbench.runner) :: Run 1/5 completed in 1.757s
+[2024-03-12 21:39:57.885] BENCH (psbench.runner) :: Run 2/5 completed in 1.756s
+[2024-03-12 21:39:59.641] BENCH (psbench.runner) :: Run 3/5 completed in 1.756s
+[2024-03-12 21:40:01.401] BENCH (psbench.runner) :: Run 4/5 completed in 1.760s
+[2024-03-12 21:40:03.164] BENCH (psbench.runner) :: Run 5/5 completed in 1.762s
+[2024-03-12 21:40:03.164] BENCH (psbench.runner) :: Average run time: 1.758 ± 0.003s
+[2024-03-12 21:40:03.256] BENCH (psbench.runner) :: Benchmark completed: 1114.297 s
+[2024-03-12 21:40:03.256] BENCH (run.task-pipelining) :: All logs and results saved to: data/alderaan/0-task-pipelining/task-pipelining-2024-03-12-21-21-28
