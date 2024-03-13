@@ -9,7 +9,7 @@ echo "Redis started on port $PORT."
 
 ARGS="--executor dask --dask-workers 2 "
 ARGS+="--ps-connector redis --ps-host localhost --ps-port $PORT "
-ARGS+="--submission-method no-proxy sequential pipelined "
+ARGS+="--submission-method sequential-no-proxy sequential-proxy pipelined-proxy-future "
 ARGS+="--task-chain-length 8 "
 ARGS+="--task-data-bytes 10000000 "
 ARGS+="--task-overhead-fractions 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 "
