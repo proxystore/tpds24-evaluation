@@ -1,0 +1,42 @@
+experiment_name: experiment
+runs_dir: runs
+run_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903
+redishost: 127.0.0.1
+redisport: 6379
+simulation_input_dir: /home/jgpaul/workspace-polaris/deepdrivemd/data/1fme
+num_total_simulations: 1000
+duration_sec: .inf
+num_workers: 40
+simulations_per_train: 6
+simulations_per_inference: 1
+simulation_settings:
+    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903/simulation
+    node_local_path: null
+    solvent_type: implicit
+    simulation_length_ns: 10.0
+    report_interval_ps: 10.0
+    dt_ps: 0.002
+    temperature_kelvin: 300.0
+    heat_bath_friction_coef: 1.0
+    rmsd_reference_pdb: /home/jgpaul/workspace-polaris/deepdrivemd/data/1fme/1FME-folded.pdb
+    mda_selection: protein and name CA
+    cutoff_angstrom: 8.0
+train_settings:
+    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903/train
+    node_local_path: null
+    checkpoint_path: null
+    cvae_settings_yaml: /home/jgpaul/workspace-polaris/deepdrivemd/examples/bba-folding-proxystream/cvae-prod-settings.yaml
+inference_settings:
+    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903/inference
+    node_local_path: null
+    cvae_settings_yaml: /home/jgpaul/workspace-polaris/deepdrivemd/examples/bba-folding-proxystream/cvae-prod-settings.yaml
+    inference_batch_size: 128
+    sklearn_num_jobs: 8
+    num_outliers: 100
+compute_settings:
+    name: polaris-headless
+    label: htex
+    num_nodes: 10
+    cpus_per_node: 32
+    cores_per_worker: 8.0
+    available_accelerators: 4
