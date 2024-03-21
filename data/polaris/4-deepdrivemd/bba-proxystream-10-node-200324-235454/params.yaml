@@ -1,6 +1,6 @@
 experiment_name: experiment
 runs_dir: runs
-run_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903
+run_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-200324-235454
 redishost: 127.0.0.1
 redisport: 6379
 simulation_input_dir: /home/jgpaul/workspace-polaris/deepdrivemd/data/1fme
@@ -10,7 +10,7 @@ num_workers: 40
 simulations_per_train: 6
 simulations_per_inference: 1
 simulation_settings:
-    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903/simulation
+    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-200324-235454/simulation
     node_local_path: null
     solvent_type: implicit
     simulation_length_ns: 10.0
@@ -22,12 +22,12 @@ simulation_settings:
     mda_selection: protein and name CA
     cutoff_angstrom: 8.0
 train_settings:
-    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903/train
+    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-200324-235454/train
     node_local_path: null
     checkpoint_path: null
     cvae_settings_yaml: /home/jgpaul/workspace-polaris/deepdrivemd/examples/bba-folding-proxystream/cvae-prod-settings.yaml
 inference_settings:
-    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-190324-155903/inference
+    output_dir: /home/jgpaul/workspace-polaris/deepdrivemd/runs/experiment-200324-235454/inference
     node_local_path: null
     cvae_settings_yaml: /home/jgpaul/workspace-polaris/deepdrivemd/examples/bba-folding-proxystream/cvae-prod-settings.yaml
     inference_batch_size: 128
