@@ -10,11 +10,12 @@ echo "Redis started on port $PORT."
 
 ARGS="--executor dask --dask-workers 8 "
 ARGS+="--ps-connector redis --ps-host localhost --ps-port $PORT "
-ARGS+="--stage-task-counts 1 8 1 8 1 8 1 "
-ARGS+="--stage-bytes-sizes 1MB 100MB 10MB 100MB 10MB 100MB 10MB 1MB "
+ARGS+="--stage-task-counts 8 1 "
+ARGS+="--stage-bytes-sizes 100MB 10MB 1MB "
+ARGS+="--stage-repeat 4 "
 ARGS+="--task-sleep 5.0 "
 ARGS+="--repeat 3 "
-ARGS+="--run-dir data/$SYSTEM/2-memory-management "
+ARGS+="--run-dir data/$SYSTEM/2-memory-management-test-4 "
 
 echo "Using args: $ARGS"
 
