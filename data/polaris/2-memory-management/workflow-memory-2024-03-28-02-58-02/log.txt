@@ -1,0 +1,16 @@
+[2024-03-28 02:58:02.505] BENCH (run.workflow-memory) :: All configurations loaded
+[2024-03-28 02:58:04.091] INFO  (proxystore.store.base) :: Initialized Store("redis-store", connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=0, metrics=False)
+[2024-03-28 02:58:04.092] INFO  (proxystore.store) :: Registered a store named redis-store
+[2024-03-28 02:58:04.092] BENCH (run.workflow-memory) :: Benchmark initialized
+[2024-03-28 02:58:04.099] BENCH (psbench.runner) :: Starting benchmark: Workflow Memory
+[2024-03-28 02:58:04.099] BENCH (psbench.runner) :: Benchmark config:
+- executor: DaskExecutor
+- connector: RedisConnector
+[2024-03-28 02:58:04.100] BENCH (psbench.runner) :: Starting run config (repeat=3): data_management=<DataManagement.DEFAULT_PROXY: 'default-proxy'> stage_task_counts=[32, 1] stage_bytes_sizes=[100000000, 10000000, 1000000] stage_repeat=8 task_sleep=5.0
+[2024-03-28 03:00:50.287] BENCH (psbench.runner) :: Run 1/3 completed in 166.186s
+[2024-03-28 03:03:37.161] BENCH (psbench.runner) :: Run 2/3 completed in 166.873s
+[2024-03-28 03:06:23.201] BENCH (psbench.runner) :: Run 3/3 completed in 166.040s
+[2024-03-28 03:06:23.202] BENCH (psbench.runner) :: Average run time: 166.367 ± 0.445s
+[2024-03-28 03:06:23.556] BENCH (psbench.runner) :: Benchmark completed: 499.457 s
+[2024-03-28 03:06:23.568] BENCH (run.workflow-memory) :: Memory profile data saved: data/polaris/2-memory-management/workflow-memory-2024-03-28-02-58-02/results-memory.csv
+[2024-03-28 03:06:23.568] BENCH (run.workflow-memory) :: All logs and results saved to: data/polaris/2-memory-management/workflow-memory-2024-03-28-02-58-02
