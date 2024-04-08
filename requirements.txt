@@ -1,8 +1,8 @@
-jupyterlab==4.1.2
+jupyterlab==3.6.7
 kaleido==0.2.1
 pandas==2.2.1
 plotly==5.19.0
 polars==0.20.13
 pre-commit==3.6.2
-proxystore
-ruff==0.2.2
+psbench@git+https://github.com/proxystore/benchmarks@v0.2.0
+ruff==0.3.5
