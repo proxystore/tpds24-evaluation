@@ -29,7 +29,7 @@ echo "Total workers: $WORKERS_PER_NODE"
 echo "Total tasks: $TASK_COUNT"
 
 ARGS="--executor parsl --parsl-executor htex-polaris-headless "
-ARGS+="--parsl-max-workers $WORKERS "
+ARGS+="--parsl-max-workers $WORKERS --max-workers $WORKERS "
 ARGS+="--stream redis --stream-servers $PRIMARY_RANK:$PORT "
 ARGS+="--ps-connector redis --ps-host $PRIMARY_RANK --ps-port $PORT "
 ARGS+="--stream-method proxy default "
