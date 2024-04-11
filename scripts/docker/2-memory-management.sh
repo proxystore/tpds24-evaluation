@@ -15,7 +15,7 @@ ARGS+="--stage-bytes-sizes 100MB 10MB 1MB "
 ARGS+="--stage-repeat 8 "
 ARGS+="--task-sleep 5.0 "
 ARGS+="--repeat 3 "
-ARGS+="--run-dir data/$SYSTEM/2-memory-management-test-4 "
+ARGS+="--run-dir data/$SYSTEM/2-memory-management "
 
 echo "Using args: $ARGS"
 
