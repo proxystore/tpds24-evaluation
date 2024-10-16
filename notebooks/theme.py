@@ -36,3 +36,17 @@ options = {
 template.update(options)
 
 pio.templates['proxystore'] = template
+
+colors = {
+    'purple': '#4d3886',
+    'green': '#11a579',
+    'red': '#d64269',
+    'yellow': '#f2b701',
+    'blue': '#3969ac',
+    'orange': '#e68310',
+    'green-light': '#B8e4d7',
+    'green-dark': '#084937',
+    'purple-light': '#D0C2F4',
+    'red-light': '#F0BCC9',
+    'red-dark': '#861D39'
+}
