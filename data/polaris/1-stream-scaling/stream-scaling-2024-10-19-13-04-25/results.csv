@@ -1,0 +1,16 @@
+executor,connector,stream,data_size_bytes,task_count,task_sleep,method,workers,completed_tasks,start_submit_tasks_timestamp,end_tasks_done_timestamp
+ParslPoolExecutor,RedisConnector,redis,10000,256,1.0,proxy,16,256,1729343077.7143917,1729343099.6697073
+ParslPoolExecutor,RedisConnector,redis,10000,256,1.0,default,16,256,1729343099.6945515,1729343118.100992
+ParslPoolExecutor,RedisConnector,redis,10000,256,1.0,adios,16,256,1729343119.1702108,1729343137.657005
+ParslPoolExecutor,RedisConnector,redis,100000,256,1.0,proxy,16,256,1729343137.6743443,1729343156.0861506
+ParslPoolExecutor,RedisConnector,redis,100000,256,1.0,default,16,256,1729343156.1108656,1729343174.5126367
+ParslPoolExecutor,RedisConnector,redis,100000,256,1.0,adios,16,256,1729343175.5387828,1729343193.9521708
+ParslPoolExecutor,RedisConnector,redis,1000000,256,1.0,proxy,16,256,1729343193.9726474,1729343212.3908513
+ParslPoolExecutor,RedisConnector,redis,1000000,256,1.0,default,16,256,1729343212.4160361,1729343231.0307848
+ParslPoolExecutor,RedisConnector,redis,1000000,256,1.0,adios,16,256,1729343232.057453,1729343250.5241706
+ParslPoolExecutor,RedisConnector,redis,10000000,256,1.0,proxy,16,256,1729343250.5444202,1729343269.3224897
+ParslPoolExecutor,RedisConnector,redis,10000000,256,1.0,default,16,256,1729343269.3471475,1729343293.0373864
+ParslPoolExecutor,RedisConnector,redis,10000000,256,1.0,adios,16,256,1729343294.066737,1729343313.0970848
+ParslPoolExecutor,RedisConnector,redis,100000000,256,1.0,proxy,16,256,1729343313.1208465,1729343347.6185973
+ParslPoolExecutor,RedisConnector,redis,100000000,256,1.0,default,16,256,1729343347.6433215,1729343586.130072
+ParslPoolExecutor,RedisConnector,redis,100000000,256,1.0,adios,16,256,1729343587.1618614,1729343619.4146237
