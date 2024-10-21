@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -A SuperBERT
+#PBS -A ExaMol
 #PBS -q debug-scaling
 #PBS -l walltime=1:00:00
 #PBS -l filesystems=home
@@ -7,6 +7,7 @@
 
 cd /home/jgpaul/workspace-polaris/sc24/analysis
 
+module use /soft/modulefiles
 module load cray-python
 . ../venv/bin/activate
 
@@ -25,14 +26,15 @@ TASK_COUNT=$(( 16*WORKERS ))
 
 echo "Nodes: $NODES"
 echo "Workers per node: $WORKERS_PER_NODE"
-echo "Total workers: $WORKERS_PER_NODE"
+echo "Total workers: $WORKERS"
 echo "Total tasks: $TASK_COUNT"
 
 ARGS="--executor parsl --parsl-executor htex-polaris-headless "
 ARGS+="--parsl-max-workers $WORKERS --max-workers $WORKERS "
 ARGS+="--stream redis --stream-servers $PRIMARY_RANK:$PORT "
+ARGS+="--adios-file /grand/SuperBERT/jgpaul/scratch/psbench-adios-stream "
 ARGS+="--ps-connector redis --ps-host $PRIMARY_RANK --ps-port $PORT "
-ARGS+="--stream-method proxy default "
+ARGS+="--stream-method proxy default adios "
 ARGS+="--data-size-bytes 10000 100000 1000000 10000000 100000000 "
 ARGS+="--task-sleep 1.0 "
 ARGS+="--task-count $TASK_COUNT "
