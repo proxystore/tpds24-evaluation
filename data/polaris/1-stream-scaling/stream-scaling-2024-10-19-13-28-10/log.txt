@@ -1,0 +1,852 @@
+[2024-10-19 13:28:10.301] BENCH (run.stream-scaling) :: All configurations loaded
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    dependency_resolver=None, 
+    executors=(HighThroughputExecutor(
+        address=None, 
+        address_probe_timeout=None, 
+        available_accelerators=[], 
+        block_error_handler=<function simple_error_handler at 0x154a0edf1b20>, 
+        cores_per_worker=1.0, 
+        cpu_affinity='alternating', 
+        drain_period=None, 
+        enable_mpi_mode=False, 
+        encrypted=False, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_launch_cmd=['interchange.py'], 
+        interchange_port_range=(55000, 56000), 
+        label='htex-polaris-headless', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers_per_node} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --cert_dir {cert_dir} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --drain_period={drain_period} --cpu-affinity {cpu_affinity} {enable_mpi_mode} --mpi-launcher={mpi_launcher} --available-accelerators {accelerators}', 
+        manager_selector=<parsl.executors.high_throughput.manager_selector.RandomManagerSelector object at 0x154a0ed9b2d0>, 
+        max_workers=2, 
+        max_workers_per_node=2, 
+        mem_per_worker=None, 
+        mpi_launcher='mpiexec', 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=LocalProvider(
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/jgpaul/workspace-polaris/sc24/analysis'
+            ), 
+            cmd_timeout=120, 
+            init_blocks=1, 
+            launcher=MpiExecLauncher(
+                bind_cmd='--cpu-bind', 
+                debug=True, 
+                overrides='--depth=64 --ppn 1'
+            ), 
+            max_blocks=1, 
+            min_blocks=0, 
+            move_files=None, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            worker_init=''
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    ),), 
+    exit_mode='cleanup', 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='data/polaris/1-stream-scaling/stream-scaling-2024-10-19-13-28-10/parsl_runinfo', 
+    std_autopath=None, 
+    strategy='simple', 
+    strategy_period=5, 
+    usage_tracking=0
+)
+[2024-10-19 13:28:12.713] INFO  (parsl.dataflow.memoization) :: App caching initialized
+[2024-10-19 13:28:13.546] INFO  (proxystore.store.base) :: Initialized Store(name=redis-store, connector=RedisConnector(hostname=x3016c0s7b0n0.hsn.cm.polaris.alcf.anl.gov, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, auto_register=False)
+[2024-10-19 13:28:13.546] INFO  (proxystore.store) :: Registered a store named "redis-store"
+[2024-10-19 13:28:13.546] BENCH (run.stream-scaling) :: Benchmark initialized
+[2024-10-19 13:28:13.549] BENCH (psbench.runner) :: Starting benchmark: Stream Scaling
+[2024-10-19 13:28:13.549] BENCH (psbench.runner) :: Benchmark config:
+- executor: ParslPoolExecutor
+- connector: RedisConnector
+- stream-config: kind='redis' topic='stream-benchmark-data' servers=['x3016c0s7b0n0.hsn.cm.polaris.alcf.anl.gov:59465']
+[2024-10-19 13:28:13.549] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000 max_workers=2 task_count=32 task_sleep=1.0 method='proxy' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:28:13.549] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:28:13.549] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:28:13.549] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:28:13.549] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:28:17.715] INFO  (parsl.executors.status_handling) :: Scaling out by 1 blocks
+[2024-10-19 13:28:17.715] INFO  (parsl.executors.status_handling) :: Allocated block ID 0
+[2024-10-19 13:28:21.675] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:28:21.677] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000, max_items=32, interval_seconds=1.0, pregenerate=False, method=proxy
+[2024-10-19 13:28:23.056] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:28:24.084] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:28:25.107] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:28:26.130] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:28:27.153] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:28:28.176] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:28:29.198] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:28:30.221] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:28:31.244] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:28:32.267] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:28:33.290] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:28:34.313] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:28:35.336] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:28:36.358] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:28:37.381] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:28:38.405] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:28:39.427] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:28:40.450] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:28:41.473] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:28:42.496] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:28:43.520] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:28:44.542] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:28:45.565] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:28:46.588] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:28:47.611] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:28:48.634] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:28:49.657] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:28:50.679] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:28:51.702] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:28:52.725] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:28:53.748] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:28:54.771] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:28:55.793] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:28:55.793] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:28:55.793] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:28:55.793] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:28:55.793] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:28:55.795] BENCH (psbench.runner) :: Run 1/1 completed in 42.245s
+[2024-10-19 13:28:55.795] BENCH (psbench.runner) :: Average run time: 42.245 ± 0.000s
+[2024-10-19 13:28:55.795] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000 max_workers=2 task_count=32 task_sleep=1.0 method='default' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:28:55.795] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:28:55.795] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:28:55.795] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:28:55.795] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:28:55.817] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:28:55.818] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000, max_items=32, interval_seconds=1.0, pregenerate=False, method=default
+[2024-10-19 13:28:55.831] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:28:56.851] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:28:57.873] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:28:58.896] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:28:59.918] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:29:00.940] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:29:01.962] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:29:02.984] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:29:04.006] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:29:05.029] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:29:06.050] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:29:07.073] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:29:08.095] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:29:09.118] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:29:10.139] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:29:11.162] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:29:12.184] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:29:13.206] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:29:14.229] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:29:15.251] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:29:16.273] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:29:17.296] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:29:18.318] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:29:19.341] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:29:20.362] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:29:21.384] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:29:22.407] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:29:23.429] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:29:24.451] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:29:25.474] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:29:26.496] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:29:27.518] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:29:28.540] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:29:28.540] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:29:28.540] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:29:28.540] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:29:28.541] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:29:28.541] BENCH (psbench.runner) :: Run 1/1 completed in 32.746s
+[2024-10-19 13:29:28.541] BENCH (psbench.runner) :: Average run time: 32.746 ± 0.000s
+[2024-10-19 13:29:28.541] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000 max_workers=2 task_count=32 task_sleep=1.0 method='adios' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:29:28.541] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:29:28.541] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:29:28.541] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:29:28.541] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:29:28.561] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:29:28.562] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000, max_items=32, interval_seconds=1.0, pregenerate=False, method=adios
+[2024-10-19 13:29:29.567] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:29:30.604] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:29:31.628] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:29:32.651] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:29:33.675] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:29:34.699] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:29:35.722] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:29:36.745] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:29:37.768] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:29:38.792] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:29:39.814] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:29:40.837] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:29:41.860] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:29:42.883] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:29:43.907] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:29:44.930] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:29:45.953] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:29:46.975] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:29:47.998] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:29:49.022] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:29:50.045] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:29:51.068] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:29:52.091] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:29:53.114] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:29:54.138] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:29:55.160] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:29:56.184] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:29:57.207] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:29:58.230] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:29:59.254] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:30:00.277] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:30:01.300] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:30:02.323] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:30:02.323] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:30:02.324] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:30:02.325] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:30:02.325] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:30:02.329] BENCH (psbench.runner) :: Run 1/1 completed in 33.787s
+[2024-10-19 13:30:02.329] BENCH (psbench.runner) :: Average run time: 33.787 ± 0.000s
+[2024-10-19 13:30:02.329] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000 max_workers=2 task_count=32 task_sleep=1.0 method='proxy' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:30:02.329] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:30:02.329] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:30:02.329] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:30:02.329] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:30:02.345] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:30:02.346] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000, max_items=32, interval_seconds=1.0, pregenerate=False, method=proxy
+[2024-10-19 13:30:02.359] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:30:03.379] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:30:04.402] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:30:05.424] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:30:06.446] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:30:07.468] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:30:08.491] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:30:09.514] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:30:10.536] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:30:11.558] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:30:12.581] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:30:13.604] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:30:14.627] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:30:15.649] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:30:16.672] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:30:17.695] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:30:18.718] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:30:19.742] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:30:20.764] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:30:21.786] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:30:22.809] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:30:23.832] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:30:24.855] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:30:25.878] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:30:26.901] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:30:27.923] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:30:28.946] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:30:29.970] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:30:30.991] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:30:32.014] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:30:33.037] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:30:34.060] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:30:35.082] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:30:35.083] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:30:35.083] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:30:35.083] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:30:35.083] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:30:35.083] BENCH (psbench.runner) :: Run 1/1 completed in 32.754s
+[2024-10-19 13:30:35.083] BENCH (psbench.runner) :: Average run time: 32.754 ± 0.000s
+[2024-10-19 13:30:35.084] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000 max_workers=2 task_count=32 task_sleep=1.0 method='default' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:30:35.084] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:30:35.084] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:30:35.084] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:30:35.084] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:30:35.104] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:30:35.105] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000, max_items=32, interval_seconds=1.0, pregenerate=False, method=default
+[2024-10-19 13:30:35.117] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:30:36.139] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:30:37.161] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:30:38.183] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:30:39.205] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:30:40.218] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:30:41.241] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:30:42.263] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:30:43.285] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:30:44.308] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:30:45.330] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:30:46.353] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:30:47.365] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:30:48.377] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:30:49.399] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:30:50.422] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:30:51.444] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:30:52.467] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:30:53.489] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:30:54.512] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:30:55.525] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:30:56.536] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:30:57.548] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:30:58.571] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:30:59.583] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:31:00.606] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:31:01.618] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:31:02.641] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:31:03.663] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:31:04.686] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:31:05.709] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:31:06.731] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:31:07.752] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:31:07.752] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:31:07.753] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:31:07.753] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:31:07.753] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:31:07.753] BENCH (psbench.runner) :: Run 1/1 completed in 32.670s
+[2024-10-19 13:31:07.753] BENCH (psbench.runner) :: Average run time: 32.670 ± 0.000s
+[2024-10-19 13:31:07.753] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000 max_workers=2 task_count=32 task_sleep=1.0 method='adios' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:31:07.753] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:31:07.754] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:31:07.754] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:31:07.754] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:31:07.774] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:31:07.776] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000, max_items=32, interval_seconds=1.0, pregenerate=False, method=adios
+[2024-10-19 13:31:08.780] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:31:09.802] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:31:10.826] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:31:11.850] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:31:12.874] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:31:13.897] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:31:14.920] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:31:15.944] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:31:16.966] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:31:17.989] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:31:19.012] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:31:20.035] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:31:21.058] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:31:22.081] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:31:23.104] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:31:24.126] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:31:25.149] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:31:26.173] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:31:27.195] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:31:28.218] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:31:29.241] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:31:30.264] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:31:31.288] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:31:32.310] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:31:33.334] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:31:34.356] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:31:35.379] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:31:36.403] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:31:37.426] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:31:38.448] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:31:39.471] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:31:40.494] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:31:41.517] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:31:41.517] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:31:41.518] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:31:41.518] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:31:41.518] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:31:41.523] BENCH (psbench.runner) :: Run 1/1 completed in 33.770s
+[2024-10-19 13:31:41.523] BENCH (psbench.runner) :: Average run time: 33.770 ± 0.000s
+[2024-10-19 13:31:41.523] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=1000000 max_workers=2 task_count=32 task_sleep=1.0 method='proxy' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:31:41.523] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:31:41.523] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:31:41.523] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:31:41.523] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:31:41.538] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:31:41.539] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=1000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=proxy
+[2024-10-19 13:31:41.555] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:31:42.573] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:31:43.596] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:31:44.619] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:31:45.643] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:31:46.666] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:31:47.690] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:31:48.713] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:31:49.735] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:31:50.759] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:31:51.781] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:31:52.804] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:31:53.827] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:31:54.850] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:31:55.873] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:31:56.896] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:31:57.919] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:31:58.942] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:31:59.965] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:32:00.988] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:32:02.011] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:32:03.034] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:32:04.057] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:32:05.079] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:32:06.103] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:32:07.126] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:32:08.149] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:32:09.172] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:32:10.194] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:32:11.218] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:32:12.241] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:32:13.264] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:32:14.286] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:32:14.287] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:32:14.287] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:32:14.287] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:32:14.287] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:32:14.287] BENCH (psbench.runner) :: Run 1/1 completed in 32.764s
+[2024-10-19 13:32:14.287] BENCH (psbench.runner) :: Average run time: 32.764 ± 0.000s
+[2024-10-19 13:32:14.288] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=1000000 max_workers=2 task_count=32 task_sleep=1.0 method='default' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:32:14.288] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:32:14.288] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:32:14.288] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:32:14.288] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:32:14.308] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:32:14.309] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=1000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=default
+[2024-10-19 13:32:14.325] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:32:15.357] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:32:16.393] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:32:17.426] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:32:18.462] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:32:19.496] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:32:20.530] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:32:21.566] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:32:22.599] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:32:23.634] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:32:24.668] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:32:25.702] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:32:26.737] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:32:27.770] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:32:28.805] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:32:29.839] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:32:30.874] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:32:31.908] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:32:32.942] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:32:33.976] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:32:35.010] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:32:36.044] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:32:37.078] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:32:38.112] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:32:39.146] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:32:40.180] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:32:41.214] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:32:42.250] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:32:43.283] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:32:44.318] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:32:45.352] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:32:46.388] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:32:47.420] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:32:47.420] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:32:47.421] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:32:47.421] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:32:47.421] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:32:47.421] BENCH (psbench.runner) :: Run 1/1 completed in 33.133s
+[2024-10-19 13:32:47.421] BENCH (psbench.runner) :: Average run time: 33.133 ± 0.000s
+[2024-10-19 13:32:47.421] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=1000000 max_workers=2 task_count=32 task_sleep=1.0 method='adios' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:32:47.421] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:32:47.421] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:32:47.421] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:32:47.422] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:32:47.441] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:32:47.443] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=1000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=adios
+[2024-10-19 13:32:48.447] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:32:49.470] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:32:50.494] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:32:51.518] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:32:52.541] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:32:53.565] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:32:54.588] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:32:55.612] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:32:56.635] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:32:57.658] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:32:58.681] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:32:59.704] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:33:00.727] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:33:01.751] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:33:02.774] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:33:03.797] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:33:04.820] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:33:05.844] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:33:06.867] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:33:07.890] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:33:08.913] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:33:09.937] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:33:10.960] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:33:11.984] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:33:13.006] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:33:14.030] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:33:15.054] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:33:16.077] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:33:17.100] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:33:18.123] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:33:19.146] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:33:20.170] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:33:21.193] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:33:21.193] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:33:21.194] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:33:21.194] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:33:21.194] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:33:21.205] BENCH (psbench.runner) :: Run 1/1 completed in 33.784s
+[2024-10-19 13:33:21.205] BENCH (psbench.runner) :: Average run time: 33.784 ± 0.000s
+[2024-10-19 13:33:21.205] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000000 max_workers=2 task_count=32 task_sleep=1.0 method='proxy' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:33:21.205] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:33:21.206] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:33:21.206] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:33:21.206] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:33:21.224] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:33:21.226] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=proxy
+[2024-10-19 13:33:21.268] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:33:22.308] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:33:23.346] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:33:24.388] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:33:25.427] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:33:26.466] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:33:27.498] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:33:28.540] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:33:29.582] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:33:30.621] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:33:31.661] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:33:32.703] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:33:33.734] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:33:34.777] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:33:35.816] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:33:36.855] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:33:37.898] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:33:38.940] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:33:39.981] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:33:41.020] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:33:42.062] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:33:43.105] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:33:44.147] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:33:45.186] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:33:46.226] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:33:47.268] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:33:48.309] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:33:49.351] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:33:50.391] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:33:51.431] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:33:52.474] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:33:53.514] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:33:54.551] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:33:54.551] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:33:54.551] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:33:54.551] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:33:54.552] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:33:54.552] BENCH (psbench.runner) :: Run 1/1 completed in 33.346s
+[2024-10-19 13:33:54.552] BENCH (psbench.runner) :: Average run time: 33.346 ± 0.000s
+[2024-10-19 13:33:54.552] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000000 max_workers=2 task_count=32 task_sleep=1.0 method='default' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:33:54.552] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:33:54.552] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:33:54.552] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:33:54.552] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:33:54.572] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:33:54.573] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=default
+[2024-10-19 13:33:54.628] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:33:54.707] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:33:55.783] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:33:55.860] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:33:56.924] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:33:56.999] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:33:58.054] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:33:58.133] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:33:59.184] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:33:59.259] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:00.310] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:34:00.385] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:01.435] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:34:01.511] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:02.561] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:34:02.639] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:03.696] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:34:03.772] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:04.825] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:34:04.901] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:05.947] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:34:06.022] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:07.073] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:34:07.149] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:08.201] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:34:08.279] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:09.330] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:34:09.405] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:10.473] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:34:10.548] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:11.592] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:34:11.667] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:12.716] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:34:12.794] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:13.851] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:34:13.926] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:14.980] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:34:15.055] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:16.110] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:34:16.186] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:17.238] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:34:17.314] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:18.364] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:34:18.442] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:19.494] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:34:19.570] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:20.626] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:34:20.701] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:21.750] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:34:21.825] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:22.875] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:34:22.953] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:24.012] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:34:24.087] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:25.137] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:34:25.212] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:26.260] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:34:26.335] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:27.387] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:34:27.463] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:28.519] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:34:28.598] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:29.654] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:34:29.732] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:34:30.796] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:34:30.796] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:34:30.796] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:34:30.796] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:34:30.796] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:34:30.797] BENCH (psbench.runner) :: Run 1/1 completed in 36.244s
+[2024-10-19 13:34:30.797] BENCH (psbench.runner) :: Average run time: 36.244 ± 0.000s
+[2024-10-19 13:34:30.797] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=10000000 max_workers=2 task_count=32 task_sleep=1.0 method='adios' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:34:30.797] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:34:30.797] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:34:30.797] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:34:30.797] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:34:30.822] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:34:30.823] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=10000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=adios
+[2024-10-19 13:34:31.828] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:34:32.855] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:34:33.881] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:34:34.906] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:34:35.933] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:34:36.958] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:34:37.984] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:34:39.009] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:34:40.034] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:34:41.060] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:34:42.085] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:34:43.112] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:34:44.137] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:34:45.162] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:34:46.188] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:34:47.213] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:34:48.238] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:34:49.264] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:34:50.290] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:34:51.316] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:34:52.340] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:34:53.366] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:34:54.391] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:34:55.416] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:34:56.442] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:34:57.468] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:34:58.494] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:34:59.519] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:35:00.545] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:35:01.569] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:35:02.595] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:35:03.610] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:35:04.637] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:35:04.637] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:35:04.638] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:35:04.639] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:35:04.639] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:35:04.719] BENCH (psbench.runner) :: Run 1/1 completed in 33.923s
+[2024-10-19 13:35:04.719] BENCH (psbench.runner) :: Average run time: 33.923 ± 0.000s
+[2024-10-19 13:35:04.720] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000000 max_workers=2 task_count=32 task_sleep=1.0 method='proxy' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:35:04.720] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:35:04.720] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:35:04.720] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:35:04.720] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:35:04.739] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:35:04.740] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=proxy
+[2024-10-19 13:35:05.050] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:35:06.212] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:35:07.375] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:35:08.538] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:35:09.700] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:35:10.865] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:35:12.048] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:35:13.211] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:35:14.375] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:35:15.536] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:35:16.698] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:35:17.861] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:35:19.044] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:35:20.207] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:35:21.368] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:35:22.530] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:35:23.682] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:35:24.845] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:35:26.025] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:35:27.188] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:35:28.351] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:35:29.514] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:35:30.677] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:35:31.840] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:35:33.036] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:35:34.200] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:35:35.364] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:35:36.532] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:35:37.693] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:35:38.851] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:35:40.014] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:35:41.177] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:35:42.339] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:35:42.340] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:35:42.340] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:35:42.340] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:35:42.340] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:35:42.340] BENCH (psbench.runner) :: Run 1/1 completed in 37.621s
+[2024-10-19 13:35:42.340] BENCH (psbench.runner) :: Average run time: 37.621 ± 0.000s
+[2024-10-19 13:35:42.341] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000000 max_workers=2 task_count=32 task_sleep=1.0 method='default' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:35:42.341] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:35:42.341] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:35:42.341] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:35:42.341] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:35:42.361] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:35:42.362] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=default
+[2024-10-19 13:35:42.734] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:35:43.534] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:35:45.090] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:35:45.892] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:35:47.439] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:35:48.216] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:35:49.802] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:35:50.611] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:35:52.136] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:35:52.938] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:35:54.509] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:35:55.313] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:35:56.869] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:35:57.673] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:35:59.235] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:36:00.040] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:01.602] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:36:02.405] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:03.976] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:36:04.781] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:06.318] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:36:07.125] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:08.742] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:36:09.548] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:11.086] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:36:11.890] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:13.450] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:36:14.254] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:15.778] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:36:16.582] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:18.147] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:36:18.951] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:20.492] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:36:21.269] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:22.816] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:36:23.622] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:25.150] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:36:25.953] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:27.489] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:36:28.293] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:29.836] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:36:30.641] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:32.208] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:36:33.016] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:34.543] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:36:35.354] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:36.913] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:36:37.719] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:39.267] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:36:40.070] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:41.614] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:36:42.436] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:43.979] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:36:44.781] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:46.327] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:36:47.133] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:48.694] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:36:49.495] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:51.046] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:36:51.850] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:53.376] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:36:54.179] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:55.727] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:36:56.531] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-10-19 13:36:58.115] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:36:58.116] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:36:58.116] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:36:58.116] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:36:58.116] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:36:58.116] BENCH (psbench.runner) :: Run 1/1 completed in 75.776s
+[2024-10-19 13:36:58.117] BENCH (psbench.runner) :: Average run time: 75.776 ± 0.000s
+[2024-10-19 13:36:58.117] BENCH (psbench.runner) :: Starting run config (repeat=1): data_size_bytes=100000000 max_workers=2 task_count=32 task_sleep=1.0 method='adios' adios_file='/grand/SuperBERT/jgpaul/scratch/psbench-adios-stream'
+[2024-10-19 13:36:58.117] TEST  (stream-scaling) :: Compute workers: 1
+[2024-10-19 13:36:58.117] TEST  (stream-scaling) :: Generator workers: 1
+[2024-10-19 13:36:58.117] TEST  (stream-scaling) :: Generator item interval: 1.0
+[2024-10-19 13:36:58.117] TEST  (stream-scaling) :: Submitting warm up task
+[2024-10-19 13:36:58.140] TEST  (stream-scaling) :: Warmup task completed
+[2024-10-19 13:36:58.141] TEST  (stream-scaling) :: Submitted generator task: item_size_bytes=100000000, max_items=32, interval_seconds=1.0, pregenerate=False, method=adios
+[2024-10-19 13:36:59.146] TEST  (stream-scaling) :: Submitted compute task 1/32
+[2024-10-19 13:37:00.228] TEST  (stream-scaling) :: Submitted compute task 2/32
+[2024-10-19 13:37:01.309] TEST  (stream-scaling) :: Submitted compute task 3/32
+[2024-10-19 13:37:02.393] TEST  (stream-scaling) :: Submitted compute task 4/32
+[2024-10-19 13:37:03.483] TEST  (stream-scaling) :: Submitted compute task 5/32
+[2024-10-19 13:37:04.557] TEST  (stream-scaling) :: Submitted compute task 6/32
+[2024-10-19 13:37:05.637] TEST  (stream-scaling) :: Submitted compute task 7/32
+[2024-10-19 13:37:06.718] TEST  (stream-scaling) :: Submitted compute task 8/32
+[2024-10-19 13:37:07.798] TEST  (stream-scaling) :: Submitted compute task 9/32
+[2024-10-19 13:37:08.876] TEST  (stream-scaling) :: Submitted compute task 10/32
+[2024-10-19 13:37:09.955] TEST  (stream-scaling) :: Submitted compute task 11/32
+[2024-10-19 13:37:11.032] TEST  (stream-scaling) :: Submitted compute task 12/32
+[2024-10-19 13:37:12.110] TEST  (stream-scaling) :: Submitted compute task 13/32
+[2024-10-19 13:37:13.188] TEST  (stream-scaling) :: Submitted compute task 14/32
+[2024-10-19 13:37:14.266] TEST  (stream-scaling) :: Submitted compute task 15/32
+[2024-10-19 13:37:15.344] TEST  (stream-scaling) :: Submitted compute task 16/32
+[2024-10-19 13:37:16.424] TEST  (stream-scaling) :: Submitted compute task 17/32
+[2024-10-19 13:37:17.506] TEST  (stream-scaling) :: Submitted compute task 18/32
+[2024-10-19 13:37:18.586] TEST  (stream-scaling) :: Submitted compute task 19/32
+[2024-10-19 13:37:19.666] TEST  (stream-scaling) :: Submitted compute task 20/32
+[2024-10-19 13:37:20.744] TEST  (stream-scaling) :: Submitted compute task 21/32
+[2024-10-19 13:37:21.821] TEST  (stream-scaling) :: Submitted compute task 22/32
+[2024-10-19 13:37:22.897] TEST  (stream-scaling) :: Submitted compute task 23/32
+[2024-10-19 13:37:23.974] TEST  (stream-scaling) :: Submitted compute task 24/32
+[2024-10-19 13:37:25.051] TEST  (stream-scaling) :: Submitted compute task 25/32
+[2024-10-19 13:37:26.128] TEST  (stream-scaling) :: Submitted compute task 26/32
+[2024-10-19 13:37:27.205] TEST  (stream-scaling) :: Submitted compute task 27/32
+[2024-10-19 13:37:28.288] TEST  (stream-scaling) :: Submitted compute task 28/32
+[2024-10-19 13:37:29.370] TEST  (stream-scaling) :: Submitted compute task 29/32
+[2024-10-19 13:37:30.449] TEST  (stream-scaling) :: Submitted compute task 30/32
+[2024-10-19 13:37:31.525] TEST  (stream-scaling) :: Submitted compute task 31/32
+[2024-10-19 13:37:32.603] TEST  (stream-scaling) :: Submitted compute task 32/32
+[2024-10-19 13:37:33.678] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:37:33.679] TEST  (stream-scaling) :: Finished submitting new compute tasks
+[2024-10-19 13:37:33.680] TEST  (stream-scaling) :: Waiting on generator task
+[2024-10-19 13:37:33.680] TEST  (stream-scaling) :: Waiting on outstanding compute tasks
+[2024-10-19 13:37:33.680] TEST  (stream-scaling) :: All compute tasks finished
+[2024-10-19 13:37:34.400] BENCH (psbench.runner) :: Run 1/1 completed in 36.283s
+[2024-10-19 13:37:34.400] BENCH (psbench.runner) :: Average run time: 36.283 ± 0.000s
+[2024-10-19 13:37:34.400] BENCH (psbench.runner) :: Benchmark completed: 560.852 s
+[2024-10-19 13:37:34.402] INFO  (parsl.jobs.job_status_poller) :: Scaling in executor htex-polaris-headless
+[2024-10-19 13:37:34.477] INFO  (parsl.executors.high_throughput.executor) :: Attempting HighThroughputExecutor shutdown
+[2024-10-19 13:37:34.485] INFO  (parsl.executors.high_throughput.executor) :: Closing ZMQ pipes
+[2024-10-19 13:37:34.485] INFO  (parsl.executors.high_throughput.executor) :: Closing outgoing_q
+[2024-10-19 13:37:34.485] INFO  (parsl.executors.high_throughput.executor) :: Closing command client
+[2024-10-19 13:37:34.486] INFO  (parsl.executors.high_throughput.executor) :: Finished HighThroughputExecutor shutdown attempt
+    envs={}, 
+    script_dir='/home/jgpaul/workspace-polaris/sc24/analysis/data/polaris/1-stream-scaling/stream-scaling-2024-10-19-13-28-10/parsl_runinfo/000/submit_scripts', 
+    userhome='/home/jgpaul/workspace-polaris/sc24/analysis'
+)
+    envs={}, 
+    script_dir='/home/jgpaul/workspace-polaris/sc24/analysis/data/polaris/1-stream-scaling/stream-scaling-2024-10-19-13-28-10/parsl_runinfo/000/submit_scripts', 
+    userhome='/home/jgpaul/workspace-polaris/sc24/analysis'
+)
+[2024-10-19 13:37:34.487] BENCH (run.stream-scaling) :: All logs and results saved to: data/polaris/1-stream-scaling/stream-scaling-2024-10-19-13-28-10
